@@ -29,7 +29,7 @@ export default function Layout( {children} ) {
             background: 'linear-gradient(171deg, rgba(77,13,45,1) 0%, rgba(17,17,70,1) 36%, rgba(11,92,136,1) 100%)'
           }} 
           className="bg-gray-800 pb-32">
-          <Disclosure as="nav" className="bg-gray-800 border-b border-cyan-900">
+          <Disclosure as="nav" className="bg-gray-900 border-b border-cyan-900">
             {({ open }) => (
               <>
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8 ">
@@ -51,7 +51,7 @@ export default function Layout( {children} ) {
                                 <a                                
                                   className={classNames(
                                     router.asPath == (item.href)
-                                      ? 'bg-gray-900 text-white'
+                                      ? 'bg-gray-800 text-white'
                                       : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                                     'px-3 py-2 rounded-md text-sm font-medium'
                                   )}
