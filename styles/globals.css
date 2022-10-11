@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ----- `Gallery Component
+----------------------------------------------------------------------------------------------------*/
+.blurOnHover img:hover { transition: all ease-in-out 200ms; transform: scale(1.1); overflow: hidden; opacity: .1; filter: blur(2px); }
+.gallery-image { z-index: 1; }
+.transitioning { background: #312e81; transition: all ease-in-out 200ms; filter: blur(4px); transform: scale(1.1); }
+.transitioned	{ transition: all ease-in-out 200ms; filter: blur(0px); transform: scale(1);  }

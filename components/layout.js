@@ -114,9 +114,9 @@ export default function Layout( {children} ) {
         <main className="-mt-32">
           <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
             {/* Replace with your content */}
-            <div className="rounded-lg bg-white shadow">
+            {/* <div className="rounded-lg bg-white shadow"> */}
               {children}
-            </div>            
+            {/* </div>             */}
             {/* /End replace */}
           </div>
         </main>
