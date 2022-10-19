@@ -2,7 +2,7 @@ export const projectData = [
   { 
     id: 0,
     link: "/projects/fulcrum", 
-    project: "From", 
+    project: "FROM", 
     company: "Epix",
     src: "/images/cover-art/from.jpg", 
     title: "", 
@@ -11,7 +11,7 @@ export const projectData = [
     cta: "Watch Now", 
     ctaicon: "", 
     year: "2022", 
-    desc: "Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent. Gravida in tempus feugiat netus enim aliquet a, quam scelerisque. Dictumst in convallis nec in bibendum aenean arcu.", 
+    desc: "From unravels the mystery of a nightmarish town that traps all those who enter. As the unwilling residents fight to keep a sense of normalcy and search for a way out, they must also survive the threats of the surrounding forest – including the terrifying creatures that come out when the sun goes down.", 
     trackname1: "From Main Theme (from the TV series 'From')", 
     trackname2: "Driving in Circles (from the TV series 'From')", 
     trackname3: "Stone in the Cellar (from the TV series 'From')", 
