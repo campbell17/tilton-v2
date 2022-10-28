@@ -1,5 +1,4 @@
 import Layout from '../components/layout'
-import Slideover from '../components/slideover'
 
 export default function Music() {
   return (
