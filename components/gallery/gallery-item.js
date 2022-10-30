@@ -11,10 +11,11 @@ export default function GalleryItem(props) {
       project: event.target.getAttribute('project'),
       src: event.target.getAttribute('src'),
       company: event.target.getAttribute('company'),
-      colorUpdate: event.target.getAttribute('color'),
+      color: event.target.getAttribute('color'),
       year: event.target.getAttribute('year'),
       cta: event.target.getAttribute('cta'),
-      ctaicon: event.target.getAttribute('ctaIcon'),
+      ctaicon: event.target.getAttribute('ctaicon'),
+      ctalink: event.target.getAttribute('ctalink'),
       desc: event.target.getAttribute('desc'),
       trackname1: event.target.getAttribute('trackname1'),
       trackname2: event.target.getAttribute('trackname2'),
@@ -39,7 +40,6 @@ export default function GalleryItem(props) {
             <a className="blurOnHover" key={data.project} onClick={coverClickHandler}>
               <BlurImage 
                 src={data.src} 
-                link={data.link} 
                 company={data.company} 
                 project={data.project} 
                 alt={data.alt}  
@@ -47,7 +47,8 @@ export default function GalleryItem(props) {
                 title={data.title}
                 subtitle={data.subtitle}
                 cta={data.cta}
-                ctaicon={data.ctaIcon}
+                ctaicon={data.ctaicon}
+                ctalink={data.ctalink} 
                 year={data.year}
                 desc={data.desc}
                 trackname1={data.trackname1}

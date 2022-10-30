@@ -4,9 +4,9 @@ import { XMarkIcon, PlayCircleIcon } from '@heroicons/react/24/outline'
 import { PlayIcon, MusicalNoteIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import Audio from '../audio'
+import Link from 'next/link'
 
 export default function GallerySlideoverItem(props) {
-
   return (
     <Transition.Root show={props.open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={props.setOpen}>
@@ -61,13 +61,14 @@ export default function GallerySlideoverItem(props) {
                               <p className="text-sm text-gray-500">{props.year}</p>
                             </div>
                             <div className="mt-5 flex-none flex-wrap space-y-3 sm:space-y-0 sm:space-x-3">
-                              <button
-                                type="button"
-                                className="flex max-w-md items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 pl-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:flex-1"
+                              <Link
+                                href={props.ctalink}                                
                               >
-                                <PlayCircleIcon className="h-6 w-6 mr-2" aria-hidden="true" />
-                                {props.cta}
-                              </button>
+                                <div className="cursor-pointer flex max-w-fit items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 pl-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                                  <PlayCircleIcon className="h-6 w-6 mr-2" aria-hidden="true" />
+                                  {props.cta}
+                                </div>
+                              </Link>
 
                             </div>
                           </div>

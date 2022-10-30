@@ -8,7 +8,7 @@ export default function Gallery() {
   const [id, setId] = useState();
   const [project, setProject] = useState();
   const [src, setSrc] = useState();
-  const [link, setLink] = useState();
+  const [ctalink, setCtalink] = useState();
   const [company, setCompany] = useState();
   const [alt, setAlt] = useState();
   const [color, setColor] = useState();
@@ -37,7 +37,7 @@ export default function Gallery() {
     setProject(cover.project)
     setId(cover.id)
     setSrc(cover.src)
-    setLink(cover.link)
+    setCtalink(cover.ctalink)
     setCompany(cover.company)
     setAlt(cover.alt)
     setColor(cover.color)
@@ -69,7 +69,7 @@ export default function Gallery() {
         project={project} 
         key={id} 
         src={src} 
-        link={link} 
+        ctalink={ctalink} 
         company={company} 
         alt={alt}  
         color={color}

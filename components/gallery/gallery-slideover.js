@@ -8,14 +8,14 @@ export default function GallerySlideover(props) {
       key={props.id} 
       project={props.project} 
       src={props.src} 
-      link={props.link} 
+      ctalink={props.ctalink} 
       company={props.company} 
       alt={props.alt}  
       color={props.color}
       title={props.title}
       subtitle={props.subtitle}
       cta={props.cta}
-      ctaicon={props.ctaIcon}
+      ctaicon={props.ctaicon}
       year={props.year}
       desc={props.desc}
       trackname1={props.trackname1}
