@@ -5,6 +5,7 @@ import { PlayIcon, MusicalNoteIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import Audio from '../audio'
 import Link from 'next/link'
+import PlayerApp from '../player/player-app'
 
 export default function GallerySlideoverItem(props) {
   return (
@@ -61,14 +62,14 @@ export default function GallerySlideoverItem(props) {
                               <p className="text-sm text-gray-500">{props.year}</p>
                             </div>
                             <div className="mt-5 flex-none flex-wrap space-y-3 sm:space-y-0 sm:space-x-3">
-                              <Link
-                                href={props.ctalink}                                
+                              <a
+                                href={props.ctalink}
+                                target="_blank noreferrer"
+                                className="cursor-pointer flex max-w-fit items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 pl-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                               >
-                                <div className="cursor-pointer flex max-w-fit items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 pl-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-                                  <PlayCircleIcon className="h-6 w-6 mr-2" aria-hidden="true" />
-                                  {props.cta}
-                                </div>
-                              </Link>
+                                <PlayCircleIcon className="h-6 w-6 mr-2" aria-hidden="true" />
+                                {props.cta}
+                              </a>
 
                             </div>
                           </div>
@@ -79,6 +80,7 @@ export default function GallerySlideoverItem(props) {
                           <div className="sm:flex sm:px-6 sm:py-5">
                             <p className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{props.desc}</p>
                           </div>
+                          <PlayerApp />
                           <Audio tracksource={props.tracksource1} title={props.trackname1} />
                           <Audio tracksource={props.tracksource2} title={props.trackname2}/>
                           <Audio tracksource={props.tracksource3} title={props.trackname3}/>

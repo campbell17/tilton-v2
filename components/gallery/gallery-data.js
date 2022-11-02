@@ -7,7 +7,7 @@ export const projectData = [
     title: "", 
     color: "bg-[#192427]", 
     subtitle: "", 
-    cta: "Watch Now", 
+    cta: "Watch on Epix", 
     ctaicon: "PlayCircleIcon", 
     ctalink: "https://www.epix.com/series/from", 
     year: "2022", 
