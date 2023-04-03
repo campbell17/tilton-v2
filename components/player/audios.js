@@ -1,14 +1,22 @@
 exports.songsdata = [
   {
-      "title": "Drake - Forever",
-      "url": "https://beardbarnmusicbucket.s3.amazonaws.com/The+Wild+Horse"
+    "title": "From Main Theme (from the TV series 'From')",
+    "url": "/music/christilton_from_01_from-main-theme.mp3" 
   },
   {
-      "title": "Linking Park - In the end",
-      "url": "https://beardbarnmusicbucket.s3.amazonaws.com/The+Wild+Horse"
+    "title": "Driving in Circles (from the TV series 'From')",
+    "url": "/music/christilton_from_02_driving-in-circles.mp3" 
   },
   {
-      "title": "Travis Scott - Stop trina be God",
-      "url": "https://beardbarnmusicbucket.s3.amazonaws.com/The+Wild+Horse"
+    "title": "Stone in the Cellar (from the TV series 'From')",
+    "url": "/music/christilton_from_03_stone-in-the-cellar.mp3" 
+  },
+  {
+    "title": "Pray with Me (from the TV series 'From')",
+    "url": "/music/christilton_from_04_pray-with-me.mp3" 
+  },
+  {
+    "title": "Messages in the Bottles (from the TV series 'From')",
+    "url": "/music/christilton_from_05_messages-in-the-bottles.mp3"
   }
 ]

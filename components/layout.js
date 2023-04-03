@@ -9,8 +9,7 @@ const navigation = [
   { name: 'Home', href: '/', current: false },
   { name: 'Music', href: '/music', current: false },
   { name: 'Representation', href: '/representation', current: false },
-  { name: 'Recent Work', href: 'recent-work', current: false },
-  { name: 'Get In Touch', href: '/get-in-touch', current: false },
+  { name: 'About', href: '/about', current: false },
 ]
 
 function classNames(...classes) {
@@ -102,11 +101,11 @@ export default function Layout( {children} ) {
               </>
             )}
           </Disclosure>
-          <header className="py-10">
+          <header className="p-10">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            {navigation.map((item) => (
+            {/* {navigation.map((item) => (
               router.asPath == (item.href) && router.asPath != "/" && <h1 key={item.name} className="text-3xl font-bold tracking-tight text-white">{item.name}</h1>              
-            ))}
+            ))} */}
             </div>
           </header>
         </div>
