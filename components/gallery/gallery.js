@@ -58,7 +58,6 @@ export default function Gallery() {
     setTracksource4(cover.tracksource4)
     setTracksource5(cover.tracksource5)
   };
-
   return (
     <>
       <GalleryItem onCoverClick={onCoverClick} />
@@ -67,6 +66,7 @@ export default function Gallery() {
         items={projectData} 
         setOpen={setOpen} 
         project={project} 
+        id={id}
         key={id} 
         src={src} 
         ctalink={ctalink} 

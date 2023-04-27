@@ -6,22 +6,23 @@ import Image from 'next/image'
 import Audio from '../audio'
 import Link from 'next/link'
 import PlayerApp from '../player/player-app'
+import Album from '../../components/album'
 
 export default function GallerySlideoverItem(props) {
   return (
-    <Transition.Root show={props.open} as={Fragment}>
+    <Transition.Root show={props.open} appear={true} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={props.setOpen}>
         <div className="fixed inset-0" />
 
         <div className="fixed inset-0 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden">
             <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10 sm:pl-16">
-              <Transition.Child
+              <Transition.Child                
                 as={Fragment}
-                enter="transform transition ease-in-out duration-500 sm:duration-200"
+                enter="transform transition ease-in-out duration-200"
                 enterFrom="translate-x-full"
                 enterTo="translate-x-0"
-                leave="transform transition ease-in-out duration-500 sm:duration-200"
+                leave="transform transition ease-in-out duration-200"
                 leaveFrom="translate-x-0"
                 leaveTo="translate-x-full"
               >
@@ -80,12 +81,7 @@ export default function GallerySlideoverItem(props) {
                           <div className="sm:flex sm:px-6 sm:py-5">
                             <p className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{props.desc}</p>
                           </div>
-                          <PlayerApp />
-                          <Audio tracksource={props.tracksource1} title={props.trackname1} />
-                          <Audio tracksource={props.tracksource2} title={props.trackname2}/>
-                          <Audio tracksource={props.tracksource3} title={props.trackname3}/>
-                          <Audio tracksource={props.tracksource4} title={props.trackname4}/>
-                          <Audio tracksource={props.tracksource5} title={props.trackname5}/>
+                          <Album id={props.id} />
                           <div className="sm:flex sm:px-6 sm:py-5">
                             <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
                               Company

@@ -1,6 +1,6 @@
 export const projectData = [
   { 
-    id: 0,
+    id: 1,
     project: "FROM", 
     company: "Epix",
     src: "/images/cover-art/from.jpg", 
@@ -12,20 +12,207 @@ export const projectData = [
     ctalink: "https://www.epix.com/series/from", 
     year: "2022", 
     desc: "'FROM' unravels the mystery of a nightmarish town that traps all those who enter. As the unwilling residents fight to keep a sense of normalcy and search for a way out, they must also survive the threats of the surrounding forest – including the terrifying creatures that come out when the sun goes down.", 
-    trackname1: "From Main Theme (from the TV series 'From')", 
-    trackname2: "Driving in Circles (from the TV series 'From')", 
-    trackname3: "Stone in the Cellar (from the TV series 'From')", 
-    trackname4: "Pray with Me (from the TV series 'From')", 
-    trackname5: "Messages in the Bottles (from the TV series 'From')", 
-    tracksource1: "/music/christilton_from_01_from-main-theme.mp3", 
-    tracksource2: "/music/christilton_from_02_driving-in-circles.mp3", 
-    tracksource3: "/music/christilton_from_03_stone-in-the-cellar.mp3", 
-    tracksource4: "/music/christilton_from_04_pray-with-me.mp3", 
-    tracksource5: "/music/christilton_from_05_messages-in-the-bottles.mp3", 
+    songsdata: [
+      {
+        "title": "From Main Theme (from the TV series 'From')",
+        "url": "/music/christilton_from_01_from-main-theme.mp3" 
+      },
+      {
+        "title": "Driving in Circles (from the TV series 'From')",
+        "url": "/music/christilton_from_02_driving-in-circles.mp3" 
+      },
+      {
+        "title": "Stone in the Cellar (from the TV series 'From')",
+        "url": "/music/christilton_from_03_stone-in-the-cellar.mp3" 
+      },
+      {
+        "title": "Pray with Me (from the TV series 'From')",
+        "url": "/music/christilton_from_04_pray-with-me.mp3" 
+      },
+      {
+        "title": "Messages in the Bottles (from the TV series 'From')",
+        "url": "/music/christilton_from_05_messages-in-the-bottles.mp3"
+      }
+    ],
   },
-  { id: 1, ctalink: "/projects", project: "Assassin's Creed Unity", company:'', src: "/images/cover-art/assassins-creed-unity.jpg", title: "", color: "bg-[#849CA8]", subtitle: "", cta: "Listen on Spotify", ctaicon: "", year: "2021-2022", desc: "Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent.", tracknames: [ "track1b", "track2", "track3", "track4", "track5" ], trackSources: [ '', '', '', '', '' ], trackctalinks: ['', '', '', '', '']},
-  { id: 2, ctalink: "/projects", project: "Fringe", company:'', src: "/images/cover-art/fringe-season-4.jpg", title: "", color: "", subtitle: "", cta: "Listen on Spotify", ctaicon: "", year: "2020", desc: "Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent.", tracknames: [ "track1c", "track2", "track3", "track4", "track5" ], trackSources: [ '', '', '', '', '' ], trackctalinks: ['', '', '', '', '']},
-  { id: 3, ctalink: "/projects", project: "Sim City", company:'', src: "/images/cover-art/sim-city.jpg", title: "", color: "", subtitle: "", cta: "Listen on Spotify", ctaicon: "", year: "2019", desc: "Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent.", tracknames: [ "track1d", "track2", "track3", "track4", "track5" ], trackSources: [ '', '', '', '', '' ], trackctalinks: ['', '', '', '', '']},
-  { id: 4, ctalink: "/projects", project: "Zoo", company:'', src: "/images/cover-art/zoo.jpg", title: "", color: "", subtitle: "", cta: "", ctaicon: "Watch Now", year: "2018", desc: "Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent.", tracknames: [ "track1e", "track2", "track3", "track4", "track5" ], trackSources: [ '', '', '', '', '' ], trackctalinks: ['', '', '', '', '']},
-  { id: 5, ctalink: "/projects", project: "Black", company:'last item', src: "/images/cover-art/black.jpg", title: "", color: "", subtitle: "", cta: "Listen on Spotify", ctaicon: "", year: "2017", desc: "Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent.", tracknames: [ "track1f", "track2", "track3", "track4", "track5" ], trackSources: [ '', '', '', '', '' ], trackctalinks: ['', '', '', '', '']},
+  { 
+    id: 2, 
+    ctalink: "/projects", 
+    project: "Assassin's Creed Unity", 
+    company:'', 
+    src: "/images/cover-art/assassins-creed-unity.jpg", 
+    title: "", 
+    color: "bg-[#849CA8]", 
+    subtitle: "", 
+    cta: "Listen on Spotify", 
+    ctaicon: "", 
+    year: "2021-2022", 
+    desc: "Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent.", 
+    songsdata: [
+      {
+        "title": "Unity (from the video game 'Assassin's Creed Unity') [Excerpt]",
+        "url": "/music/christilton_acunity_01_unity_excerpt.mp3" 
+      },
+      {
+        "title": "On Father's Watch (from the video game 'Assassin's Creed Unity') [Excerpt]",
+        "url": "/music/christilton_acunity_02_on-fathers-watch_excerpt.mp3" 
+      },
+      {
+        "title": "A Leap of Faith (from the video game 'Assassin's Creed Unity') [Excerpt]",
+        "url": "/music/christilton_acunity_03_a-leap-of-faith_excerpt.mp3" 
+      },
+      {
+        "title": "Versailles for Sore Eyes (from the video game 'Assassin's Creed Unity') [Excerpt]",
+        "url": "/music/christilton_acunity_04_versailles-for-sore-eyes_excerpt.mp3" 
+      },
+      {
+        "title": "A Clash of Assassins (from the video game 'Assassin's Creed Unity') [Excerpt]",
+        "url": "/music/christilton_acunity_05_a-clash-of-assassins_excerpt.mp3"
+      }
+    ],
+  },
+  { 
+    id: 3, 
+    ctalink: "/projects", 
+    project: "Fringe", 
+    company:'', 
+    src: "/images/cover-art/fringe-season-4.jpg", 
+    title: "", 
+    color: "", 
+    subtitle: "", 
+    cta: "Listen on Spotify", 
+    ctaicon: "", 
+    year: "2020", 
+    desc: "Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent.", 
+    songsdata: [
+      {
+        "title": "From Main Theme (from the TV series 'From')",
+        "url": "/music/christilton_from_01_from-main-theme.mp3" 
+      },
+      {
+        "title": "Driving in Circles (from the TV series 'From')",
+        "url": "/music/christilton_from_02_driving-in-circles.mp3" 
+      },
+      {
+        "title": "Stone in the Cellar (from the TV series 'From')",
+        "url": "/music/christilton_from_03_stone-in-the-cellar.mp3" 
+      },
+      {
+        "title": "Pray with Me (from the TV series 'From')",
+        "url": "/music/christilton_from_04_pray-with-me.mp3" 
+      },
+      {
+        "title": "Messages in the Bottles (from the TV series 'From')",
+        "url": "/music/christilton_from_05_messages-in-the-bottles.mp3"
+      }
+    ],
+  },
+  { 
+    id: 4, 
+    ctalink: "/projects", 
+    project: "Sim City", 
+    company:'', 
+    src: "/images/cover-art/sim-city.jpg", 
+    title: "", 
+    color: "", 
+    subtitle: "", 
+    cta: "Listen on Spotify", 
+    ctaicon: "", 
+    year: "2019", 
+    desc: "Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent.", 
+    songsdata: [
+      {
+        "title": "From Main Theme (from the TV series 'From')",
+        "url": "/music/christilton_from_01_from-main-theme.mp3" 
+      },
+      {
+        "title": "Driving in Circles (from the TV series 'From')",
+        "url": "/music/christilton_from_02_driving-in-circles.mp3" 
+      },
+      {
+        "title": "Stone in the Cellar (from the TV series 'From')",
+        "url": "/music/christilton_from_03_stone-in-the-cellar.mp3" 
+      },
+      {
+        "title": "Pray with Me (from the TV series 'From')",
+        "url": "/music/christilton_from_04_pray-with-me.mp3" 
+      },
+      {
+        "title": "Messages in the Bottles (from the TV series 'From')",
+        "url": "/music/christilton_from_05_messages-in-the-bottles.mp3"
+      }
+    ],
+  },
+  { 
+    id: 5, 
+    ctalink: "/projects", 
+    project: "Zoo", 
+    company:'', 
+    src: "/images/cover-art/zoo.jpg", 
+    title: "", 
+    color: "", 
+    subtitle: "", 
+    cta: "", 
+    ctaicon: "Watch Now",
+    year: "2018", 
+    desc: "Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent.",
+    songsdata: [
+      {
+        "title": "From Main Theme (from the TV series 'From')",
+        "url": "/music/christilton_from_01_from-main-theme.mp3" 
+      },
+      {
+        "title": "Driving in Circles (from the TV series 'From')",
+        "url": "/music/christilton_from_02_driving-in-circles.mp3" 
+      },
+      {
+        "title": "Stone in the Cellar (from the TV series 'From')",
+        "url": "/music/christilton_from_03_stone-in-the-cellar.mp3" 
+      },
+      {
+        "title": "Pray with Me (from the TV series 'From')",
+        "url": "/music/christilton_from_04_pray-with-me.mp3" 
+      },
+      {
+        "title": "Messages in the Bottles (from the TV series 'From')",
+        "url": "/music/christilton_from_05_messages-in-the-bottles.mp3"
+      }
+    ],
+  },
+  { 
+    id: 6, 
+    ctalink: "/projects", 
+    project: "Black", 
+    company:'last item', 
+    src: "/images/cover-art/black.jpg", 
+    title: "", 
+    color: "", 
+    subtitle: "", 
+    cta: "Listen on Spotify", 
+    ctaicon: "", 
+    year: "2017", 
+    desc: "Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent.", 
+    songsdata: [
+      {
+        "title": "From Main Theme (from the TV series 'From')",
+        "url": "/music/christilton_from_01_from-main-theme.mp3" 
+      },
+      {
+        "title": "Driving in Circles (from the TV series 'From')",
+        "url": "/music/christilton_from_02_driving-in-circles.mp3" 
+      },
+      {
+        "title": "Stone in the Cellar (from the TV series 'From')",
+        "url": "/music/christilton_from_03_stone-in-the-cellar.mp3" 
+      },
+      {
+        "title": "Pray with Me (from the TV series 'From')",
+        "url": "/music/christilton_from_04_pray-with-me.mp3" 
+      },
+      {
+        "title": "Messages in the Bottles (from the TV series 'From')",
+        "url": "/music/christilton_from_05_messages-in-the-bottles.mp3"
+      }
+    ],
+  },
 ]

@@ -1,13 +1,15 @@
-import { useState } from 'react'
+import { useRef } from 'react'
 import Link from 'next/link'
 import { projectData } from './gallery-data'
 import BlurImage from './gallery-item-image'
 
 export default function GalleryItem(props) {
-  
+  const refId = useRef(0);
+
   const coverClickHandler = (event) => {
     event.preventDefault();
     const allData = {
+      id: event.target.getAttribute('id'),
       project: event.target.getAttribute('project'),
       src: event.target.getAttribute('src'),
       company: event.target.getAttribute('company'),
@@ -17,6 +19,7 @@ export default function GalleryItem(props) {
       ctaicon: event.target.getAttribute('ctaicon'),
       ctalink: event.target.getAttribute('ctalink'),
       desc: event.target.getAttribute('desc'),
+      songsdata: event.target.getAttribute('songsdata'),
       trackname1: event.target.getAttribute('trackname1'),
       trackname2: event.target.getAttribute('trackname2'),
       trackname3: event.target.getAttribute('trackname3'),
@@ -29,18 +32,22 @@ export default function GalleryItem(props) {
       tracksource5: event.target.getAttribute('tracksource5'),
     };
     props.onCoverClick(allData);
+    refId.current = allData.id;
     console.log(event)
+    console.log(refId.current)
   }  
+
   return (
-    <ul role="list" className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
+    <ul role="list" ref={refId} className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
     {projectData.map((data) => (
       <li key={data.src} className="relative hover:shadow-lg transition-shadow">
         <div style={{ background: 'linear-gradient(171deg, rgba(31,41,55,1) 0%, rgba(0,0,0,1) 36%, rgba(51,65,85,1) 100%)' }} className="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-900 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
           <Link href="#">
-            <a className="blurOnHover" key={data.project} onClick={coverClickHandler}>
-              <BlurImage 
+            <a className="blurOnHover"  key={data.project} onClick={coverClickHandler}>
+              <BlurImage                 
                 src={data.src} 
                 company={data.company} 
+                id={data.id}
                 project={data.project} 
                 alt={data.alt}  
                 color={data.color}

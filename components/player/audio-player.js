@@ -1,16 +1,20 @@
 import React, {useState, useRef, useEffect} from 'react';
 import { ForwardIcon, BackwardIcon, PlayIcon, PauseIcon, ArrowUturnRightIcon, ArrowUturnLeftIcon } from '@heroicons/react/20/solid'
 
-const AudioPlayer = (props) => {
+export default function AudioPlayer (props) {
   // state
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+  const [totalAudioTime, setTotalAudioTime] = useState(0);
 
   // reference
   const audioPlayer = useRef(); // reference our audio component
   const progressBar = useRef(); // reference our progress bar
   const animationRef = useRef(); // reference the animation
+
+  const onLoadedMetaData = () =>
+    setTotalAudioTime(audioPlayer.current?.duration);
 
   useEffect(() => {
     const seconds = Math.floor(audioPlayer.current.duration);
@@ -20,12 +24,12 @@ const AudioPlayer = (props) => {
 
   const calculateTime = (secs) => {
     const minutes = Math.floor(secs / 60);
-    const returnedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+    const returnedMinutes = `${minutes}`;
     const seconds = Math.floor(secs % 60);
     const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
     return `${returnedMinutes}:${returnedSeconds}`;
   }
-  
+
   const togglePlayPause = () => {
     const prevValue = isPlaying;
     setIsPlaying(!prevValue);
@@ -36,39 +40,38 @@ const AudioPlayer = (props) => {
     } else {
       audioPlayer.current.pause();
       cancelAnimationFrame(animationRef.current);
-    }
-  }
+    }  
+  }  
 
   const whilePlaying = () => {
     progressBar.current.value = audioPlayer.current.currentTime;
     changePlayerCurrentTime();
     animationRef.current = requestAnimationFrame(whilePlaying);
-  }
+  }  
 
   const changeRange = () => {
     audioPlayer.current.currentTime = progressBar.current.value;
     changePlayerCurrentTime();
-  }
+  }  
 
   const changePlayerCurrentTime = () => {
     progressBar.current.style.setProperty('--seek-before-width', `${progressBar.current.value / duration * 100}%`);
     setCurrentTime(progressBar.current.value);
-  }
+  }  
 
   const backThirty = () => {
     progressBar.current.value = Number(progressBar.current.value) - 10;
     changeRange();
-  }
+  }  
 
   const forwardThirty = () => {
     progressBar.current.value = Number(progressBar.current.value) + 10;
     changeRange();
-  }
-
+  }    
   return (
     <div className="flex flex-col">
       <div className="text-white items-center justify-between isolate overflow-hidden bg-gray-900 gap-4 flex flex-col p-4 m-1 rounded-md shadow-2xl lg:flex lg:flex-row lg:gap-x-20">
-        <audio ref={audioPlayer} src={props.trackSource} preload="metadata"></audio>
+        <audio ref={audioPlayer} onLoadedMetadata={onLoadedMetaData} src={props.trackSource} active={props.active} preload="metadata" ></audio>
         <div className="lg:text-left lg:w-96 text-center w-full ">{props.trackName}</div>
         <div className="flex items-center justify-center gap-2">
           <span className="text-indigo-600 text-xs">10s</span>
@@ -107,11 +110,9 @@ const AudioPlayer = (props) => {
           </div>
 
           {/* duration */}
-          <div className="w-12 flex justify-center">{(duration && !isNaN(duration)) ? calculateTime(duration) : '00:00'}</div>
+          <div className="w-12 flex justify-center">{(duration && !isNaN(duration)) ? calculateTime(duration) : '0:00'}</div>
         </div>
       </div>
     </div>
   )
 }
-
-export { AudioPlayer } 

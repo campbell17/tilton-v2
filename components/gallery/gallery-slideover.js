@@ -5,6 +5,7 @@ export default function GallerySlideover(props) {
     <GallerySlideoverItem
       open={props.open} 
       setOpen={props.setOpen} 
+      id={props.id}
       key={props.id} 
       project={props.project} 
       src={props.src} 

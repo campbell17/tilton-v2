@@ -14,6 +14,7 @@ export default function BlurImage(props) {
             src={props.src} 
             ctalink={props.ctalink} 
             company={props.company} 
+            id={props.id} 
             project={props.project} 
             alt={props.alt}  
             color={props.color}
@@ -23,6 +24,7 @@ export default function BlurImage(props) {
             ctaicon={props.ctaicon}
             year={props.year}
             desc={props.desc}
+            songsdata={props.songsdata}
             trackname1={props.trackname1}
             trackname2={props.trackname2}
             trackname3={props.trackname3}
