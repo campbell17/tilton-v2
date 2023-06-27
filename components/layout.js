@@ -27,7 +27,7 @@ export default function Layout( {children} ) {
             background: 'rgb(77,13,45)',
             background: 'linear-gradient(171deg, rgba(77,13,45,1) 0%, rgba(17,17,70,1) 36%, rgba(11,92,136,1) 100%)'
           }} 
-          className="bg-gray-800 pb-32">
+          className="bg-gray-800 pb-20">
           <Disclosure as="nav" className="bg-gray-900 border-b border-cyan-900">
             {({ open }) => (
               <>
@@ -113,9 +113,9 @@ export default function Layout( {children} ) {
         <main className="-mt-32">
           <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
             {/* Replace with your content */}
-            {/* <div className="rounded-lg bg-white shadow"> */}
+            <div className="rounded-xl bg-white shadow overflow-hidden">
               {children}
-            {/* </div>             */}
+            </div>            
             {/* /End replace */}
           </div>
         </main>

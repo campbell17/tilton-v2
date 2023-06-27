@@ -7,6 +7,7 @@ import Audio from '../audio'
 import Link from 'next/link'
 import PlayerApp from '../player/player-app'
 import Album from '../../components/album'
+import { projectData } from './gallery-data'
 
 export default function GallerySlideoverItem(props) {
   return (
@@ -46,7 +47,7 @@ export default function GallerySlideoverItem(props) {
                     {/* Main */}
                     <div className="divide-y divide-gray-200">
                       <div className="pb-6">
-                        <div className={"h-24 sm:h-20 lg:h-28 bg-gray-400 " + props.color} />
+                        <div className={"h-24 sm:h-20 lg:h-28 " + props.color} />
                         <div className="lg:-mt-15 -mt-12 flow-root px-4 sm:-mt-8 sm:flex sm:items-end sm:px-6">
                           <div>
                             <div className="-m-1 flex">
@@ -81,7 +82,7 @@ export default function GallerySlideoverItem(props) {
                           <div className="sm:flex sm:px-6 sm:py-5">
                             <p className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{props.desc}</p>
                           </div>
-                          <Album id={props.id} />
+                          <Album id={props.id} initialSrc={props.songsdata} mappedSongUrl={props.mappedSongUrl} mappedSongTitle={props.mappedSongTitle} />
                           <div className="sm:flex sm:px-6 sm:py-5">
                             <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
                               Company

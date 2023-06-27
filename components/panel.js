@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function Panel() {
   return (
     <div className="mx-auto max-w-7xl mb-8">
@@ -39,10 +41,10 @@ export default function Panel() {
         <div className="relative mt-16 h-80 lg:mt-8">
           <img
             className="absolute top-0 left-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-            src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+            src="/images/figure-homepage.jpg"
             alt="App screenshot"
-            width={1824}
-            height={1080}
+            width={7000}
+            height={400}
           />
         </div>
       </div>

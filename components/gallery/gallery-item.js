@@ -1,42 +1,46 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import Link from 'next/link'
 import { projectData } from './gallery-data'
 import BlurImage from './gallery-item-image'
 
 export default function GalleryItem(props) {
   const refId = useRef(0);
+  // const mappedProject = projectData.map((data) => (data.songsdata[0]).title);
+  // const mappedSongTitle = Array.from(mappedProject)[1];
+  
+  // console.log(mappedProject);
+  // console.log(mappedSongTitle);
+  
 
   const coverClickHandler = (event) => {
     event.preventDefault();
+    const mappedProject = projectData.map((data) => (data.songsdata[0]).title);
+    const mappedUrl = projectData.map((data) => (data.songsdata[0]).url);
+
     const allData = {
-      id: event.target.getAttribute('id'),
-      project: event.target.getAttribute('project'),
       src: event.target.getAttribute('src'),
       company: event.target.getAttribute('company'),
+      id: event.target.getAttribute('id'),
+      project: event.target.getAttribute('project'),
+      alt: event.target.getAttribute('alt'),
       color: event.target.getAttribute('color'),
-      year: event.target.getAttribute('year'),
+      title: event.target.getAttribute('title'),
+      subtitle: event.target.getAttribute('subtitle'),
       cta: event.target.getAttribute('cta'),
       ctaicon: event.target.getAttribute('ctaicon'),
       ctalink: event.target.getAttribute('ctalink'),
-      desc: event.target.getAttribute('desc'),
-      songsdata: event.target.getAttribute('songsdata'),
-      trackname1: event.target.getAttribute('trackname1'),
-      trackname2: event.target.getAttribute('trackname2'),
-      trackname3: event.target.getAttribute('trackname3'),
-      trackname4: event.target.getAttribute('trackname4'),
-      trackname5: event.target.getAttribute('trackname5'),
-      tracksource1: event.target.getAttribute('tracksource1'),
-      tracksource2: event.target.getAttribute('tracksource2'),
-      tracksource3: event.target.getAttribute('tracksource3'),
-      tracksource4: event.target.getAttribute('tracksource4'),
-      tracksource5: event.target.getAttribute('tracksource5'),
+      year: event.target.getAttribute('year'),
+      desc: event.target.getAttribute('desc'),      
+      mappedSongTitle: Array.from(mappedProject)[event.target.getAttribute('id')],
+      mappedSongUrl: Array.from(mappedUrl)[event.target.getAttribute('id')],
     };
+
     props.onCoverClick(allData);
     refId.current = allData.id;
-    console.log(event)
-    console.log(refId.current)
+    console.log(event)    
+    console.log(allData.mappedSongTitle)
+    console.log(allData.mappedSongUrl)    
   }  
-
   return (
     <ul role="list" ref={refId} className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
     {projectData.map((data) => (
@@ -58,16 +62,8 @@ export default function GalleryItem(props) {
                 ctalink={data.ctalink} 
                 year={data.year}
                 desc={data.desc}
-                trackname1={data.trackname1}
-                trackname2={data.trackname2}
-                trackname3={data.trackname3}
-                trackname4={data.trackname4}
-                trackname5={data.trackname5}
-                tracksource1={data.tracksource1}
-                tracksource2={data.tracksource2}
-                tracksource3={data.tracksource3}
-                tracksource4={data.tracksource4}
-                tracksource5={data.tracksource5}
+                mappedSongTitle={data.mappedSongTitle}
+                mappedSongUrl={data.mappedSongUrl}
               />
             </a>
           </Link>

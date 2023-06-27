@@ -32,25 +32,25 @@ export default function TrackList(props) {
     <div>
       {(() => {
         switch (props.id) {
-          case "1":
+          case "0":
             return tracklist.slice(0, 1);
-          case "2":
+          case "1":
             return tracklist.slice(1, 2);
-          case "3":
+          case "2":
             return tracklist.slice(2, 3);
-          case "4":
+          case "3":
             return tracklist.slice(3, 4);
-          case "5":
+          case "4":
             return tracklist.slice(4, 5);
-          case "6":
+          case "5":
             return tracklist.slice(5, 6);
-          case "7":
+          case "6":
             return tracklist.slice(6, 7);
-          case "8":
+          case "7":
             return tracklist.slice(7, 8);
-          case "9":
+          case "8":
             return tracklist.slice(8, 9);
-          case "10":
+          case "9":
             return tracklist.slice(9, 10);
           default:
             return [];

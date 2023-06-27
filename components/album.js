@@ -4,8 +4,8 @@ import TrackList from './player/track-list';
 import { projectData } from '../components/gallery/gallery-data';
 
 export default function Album(props) {    
-  const [track, setTrack] = useState();
-  const [title, setTitle] = useState();
+  const [track, setTrack] = useState(props.mappedSongUrl);
+  const [title, setTitle] = useState(props.mappedSongTitle);
 
   const trackClickHandler = (event) => {    
     event.preventDefault();
@@ -25,8 +25,8 @@ export default function Album(props) {
   
   return (
     <>
-      <AudioPlayer key={track} trackName={title} trackSource={track}  />
       <TrackList id={props.id} trackClickHandler={trackClickHandler} />
+      <AudioPlayer key={track} trackName={title} trackSource={track}  />
     </>
   )
 }

@@ -33,7 +33,7 @@ export default function AudioPlayer (props) {
   const togglePlayPause = () => {
     const prevValue = isPlaying;
     setIsPlaying(!prevValue);
-
+    
     if (!prevValue) {      
       audioPlayer.current.play();
       animationRef.current = requestAnimationFrame(whilePlaying);
@@ -68,49 +68,53 @@ export default function AudioPlayer (props) {
     progressBar.current.value = Number(progressBar.current.value) + 10;
     changeRange();
   }    
+
+
   return (
     <div className="flex flex-col">
-      <div className="text-white items-center justify-between isolate overflow-hidden bg-gray-900 gap-4 flex flex-col p-4 m-1 rounded-md shadow-2xl lg:flex lg:flex-row lg:gap-x-20">
-        <audio ref={audioPlayer} onLoadedMetadata={onLoadedMetaData} src={props.trackSource} active={props.active} preload="metadata" ></audio>
-        <div className="lg:text-left lg:w-96 text-center w-full ">{props.trackName}</div>
-        <div className="flex items-center justify-center gap-2">
-          <span className="text-indigo-600 text-xs">10s</span>
-          <button
-            type="button"
-            className="rounded-full border border-indigo-600 p-2 text-white text-xs flex items-center gap-1 shadow-sm hover:bg-indigo-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            onClick={backThirty}
-          >
-            <ArrowUturnLeftIcon className="h-3 w-3" aria-hidden="true" />
-          </button>
-          <button
-            onClick={togglePlayPause}
-            type="button"
-            className="rounded-full bg-indigo-600 p-4 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            {isPlaying ? <PauseIcon className="h-5 w-5" aria-hidden="true" /> : <PlayIcon className="h-5 w-5" aria-hidden="true" />}
-          </button>
-          <button
-            type="button"
-            className="rounded-full border border-indigo-600 p-2 text-white text-xs flex items-center gap-1 shadow-sm hover:bg-indigo-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            onClick={forwardThirty}
-          >
-            <ArrowUturnRightIcon className="h-3 w-3" aria-hidden="true" />
-          </button>
-          <span className="text-indigo-600 text-xs">10s</span>
-        </div>
-
-        <div className="flex items-center justify-center gap-4">
-
-          {/* current time */}
-          <div className="w-12 flex justify-center">{calculateTime(currentTime)}</div>
-
-          {/* progress bar */}
-          <div className="flex items-center">
-            <input className="w-60" type="range" defaultValue="0" ref={progressBar} onChange={changeRange} />
+      <div className="text-white items-center justify-between isolate overflow-hidden bg-gray-900 gap-4 flex flex-col p-4 m-1 rounded-md shadow-2xl">
+        <audio ref={audioPlayer} onLoadedMetadata={onLoadedMetaData} src={props.trackSource} title={props.mappedSongTitle} active={props.active} preload="metadata" ></audio>
+        <div className="text-center text-xs w-full">{props.trackName}</div>
+        <div className="flex items-center w-full justify-around">
+          <div className="flex items-center justify-center gap-2">
+            <span className="text-indigo-600 text-xs">10s</span>
+            <button
+              type="button"
+              className="rounded-full border border-indigo-600 p-2 text-white text-xs flex items-center gap-1 shadow-sm hover:bg-indigo-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              onClick={backThirty}
+            >
+              <ArrowUturnLeftIcon className="h-3 w-3" aria-hidden="true" />
+            </button>
+            <button
+              onClick={togglePlayPause}
+              type="button"
+              className="rounded-full bg-indigo-600 p-4 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              {isPlaying ? <PauseIcon className="h-5 w-5" aria-hidden="true" /> : <PlayIcon className="h-5 w-5" aria-hidden="true" />}
+            </button>
+            <button
+              type="button"
+              className="rounded-full border border-indigo-600 p-2 text-white text-xs flex items-center gap-1 shadow-sm hover:bg-indigo-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              onClick={forwardThirty}
+            >
+              <ArrowUturnRightIcon className="h-3 w-3" aria-hidden="true" />
+            </button>
+            <span className="text-indigo-600 text-xs">10s</span>
           </div>
 
-          {/* duration */}
-          <div className="w-12 flex justify-center">{(duration && !isNaN(duration)) ? calculateTime(duration) : '0:00'}</div>
+          <div className="flex items-center justify-center gap-4 text-xs text-indigo-600">
+
+            {/* current time */}
+            <div className="w-7 flex justify-center">{calculateTime(currentTime)}</div>
+
+            {/* progress bar */}
+            <div className="flex items-center">
+              <input className="w-60" type="range" defaultValue="0" ref={progressBar} onChange={changeRange} />
+            </div>
+
+            {/* duration */}
+            <div className="w-7 flex justify-center">{(duration && !isNaN(duration)) ? calculateTime(duration) : '0:00'}</div>
+          </div>
         </div>
       </div>
     </div>
