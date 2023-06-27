@@ -7,6 +7,6 @@ const nextConfig = {
 module.exports = {
   images: {
     dangerouslyAllowSVG: true,
-    domains: ['images.unsplash.com', 'tailwindui.com'],
+    domains: ['images.unsplash.com', 'tailwindui.com', 'christilton.com'],
   },
 }

@@ -1,8 +1,10 @@
+import Image from "next/image"
+
 export default function DarkFeature() {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl py-4 sm:px-6 sm:py-4 md:px-8">
-        <div className="relative isolate overflow-hidden bg-gray-900 px-6 pt-8 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 md:flex md:gap-x-20 md:px-24 md:pt-0">
+        <div className="relative isolate overflow-hidden bg-gray-900 px-6 pt-8 shadow-2xl sm:rounded-xl sm:px-16 md:flex md:gap-x-20 md:px-24 md:pt-0">
           <svg
             viewBox="0 0 1024 1024"
             className="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
@@ -28,12 +30,13 @@ export default function DarkFeature() {
             </div>
           </div>
           <div className="relative mt-16 h-80 md:-mt-8">
-            <img
+            <Image
               className="absolute sm:-right-[0rem] md:-right-[20rem] lg:-right-[28rem] top-0 w-[30rem] max-w-none rounded-full bg-white/5 ring-1 ring-white/10"
               src="https://christilton.com/assets/img/global/gsa-logo.png"
               alt="App screenshot"
-              width={1824}
-              height={1080}
+              width={512}
+              height={512}
+              layout="fixed"
             />
           </div>
         </div>
