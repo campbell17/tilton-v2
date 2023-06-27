@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import AudioPlayer from './player/audio-player';
 import TrackList from './player/track-list';
 import { projectData } from '../components/gallery/gallery-data';
@@ -6,8 +6,10 @@ import { projectData } from '../components/gallery/gallery-data';
 export default function Album(props) {    
   const [track, setTrack] = useState(props.mappedSongUrl);
   const [title, setTitle] = useState(props.mappedSongTitle);
+  const audioPlayer = useRef(null);
 
   const trackClickHandler = (event) => {    
+    props.isPlaying === true ? audioPlayer.current.pause() : null
     event.preventDefault();
     const trackData = {
       track: event.target.getAttribute('url'),
@@ -19,6 +21,7 @@ export default function Album(props) {
     const trackinfo = {
       ...clickedTrack,
     };
+
     setTrack(trackinfo.track)
     setTitle(trackinfo.title)
   };
@@ -26,7 +29,7 @@ export default function Album(props) {
   return (
     <>
       <TrackList id={props.id} trackClickHandler={trackClickHandler} />
-      <AudioPlayer key={track} trackName={title} trackSource={track}  />
+      <AudioPlayer ref={audioPlayer} key={track} trackName={title} trackSource={track}  />
     </>
   )
 }

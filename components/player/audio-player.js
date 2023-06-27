@@ -7,6 +7,7 @@ export default function AudioPlayer (props) {
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [totalAudioTime, setTotalAudioTime] = useState(0);
+  const [isFirstPlay, setIsFirstPlay] = useState(true); 
 
   // reference
   const audioPlayer = useRef(); // reference our audio component
@@ -18,9 +19,19 @@ export default function AudioPlayer (props) {
 
   useEffect(() => {
     const seconds = Math.floor(audioPlayer.current.duration);
-    setDuration(seconds);    
+    setDuration(seconds);
     progressBar.current.max = seconds;
-  }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState])
+  }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState]);
+
+  useEffect(() => {
+    // Automatically play the audio when trackSource changes and it's not the first play
+    if (!isFirstPlay && props.trackSource) {
+      audioPlayer.current.src = props.trackSource;
+      audioPlayer.current.load();
+      audioPlayer.current.play();
+      setIsPlaying(true);
+    }
+  }, [isFirstPlay, props.trackSource]);
 
   const calculateTime = (secs) => {
     const minutes = Math.floor(secs / 60);
@@ -29,8 +40,9 @@ export default function AudioPlayer (props) {
     const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
     return `${returnedMinutes}:${returnedSeconds}`;
   }
-
+  
   const togglePlayPause = () => {
+    setIsFirstPlay(false);
     const prevValue = isPlaying;
     setIsPlaying(!prevValue);
     
@@ -40,15 +52,17 @@ export default function AudioPlayer (props) {
     } else {
       audioPlayer.current.pause();
       cancelAnimationFrame(animationRef.current);
-    }  
+    }      
   }  
 
   const whilePlaying = () => {
-    progressBar.current.value = audioPlayer.current.currentTime;
-    changePlayerCurrentTime();
-    animationRef.current = requestAnimationFrame(whilePlaying);
-  }  
-
+    if (audioPlayer.current) {
+      progressBar.current.value = audioPlayer.current.currentTime;
+      changePlayerCurrentTime();
+      animationRef.current = requestAnimationFrame(whilePlaying);
+    }
+  }
+  
   const changeRange = () => {
     audioPlayer.current.currentTime = progressBar.current.value;
     changePlayerCurrentTime();
@@ -68,7 +82,16 @@ export default function AudioPlayer (props) {
     progressBar.current.value = Number(progressBar.current.value) + 10;
     changeRange();
   }    
-
+  const changeTrack = (newSrc) => {
+    if (audioPlayer.current) {
+      audioPlayer.current.pause();
+      audioPlayer.current.currentTime = 0;
+    }
+    audioPlayer.current.src = newSrc;
+    audioPlayer.current.load();
+    audioPlayer.current.play();
+    setIsPlaying(true);
+  };
 
   return (
     <div className="flex flex-col">
