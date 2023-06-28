@@ -82,7 +82,7 @@ export default function GallerySlideoverItem(props) {
                           <div className="sm:flex sm:px-6 sm:py-5">
                             <p className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{props.desc}</p>
                           </div>
-                          <Album id={props.id} initialSrc={props.songsdata} mappedSongUrl={props.mappedSongUrl} mappedSongTitle={props.mappedSongTitle} />
+                          <Album id={props.id} initialSrc={props.songsdata} selectedIds={props.selectedIds} mappedSongUrl={props.mappedSongUrl} mappedSongTitle={props.mappedSongTitle} />
                           <div className="sm:flex sm:px-6 sm:py-5">
                             <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
                               Company

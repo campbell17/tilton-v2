@@ -11,10 +11,10 @@ export default function Home() {
           heading="Chris Tilton" subheading="Composer. Los Angeles, CA."
           // cta ctaPrimaryUrl="#" ctaPrimaryText="Get started" ctaSecondaryUrl="#" ctaSecondaryText="Learn more"
         />
-        <DarkFeature />
         <div className="m-8">
-          <Gallery />        
+          <Gallery isHomepage={true} />        
         </div>
+        <DarkFeature />
     </Layout>
   )
 }

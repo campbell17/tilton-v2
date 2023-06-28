@@ -3,7 +3,7 @@ import GallerySlideover from './gallery-slideover'
 import GalleryItem from './gallery-item'
 import { projectData } from './gallery-data';
 
-export default function Gallery() {
+export default function Gallery(props) {
   const [open, setOpen] = useState(false);
   const [id, setId] = useState();
   const [project, setProject] = useState();
@@ -44,7 +44,7 @@ export default function Gallery() {
   };
   return (
     <>
-      <GalleryItem onCoverClick={onCoverClick} />
+      <GalleryItem onCoverClick={onCoverClick} isHomepage={props.isHomepage} />
       <GallerySlideover 
         open={open} 
         items={projectData} 

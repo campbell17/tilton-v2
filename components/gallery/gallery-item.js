@@ -41,9 +41,18 @@ export default function GalleryItem(props) {
     console.log(allData.mappedSongTitle)
     console.log(allData.mappedSongUrl)    
   }  
+
+  let filteredProjectData;
+
+  if (props.isHomepage) {
+    filteredProjectData = projectData.filter((data) => data.homepage);
+  } else {
+    filteredProjectData = projectData;
+  }
+
   return (
     <ul role="list" ref={refId} className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
-    {projectData.map((data) => (
+    {filteredProjectData.map((data) => (
       <li key={data.src} className="relative hover:shadow-lg transition-shadow">
         <div style={{ background: 'linear-gradient(171deg, rgba(31,41,55,1) 0%, rgba(0,0,0,1) 36%, rgba(51,65,85,1) 100%)' }} className="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-900 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
           <Link href="#">

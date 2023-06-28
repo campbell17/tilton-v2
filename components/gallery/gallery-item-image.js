@@ -25,8 +25,8 @@ export default function BlurImage(props) {
             year={props.year}
             desc={props.desc}
             songsdata={props.songsdata}
-            mappedSongTitle={props.mappedSongTitle}
-            mappedSongUrl={props.mappedSongUrl}
+            mappedsongtitle={props.mappedsongtitle}
+            mappedsongurl={props.mappedsongurl}
             layout='responsive'
             width={100}
             height={100}

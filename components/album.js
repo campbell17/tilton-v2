@@ -28,8 +28,8 @@ export default function Album(props) {
   
   return (
     <>
-      <TrackList id={props.id} trackClickHandler={trackClickHandler} />
-      <AudioPlayer ref={audioPlayer} key={track} trackName={title} trackSource={track}  />
+      <TrackList id={props.id} selectedIds={props.selectedIds} trackClickHandler={trackClickHandler} />
+      <AudioPlayer forwardRef={audioPlayer} key={track} trackName={title} trackSource={track}  />
     </>
   )
 }
