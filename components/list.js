@@ -41,7 +41,7 @@ const applications = [
 
 export default function List() {
   return (
-    <div className="overflow-hidden bg-white shadow sm:rounded-md">
+    <div className="overflow-hidden bg-white shadow sm:rounded-md m-6">
       <ul role="list" className="divide-y divide-gray-200">
         {applications.map((application) => (
           <li key={application.applicant.email}>
