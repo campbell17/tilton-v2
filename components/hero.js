@@ -8,9 +8,9 @@ export default function Hero(props) {
         <div className="mx-auto max-w-2xl py-32 sm:py-24 lg:py-12">
           {props.announcement != null ? 
             <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-              <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+              <div className={"relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20" + `${props.darkBG && " text-white ring-gray-100/10 hover:ring-gray-100/20 bg-black/10 hover:bg-black/30"}` }>
                 {props.announcementContent}{' '}
-                <a href={props.announcementUrl} className="font-semibold text-indigo-600">
+                <a href={props.announcementUrl} className={"font-semibold text-indigo-600" + `${props.darkBG && " text-indigo-300 hover:text-indigo-400 mix-blend-difference"}` }>
                   <span className="absolute inset-0" aria-hidden="true" />
                   {props.announcementLinktext} <span aria-hidden="true">&rarr;</span>
                 </a>
@@ -19,10 +19,10 @@ export default function Hero(props) {
            : null
           }
           <div className="text-center">
-            <h1 className={"text-5xl font-bold tracking-tight sm:text-6xl text-gray-900" + `${props.darkMode && " text-white"}` }>
+            <h1 className={"text-5xl font-bold tracking-tight sm:text-6xl text-gray-900" + `${props.darkBG && " text-white"}` }>
               {props.heading}
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className={"mt-6 text-lg leading-8 text-gray-600" + `${props.darkBG && " text-white"}` }>
               {props.subheading}
             </p>
             {props.cta != null ? 
@@ -33,7 +33,7 @@ export default function Hero(props) {
               >
                 {props.ctaPrimaryText}
               </a>
-              <a href={props.ctaSecondaryUrl} className="text-sm font-semibold leading-6 text-gray-900">
+              <a href={props.ctaSecondaryUrl} className={"text-sm font-semibold leading-6 text-gray-900" + `${props.darkBG && " text-white"}` }>
                 {props.ctaSecondaryText} <span aria-hidden="true">→</span>
               </a>
             </div>

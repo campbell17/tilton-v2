@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Layout>
         <Hero 
-          darkMode
+          darkBG
           heroBGStyles="bg-blue-800 py-12 bg-cover bg-center bg-blend-overlay bg-[url('/images/ig-1.jpg')]"
           announcement 
           announcementUrl="#" 
