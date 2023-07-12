@@ -7,7 +7,7 @@ export default function Hero(props) {
       <div className="relative isolate px-6 lg:px-8">
         <div className="mx-auto max-w-2xl py-32 sm:py-24 lg:py-12">
           {props.announcement != null ? 
-            <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+            <div className="hidden sm:mb-4 sm:flex sm:justify-center">
               <div className={"relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20" + `${props.darkBG && " text-white ring-gray-100/10 hover:ring-gray-100/20 bg-black/10 hover:bg-black/30"}` }>
                 {props.announcementContent}{' '}
                 <a href={props.announcementUrl} className={"font-semibold text-indigo-600" + `${props.darkBG && " text-indigo-300 hover:text-indigo-400 mix-blend-difference"}` }>
