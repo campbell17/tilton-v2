@@ -7,7 +7,6 @@ import Audio from '../audio'
 import Link from 'next/link'
 import PlayerApp from '../player/player-app'
 import Album from '../../components/album'
-import { projectData } from './gallery-data'
 
 export default function GallerySlideoverItem(props) {
   return (

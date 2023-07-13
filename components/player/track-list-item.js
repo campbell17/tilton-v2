@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React from 'react';
 
 export default function TrackListItem(props) {
   return (
@@ -12,5 +12,5 @@ export default function TrackListItem(props) {
     >
       load {props.title}
     </button>
-  )
+  );
 }

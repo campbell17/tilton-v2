@@ -10,7 +10,7 @@ export default function Hero(props) {
             <div className="hidden sm:mb-4 sm:flex sm:justify-center">
               <div className={"relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20" + `${props.darkBG && " text-white ring-gray-100/10 hover:ring-gray-100/20 bg-black/10 hover:bg-black/30"}` }>
                 {props.announcementContent}{' '}
-                <a href={props.announcementUrl} className={"font-semibold text-indigo-600" + `${props.darkBG && " text-indigo-300 hover:text-indigo-400 mix-blend-difference"}` }>
+                <a href={props.announcementUrl} target="_blank" rel="noreferrer" className={"font-semibold text-indigo-600" + `${props.darkBG && " text-indigo-300 hover:text-indigo-400 mix-blend-difference"}` }>
                   <span className="absolute inset-0" aria-hidden="true" />
                   {props.announcementLinktext} <span aria-hidden="true">&rarr;</span>
                 </a>
