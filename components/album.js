@@ -28,8 +28,10 @@ export default function Album(props) {
   
   return (
     <>
-      <TrackList id={props.id} selectedIds={props.selectedIds} trackClickHandler={trackClickHandler} />
+      <TrackList customTracks={props.customTracks} id={props.id} selectedIds={props.selectedIds} trackClickHandler={trackClickHandler} />
       <AudioPlayer forwardRef={audioPlayer} key={track} trackName={title} trackSource={track}  />
     </>
   )
 }
+
+// todo - make CustomAlbum, CustomTrackList, and CustomTrackListItem components to be able to do 1-off albums &shrug;

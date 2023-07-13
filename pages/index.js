@@ -5,6 +5,12 @@ import Hero from '../components/hero'
 import Album from '../components/album'
 
 export default function Home() {
+  const customTracks = [
+    // Define your custom tracks here
+    { title: 'Custom Track 1', url: 'https://example.com/track1' },
+    { title: 'Custom Track 2', url: 'https://example.com/track2' },
+  ];
+
   return (
     <Layout>
         <Hero 
@@ -19,7 +25,7 @@ export default function Home() {
           // cta ctaPrimaryUrl="#" ctaPrimaryText="Get started" ctaSecondaryUrl="#" ctaSecondaryText="Learn more"
         />
         <div className="m-8">
-          <Album  />        
+          <Album mappedSongUrl={customTracks[0].url} mappedSongTitle={customTracks[0].title} customTracks={customTracks} />        
         </div>
         <div className="m-8">
           <Gallery isHomepage={true} />        

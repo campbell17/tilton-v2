@@ -1,11 +1,7 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon, PlayCircleIcon } from '@heroicons/react/24/outline'
-import { PlayIcon, MusicalNoteIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
-import Audio from '../audio'
-import Link from 'next/link'
-import PlayerApp from '../player/player-app'
 import Album from '../../components/album'
 
 export default function GallerySlideoverItem(props) {
