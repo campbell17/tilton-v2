@@ -3,6 +3,7 @@ import GallerySlideoverItem from "./gallery-slideover-item"
 export default function GallerySlideover(props) {
   return (
     <GallerySlideoverItem
+      gallery={props.gallery}
       open={props.open} 
       setOpen={props.setOpen} 
       id={props.id}

@@ -46,6 +46,7 @@ export default function Gallery(props) {
     <>
       <GalleryItem onCoverClick={onCoverClick} isHomepage={props.isHomepage} />
       <GallerySlideover 
+        gallery={props.gallery}
         open={open} 
         items={projectData} 
         setOpen={setOpen} 

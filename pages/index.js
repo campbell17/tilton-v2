@@ -45,7 +45,7 @@ export default function Home() {
           <Album mappedSongUrl={customTracks[0].url} mappedSongTitle={customTracks[0].title} customTracks={customTracks} />        
         </div>
         <div className="m-8">
-          <Gallery isHomepage={true} />        
+          <Gallery gallery isHomepage={true} />        
         </div>
         <DarkFeature />
     </Layout>

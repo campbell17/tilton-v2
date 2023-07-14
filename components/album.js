@@ -9,6 +9,11 @@ export default function Album(props) {
   const audioPlayer = useRef(null);
 
   const trackClickHandler = (event) => {    
+    if (event.target !== event.currentTarget) {
+      // The event originated from a child element
+      return;
+    }
+    console.log("clicked!")
     props.isPlaying === true ? audioPlayer.current.pause() : null
     event.preventDefault();
     const trackData = {
@@ -27,12 +32,12 @@ export default function Album(props) {
   };
   console.log(onTrackClick);
   return (
-    <>
+    <div className={`${props.gallery ? "mx-2" : ""}`}>
       <div className="flex items-stretch flex-col">
         <TrackList customTracks={props.customTracks} id={props.id} selectedIds={props.selectedIds} trackClickHandler={trackClickHandler} />
       </div>
       <AudioPlayer forwardRef={audioPlayer} key={track} trackName={title} trackSource={track}  />
-    </>
+    </div>
   )
 }
 
