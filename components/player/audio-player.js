@@ -95,7 +95,7 @@ export default function AudioPlayer (props) {
 
   return (
     <div className="flex flex-col">
-      <div className="text-white items-center justify-between isolate overflow-hidden bg-gray-900 gap-4 flex flex-col p-4 m-1 rounded-md shadow-2xl">
+      <div className="text-white items-center justify-between isolate overflow-hidden bg-gray-900 gap-4 flex flex-col p-4 rounded-b-lg shadow-2xl">
         <audio ref={audioPlayer} onLoadedMetadata={onLoadedMetaData} src={props.trackSource} title={props.mappedSongTitle} active={props.active} preload="metadata" ></audio>
         <div className="text-center text-xs w-full">{props.trackName}</div>
         <div className="flex items-center w-full justify-around">

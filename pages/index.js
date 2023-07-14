@@ -7,8 +7,25 @@ import Album from '../components/album'
 export default function Home() {
   const customTracks = [
     // Define your custom tracks here
-    { title: 'Custom Track 1', url: 'https://example.com/track1' },
-    { title: 'Custom Track 2', url: 'https://example.com/track2' },
+    {
+      "title": "From Main Theme [Excerpt]",
+      "project": "From (TV Series)",
+      "url": "/music/christilton_from_01_from-main-theme.mp3",
+      "image": "/images/cover-art/from.jpg", 
+    },
+    {
+      "title": "Unity [Excerpt]",
+      "url": "/music/christilton_acunity_01_unity_excerpt.mp3",
+      "project": "Assassin's Creed Unity (Video Game)",
+      "image": "/images/cover-art/assassins-creed-unity.jpg", 
+    },
+    {
+      "title": "Sim City Theme [Excerpt]",
+      "url": "/music/christilton_simcity_01_simcity-theme_excerpt.mp3",
+      "project": "Sim City (Video Game)",
+      "image": "/images/cover-art/sim-city.jpg", 
+    },
+
   ];
 
   return (

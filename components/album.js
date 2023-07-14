@@ -25,10 +25,12 @@ export default function Album(props) {
     setTrack(trackinfo.track)
     setTitle(trackinfo.title)
   };
-  
+  console.log(onTrackClick);
   return (
     <>
-      <TrackList customTracks={props.customTracks} id={props.id} selectedIds={props.selectedIds} trackClickHandler={trackClickHandler} />
+      <div className="flex items-stretch flex-col">
+        <TrackList customTracks={props.customTracks} id={props.id} selectedIds={props.selectedIds} trackClickHandler={trackClickHandler} />
+      </div>
       <AudioPlayer forwardRef={audioPlayer} key={track} trackName={title} trackSource={track}  />
     </>
   )
