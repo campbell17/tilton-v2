@@ -3,6 +3,7 @@ import Gallery from '../components/gallery/gallery'
 import DarkFeature from '../components/dark-feature'
 import Hero from '../components/hero'
 import Album from '../components/album'
+import LogoCloud from '../components/logo-cloud'
 
 export default function Home() {
   const customTracks = [
@@ -44,6 +45,7 @@ export default function Home() {
         <div className="m-8">
           <Album mappedSongUrl={customTracks[0].url} mappedSongTitle={customTracks[0].title} customTracks={customTracks} />        
         </div>
+        <LogoCloud />
         <div className="m-8">
           <Gallery gallery isHomepage={true} />        
         </div>

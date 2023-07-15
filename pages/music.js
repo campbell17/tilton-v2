@@ -12,7 +12,7 @@ export default function Music() {
         subheading="This is the description"
       />
       <div className="m-8">
-        <Gallery />        
+        <Gallery gallery />        
       </div>
     </Layout>
   )
