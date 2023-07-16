@@ -36,12 +36,15 @@ export default function Layout( {children} ) {
                     <div className="flex h-16 items-center justify-between px-4 sm:px-0">
                       <div className="flex items-center justify-between w-full">
                         <div className="flex-shrink-0 h-7 w-[9.25rem] relative">
-                          <Image                            
-                            src="/images/tilton-logo.png"
-                            alt="Chris Tilton"
-                            layout='fill'
-                            objectFit='cover'
-                          />
+                          <Link href="/" className="relative">
+                            <Image                            
+                              src="/images/tilton-logo.png"
+                              className="cursor-pointer"
+                              alt="Chris Tilton"
+                              layout='fill'
+                              objectFit='cover'
+                            />
+                          </Link>
                         </div>
                         <div className="hidden md:block">
                           <div className="ml-10 flex items-baseline space-x-4">
