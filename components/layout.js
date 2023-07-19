@@ -36,7 +36,8 @@ export default function Layout( {children} ) {
                     <div className="flex h-16 items-center justify-between px-4 sm:px-0">
                       <div className="flex items-center justify-between w-full">
                         <div className="flex-shrink-0 h-7 w-[9.25rem] relative">
-                          <Link href="/" className="relative">
+                          <Link href="/">
+                            {/* for some reason this image causes the following console error: "Warning: Function components cannot be given refs. Attempts to access this ref will fail. Did you mean to use React.forwardRef()?"  */}
                             <Image                            
                               src="/images/tilton-logo.png"
                               className="cursor-pointer"
