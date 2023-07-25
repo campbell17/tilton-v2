@@ -10,6 +10,7 @@ export default function Gallery(props) {
   const [src, setSrc] = useState();
   const [ctalink, setCtalink] = useState();
   const [company, setCompany] = useState();
+  const [hero, setHero] = useState();
   const [alt, setAlt] = useState();
   const [color, setColor] = useState();
   const [title, setTitle] = useState();
@@ -31,6 +32,7 @@ export default function Gallery(props) {
     setSrc(cover.src)
     setCtalink(cover.ctalink)
     setCompany(cover.company)
+    setHero(cover.hero)
     setAlt(cover.alt)
     setColor(cover.color)
     setTitle(cover.title)
@@ -56,6 +58,7 @@ export default function Gallery(props) {
         src={src} 
         ctalink={ctalink} 
         company={company} 
+        hero={hero} 
         alt={alt}  
         color={color}
         title={title}

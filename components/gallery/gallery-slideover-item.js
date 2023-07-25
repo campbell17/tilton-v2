@@ -27,7 +27,7 @@ export default function GallerySlideoverItem(props) {
                   <div className="flex h-full flex-col overflow-y-scroll relative shadow-xl">
                   <Hero 
                     darkBG
-                    heroBGStyles="absolute -z-[1] w-full h-96 bg-blue-800 py-12 bg-cover bg-right bg-[url('/images/hero.jpg')]"
+                    heroBGStyles={`absolute -z-[1] w-full h-96 bg-blue-800 py-12 bg-cover bg-right ${props.hero}`}
                   />
 
                     <div className="px-4 py-6 sm:px-6">
@@ -49,7 +49,7 @@ export default function GallerySlideoverItem(props) {
                     <div className="divide-y divide-gray-200">
                       <div className="pb-6">
                         <div className="h-20" />
-                        <div className="lg:-mt-15 -mt-12 flow-root items-center px-4 sm:-mt-8 sm:flex sm:px-6">
+                        <div className="lg:-mt-15 -mt-12 flow-root items-center sm:-mt-8 sm:flex px-6">
                           <div>
                             <div className="-m-1 flex">
                               <div className="inline-flex overflow-hidden rounded-lg border-4 border-white relative flex-shrink-0 -mt-20 sm:mt-0 h-40 w-40 lg:h-48 lg:w-48">

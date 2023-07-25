@@ -12,6 +12,7 @@ export default function GallerySlideover(props) {
       src={props.src} 
       ctalink={props.ctalink} 
       company={props.company} 
+      hero={props.hero} 
       alt={props.alt}  
       color={props.color}
       title={props.title}

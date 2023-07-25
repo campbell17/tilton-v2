@@ -14,6 +14,7 @@ export default function BlurImage(props) {
             src={props.src} 
             ctalink={props.ctalink} 
             company={props.company} 
+            hero={props.hero}
             id={props.id} 
             project={props.project} 
             alt={props.alt}  

@@ -20,6 +20,7 @@ export default function GalleryItem(props) {
     const allData = {
       src: event.target.getAttribute('src'),
       company: event.target.getAttribute('company'),
+      hero: event.target.getAttribute('hero'),
       id: event.target.getAttribute('id'),
       project: event.target.getAttribute('project'),
       alt: event.target.getAttribute('alt'),
@@ -60,6 +61,7 @@ export default function GalleryItem(props) {
               <BlurImage                 
                 src={data.src} 
                 company={data.company} 
+                hero={data.hero}
                 id={data.id}
                 project={data.project} 
                 alt={data.alt}  
