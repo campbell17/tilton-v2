@@ -38,9 +38,6 @@ export default function GalleryItem(props) {
 
     props.onCoverClick(allData);
     refId.current = allData.id;
-    console.log(event)    
-    console.log(allData.mappedSongTitle)
-    console.log(allData.mappedSongUrl)    
   }  
 
   let filteredProjectData;
