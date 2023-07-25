@@ -6,19 +6,17 @@ import { projectData } from '../components/gallery/gallery-data';
 export default function Album(props) {    
   const [track, setTrack] = useState(props.mappedSongUrl);
   const [title, setTitle] = useState(props.mappedSongTitle);
+  const [project, setProject] = useState(props.mappedSongProject);
+  const [image, setImage] = useState(props.mappedSongImage);
   const audioPlayer = useRef(null);
 
-  const trackClickHandler = (event) => {    
-    if (event.target !== event.currentTarget) {
-      // The event originated from a child element
-      return;
-    }
-    console.log("clicked!")
-    props.isPlaying === true ? audioPlayer.current.pause() : null
+  const trackClickHandler = (event) => {        
     event.preventDefault();
     const trackData = {
       track: event.target.getAttribute('url'),
       title: event.target.getAttribute('title'),
+      image: event.target.getAttribute('image'),
+      project: event.target.getAttribute('project'),
     };
     onTrackClick(trackData);
   } 
@@ -29,14 +27,15 @@ export default function Album(props) {
 
     setTrack(trackinfo.track)
     setTitle(trackinfo.title)
+    setImage(trackinfo.image)
+    setProject(trackinfo.project)
   };
-  console.log(onTrackClick);
   return (
     <div className={`${props.gallery ? "mx-2" : ""}`}>
       <div className="flex items-stretch flex-col">
         <TrackList customTracks={props.customTracks} id={props.id} selectedIds={props.selectedIds} trackClickHandler={trackClickHandler} />
       </div>
-      <AudioPlayer forwardRef={audioPlayer} key={track} trackName={title} trackSource={track}  />
+      <AudioPlayer forwardRef={audioPlayer} key={track} project={project} image={image} trackName={title} trackSource={track}  />
     </div>
   )
 }

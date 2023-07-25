@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
+import Image from 'next/image';
 import { ForwardIcon, BackwardIcon, PlayIcon, PauseIcon, ArrowUturnRightIcon, ArrowUturnLeftIcon } from '@heroicons/react/20/solid'
 
 export default function AudioPlayer (props) {
@@ -95,10 +96,26 @@ export default function AudioPlayer (props) {
 
   return (
     <div className="flex flex-col">
-      <div className="text-white items-center justify-between isolate overflow-hidden bg-gray-900 gap-4 flex flex-col p-4 rounded-b-lg shadow-2xl">
-        <audio ref={audioPlayer} onLoadedMetadata={onLoadedMetaData} src={props.trackSource} title={props.mappedSongTitle} active={props.active} preload="metadata" ></audio>
-        <div className="text-center text-xs w-full">{props.trackName}</div>
-        <div className="flex items-center w-full justify-around">
+      <div className="text-white items-center justify-between isolate overflow-hidden bg-gray-900 gap-2 flex flex-col p-4 rounded-b-lg shadow-2xl">
+        <div className="flex justify-between w-full">
+        <audio ref={audioPlayer} onLoadedMetadata={onLoadedMetaData} src={props.trackSource} title={props.mappedSongTitle} project={props.mappedSongProject} image={props.mappedSongImage} active={props.active} preload="metadata" ></audio>
+        <div className="flex items-center text-xs w-full">
+          {props.image ? 
+          <div className="flex w-16 relative mr-2 border rounded-md border-black">
+            <Image url={props.url} title={props.title}       
+              src={props.image}
+              alt={props.image}
+              width={64}
+              height={64}
+              className="rounded-md"
+            />
+          </div> : null}
+          <div className="flex flex-1 flex-col items-start">
+            <div>{props.trackName}</div>
+            <div className="opacity-50 text-left">{props.project}</div>
+          </div>
+        </div>
+        <div className="flex items-center">
           <div className="flex items-center justify-center gap-2">
             <span className="text-indigo-600 text-xs">10s</span>
             <button
@@ -125,21 +142,22 @@ export default function AudioPlayer (props) {
             <span className="text-indigo-600 text-xs">10s</span>
           </div>
 
-          <div className="flex items-center justify-center gap-4 text-xs text-indigo-600">
+        </div>
+      </div>
+          <div className="flex items-center justify-center gap-4 w-full text-xs text-indigo-600">
 
             {/* current time */}
             <div className="w-7 flex justify-center">{calculateTime(currentTime)}</div>
 
             {/* progress bar */}
-            <div className="flex items-center">
-              <input className="w-60" type="range" defaultValue="0" ref={progressBar} onChange={changeRange} />
+            <div className="flex items-center w-full">
+              <input className="w-full" type="range" defaultValue="0" ref={progressBar} onChange={changeRange} />
             </div>
 
             {/* duration */}
             <div className="w-7 flex justify-center">{(duration && !isNaN(duration)) ? calculateTime(duration) : '0:00'}</div>
           </div>
-        </div>
-      </div>
+          </div>
     </div>
   )
 }

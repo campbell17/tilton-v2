@@ -43,7 +43,7 @@ export default function Home() {
           // cta ctaPrimaryUrl="#" ctaPrimaryText="Get started" ctaSecondaryUrl="#" ctaSecondaryText="Learn more"
         />
         <div className="m-8">
-          <Album mappedSongUrl={customTracks[0].url} mappedSongTitle={customTracks[0].title} customTracks={customTracks} />        
+          <Album mappedSongUrl={customTracks[0].url} mappedSongProject={customTracks[0].project} mappedSongImage={customTracks[0].image} mappedSongTitle={customTracks[0].title} customTracks={customTracks} />        
         </div>
         <LogoCloud />
         <div className="m-8">
