@@ -9,3 +9,11 @@
 .transitioning { background: #312e81; transition: all ease-in-out 200ms; filter: blur(4px); transform: scale(1.1); }
 .transitioned	{ transition: all ease-in-out 200ms; filter: blur(0px); transform: scale(1);  }
 
+/* Sticky style change test */
+.pinned {
+  position: sticky;
+  /* use "top" to provide threshold for hitting top of parent */
+  top: -1px;
+  border-radius: 0;
+}
+

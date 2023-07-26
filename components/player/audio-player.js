@@ -9,11 +9,51 @@ export default function AudioPlayer (props) {
   const [currentTime, setCurrentTime] = useState(0);
   const [totalAudioTime, setTotalAudioTime] = useState(0);
   const [isFirstPlay, setIsFirstPlay] = useState(true); 
+  const [isIntersecting, setIsIntersecting] = useState(false);
 
   // reference
   const audioPlayer = useRef(); // reference our audio component
   const progressBar = useRef(); // reference our progress bar
   const animationRef = useRef(); // reference the animation
+  const playerContainer = useRef();
+
+  // Function to handle intersection changes
+  const handleIntersection = (entries) => {
+    const [entry] = entries;
+    setIsIntersecting(entry.isIntersecting);
+  };
+
+  useEffect(() => {
+    // Create the Intersection Observer instance
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null, // Use the viewport as the root
+      threshold: 1, // 50% intersection required
+    });
+
+    // Observe the player container
+    if (playerContainer.current) {
+      observer.observe(playerContainer.current);
+    }
+
+    // Clean up the observer when the component unmounts
+    return () => observer.disconnect();
+  }, []);
+  
+  // Function to add or remove a class based on intersection status
+  const handleIntersectionClass = () => {
+    if (isIntersecting) {
+      // Add your class name here to add it when the component is intersecting
+      playerContainer.current.classList.remove('pinned');
+    } else {
+      // Remove your class name here to remove it when the component is not intersecting
+      playerContainer.current.classList.add('pinned');
+    }
+  };
+
+  // Call the function whenever the intersection status changes
+  useEffect(() => {
+    handleIntersectionClass();
+  }, [isIntersecting]);  
 
   const onLoadedMetaData = () =>
     setTotalAudioTime(audioPlayer.current?.duration);
@@ -95,8 +135,8 @@ export default function AudioPlayer (props) {
   };
 
   return (
-    <div className={`${props.className} flex flex-col z-[1]`}>
-      <div className="text-white items-center justify-between isolate bg-gray-900 gap-2 flex flex-col p-4 rounded-t-lg shadow-2xl">
+    <div ref={playerContainer} className={`${props.className} flex flex-col z-[1] rounded-t-lg overflow-hidden`}>
+      <div className="text-white items-center justify-between isolate bg-gray-900 gap-2 flex flex-col p-4 shadow-2xl">
         <div className="flex flex-col gap-2 sm:flex-row items-center justify-center sm:justify-between w-full">
         <audio ref={audioPlayer} onLoadedMetadata={onLoadedMetaData} src={props.trackSource} title={props.mappedSongTitle} project={props.mappedSongProject} image={props.mappedSongImage} active={props.active} preload="metadata" ></audio>
         <div className="flex items-center text-xs w-full">

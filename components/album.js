@@ -32,7 +32,7 @@ export default function Album(props) {
   };
   return (
     <div className={`${props.gallery ? "mx-2" : ""}`}>
-      <AudioPlayer className="sticky top-0" forwardRef={audioPlayer} key={track} project={project} image={image} trackName={title} trackSource={track}  />
+      <AudioPlayer className="" forwardRef={audioPlayer} key={track} project={project} image={image} trackName={title} trackSource={track}  />
       <div className="flex items-stretch flex-col rounded-b-md overflow-hidden">
         <TrackList customTracks={props.customTracks} id={props.id} selectedIds={props.selectedIds} trackClickHandler={trackClickHandler} />
       </div>
