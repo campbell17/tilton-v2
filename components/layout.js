@@ -4,6 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+// import Navtest from './navtest'
 
 const navigation = [
   { name: 'Home', href: '/', current: false },
@@ -69,20 +70,20 @@ export default function Layout( {children} ) {
                       </div>
 
                       <div className="-mr-2 flex md:hidden">
+                        {/* <Navtest /> */}
                         {/* Mobile menu button */}
                         <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                           <span className="sr-only">Open main menu</span>
-                          {open ? (
-                            <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                          ) : (
-                            <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                          )}
+                            {open ? (
+                              <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                            ) : (
+                              <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                            )}
                         </Disclosure.Button>
                       </div>
                     </div>
                   </div>
                 </div>
-
                 <Disclosure.Panel className="border-b border-gray-700 md:hidden">
                   <div className="space-y-1 px-2 py-3 sm:px-3">
                     {navigation.map((item) => (
