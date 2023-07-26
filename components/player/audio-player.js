@@ -95,13 +95,13 @@ export default function AudioPlayer (props) {
   };
 
   return (
-    <div className="flex flex-col">
-      <div className="text-white items-center justify-between isolate overflow-hidden bg-gray-900 gap-2 flex flex-col p-4 rounded-b-lg shadow-2xl">
-        <div className="flex justify-between w-full">
+    <div className={`${props.className} flex flex-col z-[1]`}>
+      <div className="text-white items-center justify-between isolate bg-gray-900 gap-2 flex flex-col p-4 rounded-t-lg shadow-2xl">
+        <div className="flex flex-col gap-2 sm:flex-row items-center justify-center sm:justify-between w-full">
         <audio ref={audioPlayer} onLoadedMetadata={onLoadedMetaData} src={props.trackSource} title={props.mappedSongTitle} project={props.mappedSongProject} image={props.mappedSongImage} active={props.active} preload="metadata" ></audio>
         <div className="flex items-center text-xs w-full">
           {props.image ? 
-          <div className="flex w-16 relative mr-2 border rounded-md border-black">
+          <div className="hidden sm:flex w-16 relative mr-2 border rounded-md border-black">
             <Image url={props.url} title={props.title}       
               src={props.image}
               alt={props.image}
@@ -110,9 +110,9 @@ export default function AudioPlayer (props) {
               className="rounded-md"
             />
           </div> : null}
-          <div className="flex flex-1 flex-col items-start">
+          <div className="flex flex-1 sm:flex-col justify-center items-start">
             <div>{props.trackName}</div>
-            <div className="opacity-50 text-left">{props.project}</div>
+            <div className="hidden sm:block opacity-50 text-left">{props.project}</div>
           </div>
         </div>
         <div className="flex items-center">

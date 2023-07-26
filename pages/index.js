@@ -7,7 +7,6 @@ import LogoCloud from '../components/logo-cloud'
 
 export default function Home() {
   const customTracks = [
-    // Define your custom tracks here
     {
       "title": "From Main Theme [Excerpt]",
       "project": "From (TV Series)",
@@ -26,7 +25,48 @@ export default function Home() {
       "project": "Sim City (Video Game)",
       "image": "/images/cover-art/sim-city.jpg", 
     },
-
+    {
+      "title": "A New Day in the Old Town [Excerpt]",
+      "project": "Fringe (TV Series)",
+      "url": "/music/christilton_from_01_from-main-theme.mp3",
+      "image": "/images/cover-art/fringe-season-4.jpg", 
+    },
+    {
+      "title": "Lion Attack",
+      "url": "/music/christilton_acunity_01_unity_excerpt.mp3",
+      "project": "Zoo (TV Series)",
+      "image": "/images/cover-art/zoo.jpg", 
+    },
+    {
+      "title": "Divide Main Theme",
+      "url": "/music/christilton_simcity_01_simcity-theme_excerpt.mp3",
+      "project": "Divide (Video Game)",
+      "image": "/images/cover-art/divide.jpg", 
+    },
+    {
+      "title": "The Adventures of Moxie",
+      "project": "Moxie (Robot Companion)",
+      "url": "/music/christilton_from_01_from-main-theme.mp3",
+      "image": "/images/cover-art/moxie.jpg", 
+    },
+    {
+      "title": "Funeral Pyre Straits [Excerpt]",
+      "url": "/music/christilton_acunity_01_unity_excerpt.mp3",
+      "project": "Fringe (TV Series)",
+      "image": "/images/cover-art/fringe-season-4.jpg", 
+    },
+    {
+      "title": "The Last Monarch [Excerpt]",
+      "url": "/music/christilton_simcity_01_simcity-theme_excerpt.mp3",
+      "project": "Zoo (TV Series)",
+      "image": "/images/cover-art/zoo.jpg", 
+    },
+    {
+      "title": "Ocillating Rift",
+      "url": "/music/christilton_simcity_01_simcity-theme_excerpt.mp3",
+      "project": "Personal Project",
+      "image": "/images/cover-art/tilton-i-selections.jpg", 
+    },    
   ];
 
   return (
