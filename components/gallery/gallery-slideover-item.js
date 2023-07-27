@@ -25,50 +25,55 @@ export default function GallerySlideoverItem(props) {
               >
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-2xl">
                   <div className="flex h-full flex-col overflow-y-scroll relative shadow-xl">
-                  <Hero 
-                    darkBG
-                    heroBGStyles={`absolute -z-[1] w-full h-96 bg-blue-800 py-12 bg-cover bg-right ${props.hero}`}
-                  />
-
-                    <div className="px-4 py-6 sm:px-6">
-                      <div className="flex items-start justify-between">
-                        <Dialog.Title className="text-lg font-medium text-gray-900"></Dialog.Title>
-                        <div className="ml-3 flex h-7 items-center">
-                          <button
-                            type="button"
-                            className="rounded-md text-gray-400 hover:text-gray-500 focus:ring-indigo-500"
-                            onClick={() => props.setOpen(false)}
-                          >
-                            <span className="sr-only">Close panel</span>
-                            <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                          </button>
+                      {/* Hero BG */}
+                      <Hero 
+                        darkBG
+                        heroBGStyles={`absolute -z-[1] w-full h-96 py-12 bg-cover bg-right ${props.color} ${props.hero}`}
+                      />
+                      {/* Header & Close button */}
+                      <div className="px-4 py-6 sm:px-6">
+                        <div className="flex items-start justify-between">
+                          <Dialog.Title className="text-lg font-medium text-gray-900"></Dialog.Title>
+                          <div className="ml-3 flex h-7 items-center">
+                            <button
+                              type="button"
+                              className="rounded-md text-gray-400 hover:text-gray-500 focus:ring-indigo-500"
+                              onClick={() => props.setOpen(false)}
+                            >
+                              <span className="sr-only">Close panel</span>
+                              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    {/* Main */}
-                    <div className="divide-y divide-gray-200">
-                      <div className="pb-6">
-                        <div className="h-20" />
-                        <div className="lg:-mt-15 -mt-12 flow-root items-center sm:-mt-8 sm:flex px-6">
-                          <div>
-                            <div className="-m-1 flex">
-                              <div className="inline-flex overflow-hidden rounded-lg border-4 border-white relative flex-shrink-0 -mt-20 sm:mt-0 h-40 w-40 lg:h-48 lg:w-48">
-                                <ImageLoader src={props.src} alt={props.alt} />
-                              </div>
-                            </div>
+
+                      {/* Top Content */}
+
+                      <div className="pb-10 sm:pb-6">
+
+                        <div className="mt-10 sm:mt-14 flex flex-col items-center sm:flex-row px-6">
+                          
+                          {/* Album Cover Image */}
+                          <div className="inline-flex overflow-hidden rounded-lg border-4 border-white relative flex-shrink-0 -mt-20 sm:mt-0 h-40 w-40 lg:h-48 lg:w-48">
+                            <ImageLoader src={props.src} alt={props.alt} />
                           </div>
-                          <div className="sm:ml-6 mt-4 sm:mt-0 text-white sm:flex-1">
-                            <div>
-                              <div className="flex">
-                                <h3 className="text-xl font-bold sm:text-2xl">{props.project}</h3>
-                              </div>
-                              <p className="text-sm opacity-50">{props.year}</p>
+
+                          <div className="sm:ml-6 mt-4 sm:mt-0 text-white flex flex-col">
+
+                            <div className="text-center sm:text-left flex flex-col">
+                              {/* Project title */}
+                              <h3 className="text-xl font-bold sm:text-2xl">{props.project}</h3>
+
+                              {/* Project year */}
+                              <p className="text-sm text-gray-400">{props.year}</p>
                             </div>
-                            <div className="mt-5 flex-none flex-wrap space-y-3 sm:space-y-0 sm:space-x-3">
+                            
+                            {/* Project CTA */}
+                            <div className="mt-5 flex justify-center sm:justify-start flex-wrap space-y-3 sm:space-y-0 sm:space-x-3">
                               <a
                                 href={props.ctalink}
                                 target="_blank noreferrer"
-                                className="cursor-pointer flex max-w-fit items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 pl-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                className="cursor-pointer flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 pl-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                               >
                                 <PlayCircleIcon className="h-6 w-6 mr-2" aria-hidden="true" />
                                 {props.cta}
@@ -78,6 +83,8 @@ export default function GallerySlideoverItem(props) {
                           </div>
                         </div>
                       </div>
+                    {/* Body Content */}
+                    <div className="divide-y divide-gray-200 bg-white">
                       <div className="px-4 py-5 bg-white sm:px-0 sm:py-0">
                         <dl className="space-y-8 sm:space-y-0 sm:divide-y sm:divide-gray-200">
                           <div className="sm:flex sm:px-6 sm:py-5">

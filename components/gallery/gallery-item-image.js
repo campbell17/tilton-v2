@@ -32,11 +32,11 @@ export default function BlurImage(props) {
             width={100}
             height={100}
             objectFit="cover"
-            className={
-              isLoading
+            className={`
+              ${isLoading
                 ? 'gallery-image transitioning'
-                : 'gallery-image transitioned'
-            }
+                : 'gallery-image transitioned'}
+            `}
             onLoadingComplete={() => setLoading(false)}
           />
           <h3 style={{ 
