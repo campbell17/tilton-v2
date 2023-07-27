@@ -84,8 +84,8 @@ export default function GallerySlideoverItem(props) {
                         </div>
                       </div>
                     {/* Body Content */}
-                    <div className="divide-y divide-gray-200 bg-white">
-                      <div className="px-4 py-5 bg-white sm:px-0 sm:py-0">
+                    <div className="divide-y divide-gray-200 flex h-full bg-white">
+                      <div className="px-4 py-5 bg-white sm:px-0 sm:py-0 w-full">
                         <dl className="space-y-8 sm:space-y-0 sm:divide-y sm:divide-gray-200">
                           <div className="sm:flex sm:px-6 sm:py-5">
                             <p className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{props.desc}</p>
