@@ -4,10 +4,15 @@ export default function Hero(props) {
 
   return (
     <div className="overflow-hidden rounded-t-lg">
-      <div className={props.heroBGStyles}> {/* BG image and styles are declared as props */}
+      <div className={`${!props.videoSource1 && props.heroBGStyles} relative py-12`}> {/* BG image and styles are declared as props */}
+        {props.videoSource1 ?
+          <video className="absolute top-0 left-0 object-cover w-screen h-screen" autoPlay muted loop id="bgvid">
+            <source src={props.videoSource1} type={props.videoSourceType1} />
+            <source src={props.videoSource2} type={props.videoSourceType2} />
+          </video> : null }
         <div className="relative isolate px-6 lg:px-8">
           <div className="mx-auto max-w-2xl py-32 sm:py-24 lg:py-12">
-            {props.announcement != null ? 
+            {props.announcementContent != null ? 
               <div className="hidden sm:mb-4 sm:flex sm:justify-center">
                 <div className={"transition-all duration-300 relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20" + `${props.darkBG && " text-white ring-gray-100/10 hover:ring-gray-100/20 bg-black/30 hover:bg-black/50"}` }>
                   {props.announcementContent}{' '}
@@ -26,7 +31,7 @@ export default function Hero(props) {
               <p className={"mt-6 text-lg leading-8 text-gray-600" + `${props.darkBG && " text-white"}` }>
                 {props.subheading}
               </p>
-              {props.cta != null ? 
+              {props.ctaPrimaryUrl != null ? 
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
                   href={props.ctaPrimaryUrl}
@@ -34,9 +39,9 @@ export default function Hero(props) {
                 >
                   {props.ctaPrimaryText}
                 </a>
-                <a href={props.ctaSecondaryUrl} className={"text-sm font-semibold leading-6 text-gray-900" + `${props.darkBG && " text-white"}` }>
+                {props.ctaSecondaryUrl && <a href={props.ctaSecondaryUrl} className={"text-sm font-semibold leading-6 text-gray-900" + `${props.darkBG && " text-white"}` }>
                   {props.ctaSecondaryText} <span aria-hidden="true">→</span>
-                </a>
+                </a>}
               </div>
               : null}
             </div>

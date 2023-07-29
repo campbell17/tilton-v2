@@ -38,8 +38,47 @@ export const projectData = [
     ],
   },
   { 
-    homepage: true,
+    homepage: false,
     id: 1, 
+    ctalink: "/projects", 
+    project: "Moxie (Robotic Companion)", 
+    company: "Embodied, Inc", 
+    src: "/images/cover-art/moxie.jpg", 
+    hero: "bg-[url('/images/hero-moxie.jpg')]",
+    title: "Moxie (Robotic Companion) 2021", 
+    color: "bg-[#849CA8]", 
+    subtitle: "", 
+    cta: "Learn More about Moxie", 
+    ctaicon: "icon-web.png", 
+    year: "2021", 
+    desc: "", 
+    songsdata: [
+      {
+        "title": "The Adventures of Moxie (from the robot companion 'Moxie')",
+        "url": "/music/christilton_moxie_01_the-adventures-of-moxie.mp3" 
+      },
+      {
+        "title": "Oh, the Places You'll Go! (from the robot companion 'Moxie')",
+        "url": "/music/christilton_moxie_02_oh-the-places-youll-go.mp3" 
+      },
+      {
+        "title": "The Library (from the robot companion 'Moxie')",
+        "url": "/music/christilton_moxie_03_the-library.mp3" 
+      },
+      {
+        "title": "Moxie, P.I. (from the robot companion 'Moxie')",
+        "url": "/music/christilton_moxie_04_moxie-p-i.mp3" 
+      },
+      {
+        "title": "Global Robotics Laboratories (from the robot companion 'Moxie')",
+        "url": "/music/christilton_moxie_05_global-robotics-laboratories.mp3"
+      }
+    ]
+  },
+  
+  { 
+    homepage: true,
+    id: 33, 
     ctalink: "/projects", 
     project: "Assassin's Creed Unity", 
     company:'', 
