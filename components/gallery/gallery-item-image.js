@@ -22,6 +22,8 @@ export default function BlurImage(props) {
             title={props.title}
             subtitle={props.subtitle}
             cta={props.cta}
+            ctabrand={props.ctabrand}
+            ctabrandhover={props.ctabrandhover}
             ctaicon={props.ctaicon}
             year={props.year}
             desc={props.desc}

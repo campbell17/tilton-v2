@@ -16,6 +16,8 @@ export default function Gallery(props) {
   const [title, setTitle] = useState();
   const [subtitle, setSubtitle] = useState();
   const [cta, setCta] = useState();
+  const [ctabrand, setCtabrand] = useState();
+  const [ctabrandhover, setCtabrandhover] = useState();
   const [ctaicon, setCtaicon] = useState();
   const [year, setYear] = useState();
   const [desc, setDesc] = useState();
@@ -38,6 +40,8 @@ export default function Gallery(props) {
     setTitle(cover.title)
     setSubtitle(cover.subtitle)
     setCta(cover.cta)
+    setCtabrand(cover.ctabrand)
+    setCtabrandhover(cover.ctabrandhover)
     setCtaicon(cover.ctaicon)
     setYear(cover.year)
     setDesc(cover.desc)
@@ -64,6 +68,8 @@ export default function Gallery(props) {
         title={title}
         subtitle={subtitle}
         cta={cta}
+        ctabrand={ctabrand}
+        ctabrandhover={ctabrandhover}
         ctaicon={ctaicon}
         year={year}
         desc={desc}

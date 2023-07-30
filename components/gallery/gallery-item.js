@@ -28,6 +28,8 @@ export default function GalleryItem(props) {
       title: event.target.getAttribute('title'),
       subtitle: event.target.getAttribute('subtitle'),
       cta: event.target.getAttribute('cta'),
+      ctabrand: event.target.getAttribute('ctabrand'),
+      ctabrandhover: event.target.getAttribute('ctabrandhover'),
       ctaicon: event.target.getAttribute('ctaicon'),
       ctalink: event.target.getAttribute('ctalink'),
       year: event.target.getAttribute('year'),
@@ -66,6 +68,8 @@ export default function GalleryItem(props) {
                 title={data.title}
                 subtitle={data.subtitle}
                 cta={data.cta}
+                ctabrand={data.ctabrand}
+                ctabrandhover={data.ctabrandhover}
                 ctaicon={data.ctaicon}
                 ctalink={data.ctalink} 
                 year={data.year}
