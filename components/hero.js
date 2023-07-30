@@ -4,7 +4,7 @@ export default function Hero(props) {
 
   return (
     <div className="overflow-hidden rounded-t-lg">
-      <div className={`${!props.videoSource1 && props.heroBGStyles} relative py-12`}> {/* BG image and styles are declared as props */}
+      <div className={`${props.videoSource1 ? "relative py-12" : props.heroBGStyles}`}> {/* BG image and styles are declared as props */}
         {props.videoSource1 ?
           <video className="absolute top-0 left-0 object-cover w-screen h-screen" autoPlay muted loop id="bgvid">
             <source src={props.videoSource1} type={props.videoSourceType1} />
