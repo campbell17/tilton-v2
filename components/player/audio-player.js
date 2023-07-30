@@ -31,7 +31,7 @@ export default function AudioPlayer (props) {
     });
 
     // Observe the player container
-    if (playerContainer.current) {
+    if (playerContainer.current && !props.notpinned) {
       observer.observe(playerContainer.current);
     }
 
@@ -135,8 +135,8 @@ export default function AudioPlayer (props) {
   };
 
   return (
-    <div ref={playerContainer} className={`${props.className} flex flex-col z-[1] rounded-t-lg overflow-hidden`}>
-      <div className="text-white items-center justify-between isolate bg-gray-900 gap-2 flex flex-col p-4 shadow-2xl">
+    <div notpinned={props.notpinned} ref={playerContainer} className={`${props.className} flex flex-col z-[1] rounded-t-lg overflow-hidden`}>
+      <div className={`${props.fringe ? "rounded-b-lg" : null} text-white items-center justify-between isolate bg-gray-900 gap-2 flex flex-col p-4 shadow-2xl`}>
         <div className="flex flex-col gap-2 sm:flex-row items-center justify-center sm:justify-between w-full">
         <audio ref={audioPlayer} onLoadedMetadata={onLoadedMetaData} src={props.trackSource} title={props.mappedSongTitle} project={props.mappedSongProject} image={props.mappedSongImage} active={props.active} preload="metadata" ></audio>
         <div className="flex items-center text-xs w-full">
