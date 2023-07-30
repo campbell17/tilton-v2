@@ -23,7 +23,7 @@ export default function TrackListItem(props) {
           alt={props.image}
           width={48}
           height={48}
-          className=""
+          className="rounded-md border border-black"
         />
       </span> : null}
       <span onClick={props.trackClickHandler} url={props.url} title={props.title} project={props.project} image={props.image} className="flex items-center w-full">
