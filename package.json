@@ -11,6 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.2",
     "@heroicons/react": "^2.0.12",
+    "@icons-pack/react-simple-icons": "^8.0.1",
     "amplitudejs": "^5.3.2",
     "howler": "^2.2.3",
     "next": "^12.3.1",
