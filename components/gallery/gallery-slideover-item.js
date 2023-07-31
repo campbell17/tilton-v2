@@ -38,7 +38,7 @@ export default function GallerySlideoverItem(props) {
                           <div className="ml-3 flex h-7 items-center">
                             <button
                               type="button"
-                              className="rounded-md text-gray-400 hover:text-gray-500"
+                              className="rounded-md text-gray-400 hover:text-gray-500 outline-none"
                               onClick={() => props.setOpen(false)}
                             >
                               <span className="sr-only">Close panel</span>
