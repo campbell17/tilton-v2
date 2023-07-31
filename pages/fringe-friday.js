@@ -28,7 +28,7 @@ export default function FringeFriday() {
     updateTrackOnFriday();
     const interval = setInterval(updateTrackOnFriday, 24 * 60 * 60 * 1000); // 24 hours interval
     return () => clearInterval(interval);
-  }, []);
+  });
   
 
   return (

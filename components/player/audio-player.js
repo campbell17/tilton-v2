@@ -37,7 +37,7 @@ export default function AudioPlayer (props) {
 
     // Clean up the observer when the component unmounts
     return () => observer.disconnect();
-  }, []);
+  });
   
   // Function to add or remove a class based on intersection status
   const handleIntersectionClass = () => {
@@ -53,7 +53,7 @@ export default function AudioPlayer (props) {
   // Call the function whenever the intersection status changes
   useEffect(() => {
     handleIntersectionClass();
-  }, [isIntersecting]);  
+  });  
 
   const onLoadedMetaData = () =>
     setTotalAudioTime(audioPlayer.current?.duration);
