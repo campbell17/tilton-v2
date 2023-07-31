@@ -25,7 +25,7 @@ export default function GallerySlideoverItem(props) {
                 leaveTo="translate-x-full"
               >
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-2xl">
-                  <div className="flex h-full flex-col overflow-y-scroll relative shadow-xl">
+                  <div className="flex h-full flex-col relative overflow-y-scroll shadow-xl">
                       {/* Hero BG */}
                       <Hero 
                         darkBG
@@ -38,7 +38,7 @@ export default function GallerySlideoverItem(props) {
                           <div className="ml-3 flex h-7 items-center">
                             <button
                               type="button"
-                              className="rounded-md text-gray-400 hover:text-gray-500 focus:ring-indigo-500"
+                              className="rounded-md text-gray-400 hover:text-gray-500"
                               onClick={() => props.setOpen(false)}
                             >
                               <span className="sr-only">Close panel</span>
@@ -85,7 +85,7 @@ export default function GallerySlideoverItem(props) {
                         </div>
                       </div>
                     {/* Body Content */}
-                    <div className="divide-y divide-gray-200 flex h-full bg-white">
+                    <div className="flex h-auto bg-white">
                       <div className="px-4 py-5 bg-white sm:px-0 sm:py-0 w-full flex">
                         <dl className="space-y-8 sm:space-y-0 sm:divide-y sm:divide-gray-200 w-full">
                           <div className="sm:flex sm:px-6 sm:py-5">
