@@ -4,6 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import FringeFriday from '../pages/fringe-friday'
 // import Navtest from './navtest'
 
 const navigation = [
@@ -118,7 +119,7 @@ export default function Layout( {children} ) {
         <main className="-mt-32">
           <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
             {/* Replace with your content */}
-            <div className="rounded-xl bg-white shadow">
+            <div className={`${router.pathname === "/fringe-friday" ? "rounded-xl bg-white shadow" : "rounded-xl bg-white shadow pb-6"}`}>
               {children}
             </div>            
             {/* /End replace */}

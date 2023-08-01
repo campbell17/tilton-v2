@@ -360,7 +360,7 @@ export const projectData = [
   { 
     id: 9, 
     ctalink: "/projects", 
-    project: "Alcatraz (TV Series) 2012", 
+    project: "Alcatraz", 
     company: "Warner Bros/Bad Robot", 
     src: "/images/cover-art/alcatraz.jpg", 
     hero: "bg-[url('/images/hero-alcatraz.jpg')]",
@@ -399,7 +399,7 @@ export const projectData = [
   { 
     id: 10, 
     ctalink: "/projects", 
-    project: "Cover (Short Film) 2011", 
+    project: "Cover", 
     company: "Directed by Josh Negrin", 
     src: "/images/cover-art/cover.jpg", 
     hero: "bg-[url('/images/hero-cover.jpg')]",
@@ -438,7 +438,7 @@ export const projectData = [
   { 
     id: 11, 
     ctalink: "/projects", 
-    project: "Undercovers (TV Series) 2010", 
+    project: "Undercovers", 
     company: "Warner Bros/Bad Robot", 
     src: "/images/cover-art/undercovers.jpg", 
     hero: "bg-[url('/images/hero-undercovers.jpg')]",
@@ -477,7 +477,7 @@ export const projectData = [
   { 
     id: 12, 
     ctalink: "/projects", 
-    project: "Night at the Museum: Battle of the Smithsonian (Video Game) 2009", 
+    project: "Night at the Museum: Battle of the Smithsonian", 
     company: "Majesco/Pipeworks", 
     src: "/images/cover-art/night-at-the-museum.jpg", 
     hero: "bg-[url('/images/hero-night-at-the-museum.jpg')]",
@@ -516,7 +516,7 @@ export const projectData = [
   { 
     id: 13, 
     ctalink: "/projects", 
-    project: "Fracture (Video Game) 2008", 
+    project: "Fracture", 
     company: "LucasArts/Day 1 Studios", 
     src: "/images/cover-art/fracture.jpg", 
     hero: "bg-[url('/images/hero-fracture.jpg')]",
@@ -555,7 +555,7 @@ export const projectData = [
   { 
     id: 14, 
     ctalink: "/projects", 
-    project: "Mercenaries 2: World in Flames (Video Game) 2008", 
+    project: "Mercenaries 2: World in Flames", 
     company: "Electronic Arts/Pandemic", 
     src: "/images/cover-art/mercenaries-2.jpg", 
     hero: "bg-[url('/images/hero-mercenaries-2.jpg')]",
@@ -595,7 +595,7 @@ export const projectData = [
   {
     id: 15,
     ctalink: "/projects",
-    project: "Jumper (Video Game) 2008",
+    project: "Jumper",
     company: "Brash Entertainment/Redtribe",
     src: "/images/cover-art/jumper.jpg",
     hero: "bg-[url(/images/hero-jumper.jpg)]",
@@ -620,7 +620,7 @@ export const projectData = [
   {
     id: 16,
     ctalink: "/projects",
-    project: "La Lune (Short) 2008",
+    project: "La Lune",
     company: "Directed by Kelly Kyung-Hee Shon",
     src: "/images/cover-art/la-lune.jpg",
     hero: "bg-[url(/images/hero-la-lune.jpg)]",
@@ -644,7 +644,7 @@ export const projectData = [
   {
     id: 17,
     ctalink: "/projects",
-    project: "The Sunday Man (Short) 2007",
+    project: "The Sunday Man",
     company: "Directed by Danielle Shamash",
     src: "/images/cover-art/the-sunday-man.jpg",
     hero: "bg-[url(/images/hero-the-sunday-man.jpg)]",
@@ -668,7 +668,7 @@ export const projectData = [
   {
     id: 18,
     ctalink: "/projects",
-    project: "Black (Video Game) 2006",
+    project: "Black",
     company: "Electronic Arts/Criterion Games",
     src: "/images/cover-art/black.jpg",
     hero: "bg-[url('/images/hero-black.jpg')]",
@@ -707,7 +707,7 @@ export const projectData = [
   {
     id: 19,
     ctalink: "/projects",
-    project: "Mercenaries (Video Game) 2005",
+    project: "Mercenaries",
     company: "LucasArts/Pandemic",
     src: "/images/cover-art/mercenaries.jpg",
     hero: "bg-[url('/images/hero-mercenaries.jpg')]",
@@ -746,7 +746,7 @@ export const projectData = [
   {
     id: 20,
     ctalink: "/projects",
-    project: "Muppets Party Cruise (Video Game) 2003",
+    project: "Muppets Party Cruise",
     company: "Mass Media/TDK",
     src: "/images/cover-art/muppets-party-cruise.jpg",
     hero: "bg-[url('/images/hero-muppets.jpg')]",
