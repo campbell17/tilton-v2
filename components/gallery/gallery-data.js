@@ -50,9 +50,9 @@ export const projectData = [
     color: "bg-[#00a1b7]", 
     subtitle: "", 
     cta: "Learn More about Moxie",
-    ctabrand: "bg-[#1DB954] hover:bg-[#1DB954]", 
+    ctabrand: "", 
     ctabrandhover: "",
-    ctaicon: "icon-web.png", 
+    ctaicon: "none", 
     year: "2021", 
     desc: "Developed by a veteran team of technologists, neuroscientists, child development specialists, and creative storytellers, Moxie is a social robot designed with the latest technology that allows it to engage with children in a revolutionary way. ", 
     songsdata: [
@@ -93,7 +93,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "icon-spotify.png", 
     year: "2019", 
-    desc: "", 
+    desc: "CSC is an open-universe, sandbox-style space MMO with a player-owned economy. Command starships and earn digital items to buy, sell, or trade without limits both inside and outside of the game universe. Experience a free-market Play-to-Own Economy that provides true ownership & freedom.", 
     songsdata: [
       {
         "title": "Main Theme (from the video game 'CSC')",
@@ -172,7 +172,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "icon-spotify.png", 
     year: "2017", 
-    desc: "", 
+    desc: "Divide is a character-driven, science fiction action/adventure game with a modern take on isometric adventures of the past. Search for clues that reveal new insight into the story, interact with fully realized characters, and combat enemies by hacking out of sight, or launching a direct assault.", 
     songsdata: [
       {
         "title": "Divide Main Theme (from the video game 'Divide')",
@@ -213,7 +213,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "", 
     year: "2021-2022", 
-    desc: "Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent.", 
+    desc: "Assassin's Creed® Unity is an action/adventure game set in the city of Paris during one of its darkest hours, the French Revolution. Take ownership of the story by customising Arno's equipement to make the experience unique to you, both visually and mechanically. In addition to an epic single-player experience, Assassin’s Creed Unity delivers the excitement of playing with up to three friends through online cooperative gameplay in specific missions. Throughout the game, take part in one of the most pivotal moments of French history in a compelling storyline and a breath-taking playground that brought you the city of lights of today.", 
     songsdata: [
       {
         "title": "Unity (from the video game 'Assassin's Creed Unity') [Excerpt]",
@@ -252,7 +252,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "icon-spotify.png", 
     year: "2013", 
-    desc: "", 
+    desc: "Will you create a utopian society underpinned by clean technology, or allow a giant corporation to plunder and pollute in the name of feeding your Sims’ insatiable consumerism? In addition to expanding outward, cities will have the ability to build into the sky with enormous multi-zone MegaTowers. Education and research will help you discover new technologies that make your cities less polluted, less reliant on natural resources, managed day-to-day by service drones, and as a byproduct– at risk for resource-draining giant robot attacks on your city. As the population increases, your Sims will live, work, and play closer together. Whether they do so in harmony and prosperity or as members of an exploited workforce is up to you.", 
     songsdata: [
       {
         "title": "Cities of Tomorrow (from the video game 'SimCity: Cities of Tomorrow') [Excerpt]",
@@ -292,7 +292,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "", 
     year: "2019", 
-    desc: "Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent.", 
+    desc: "Do you have what it takes to build a metropolis from scratch? Find out in SimCity, a game that tasks you with planning the layout and infrastructure of a fully simulated city. Create a single city or up to 16 cities at once, then track the education, wealth, happiness, and more of your region and the Sims that live in it. Anyone can build a city - but it takes a good mayor to make one thrive.", 
     songsdata: [
       {
         "title": "Sim City Theme (from the video game 'Sim City')",
@@ -333,7 +333,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "", 
     year: "2020", 
-    desc: "Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent.", 
+    desc: "The critically acclaimed FRINGE explores the ever-blurring line between science fiction and reality, where hybrid monsters tear through sewers, thieves walk through walls and portals open to parallel universes. Unable to police a world in which science has advanced beyond our wildest dreams -- and nightmares -- FBI Special Agent Olivia Dunham seeks help from eccentric 'fringe' scientist Dr. Walter Bishop and his jack-of-all trades son, Peter. Under the direction of Special Agent Phillip Broyles and assisted by Agents Astrid Farnsworth, Charlie Francis and Lincoln Lee, the Fringe Team investigates unusual incidents that defy human logic and unimaginable events that threaten our very existence on a universal scale.", 
     songsdata: [
       {
         "title": "A New Day in the Old Town (from the TV series 'Fringe')",
@@ -372,7 +372,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "", 
     year: "2012", 
-    desc: "", 
+    desc: "Alcatraz is a science fiction crime drama TV series where 63 inmates from the infamous Alcatraz prison reappear in the present day after mysteriously disappearing in 1963. A special FBI task force investigates their return and uncovers dark secrets and a conspiracy surrounding their reappearance. The show blends mystery, action, and time-travel elements in a compelling storyline.", 
     songsdata: [
       {
         "title": "Where There's Smoke There's Salmon (from the TV series 'Alcatraz')",
@@ -411,7 +411,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "icon-download.png", 
     year: "2011", 
-    desc: "", 
+    desc: "Jake and Sara's day together takes a turn for the worse, when they're suddenly being chased and shot at by government spooks.", 
     songsdata: [
       {
         "title": "Opening Titles (from the short film 'Cover)",
@@ -450,7 +450,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "", 
     year: "2010", 
-    desc: "", 
+    desc: "Follow the lives of Steven and Samantha Bloom, a married couple and both retired CIA agents. After a former colleague goes missing, they are reluctantly pulled back into the world of espionage to locate and rescue him. The series follows their thrilling missions around the globe, balancing the challenges of married life with the high-stakes nature of their spy work, all while uncovering secrets from their past.", 
     songsdata: [
       {
         "title": "Brothers in Harms (from the TV series 'UnderCovers')",
@@ -489,7 +489,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "icon-download.png", 
     year: "2009", 
-    desc: "", 
+    desc: "Assume the role of the night security guard, Larry Daley, who must navigate through the vast and lively halls of the Smithsonian Institution to rescue his museum friends, who have been transported into the museum exhibits by the mystical Tablet of Ahkmenrah. As players explore various exhibits, they encounter historical figures and famous characters that come to life, leading to hilarious and exciting adventures. The game combines puzzle-solving, exploration, and action elements, providing an enjoyable journey through history with a touch of whimsy and humor inspired by the movie.", 
     songsdata: [
       {
         "title": "Main Theme (from the video game 'Night at the Museum: Battle of the Smithsonian')",
@@ -528,7 +528,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "icon-download.png", 
     year: "2008", 
-    desc: "", 
+    desc: "Fracture is a third-person shooter video game developed by Day 1 Studios and published by LucasArts. Set in a futuristic world, the game features innovative terrain deformation mechanics that allow players to reshape the landscape and create strategic advantages during intense battles between two warring factions.", 
     songsdata: [
       {
         "title": "The Pacificans (from the video game 'Fracture')",
@@ -567,7 +567,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "icon-spotify.png", 
     year: "2008", 
-    desc: "", 
+    desc: "Mercenaries 2: World in Flames is an action-adventure video game developed by Pandemic Studios. Set in an open-world environment, players take on the role of mercenaries tasked with completing various missions and objectives in a war-torn Venezuela, using a wide range of vehicles, weapons, and tactics to achieve their goals.", 
     songsdata: [
       {
         "title": "Main Theme (from the video game 'Mercenaries 2: World in Flames') [Excerpt]",
@@ -607,7 +607,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "icon-download.png",
     year: "2008",
-    desc: "",
+    desc: "Jumper: Griffin's Story is an action-adventure video game based on the movie Jumper. Developed by Red Tribe and published by Brash Entertainment, the game follows the story of Griffin, a new character introduced exclusively for the game. Players take on the role of Griffin, a teleporting warrior, as he embarks on a quest for revenge against an ancient secret society, utilizing his unique abilities to battle enemies across various locations and unravel the mysteries of the Jumper universe.",
     songsdata: [
       { title: "Griffin's Story (from the video game 'Jumper: Griffin's Story')", url: "/music/christilton_jumper_01_griffins-story.mp3" },
       { title: "Path to Roland (from the video game 'Jumper: Griffin's Story')", url: "/music/christilton_jumper_02_path-to-roland.mp3" },
@@ -632,7 +632,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "icon-download.png",
     year: "2008",
-    desc: "",
+    desc: "In this magical fairy tale, two minature lovers seek the sun from atop a crumbling hourgalss.",
     songsdata: [
       { title: "Opening (from the short animation 'La Lune')", url: "/music/christilton_lalune_01_opening.mp3" },
       { title: "Shoot for the Lune (from the short animation 'La Lune')", url: "/music/christilton_lalune_02_shoot-for-the-lune.mp3" },
@@ -656,7 +656,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "icon-download.png",
     year: "2007",
-    desc: "",
+    desc: "The misadventures of a remarkably peculiar man, who has some very unusual ideas about who he is.",
     songsdata: [
       { title: "Opening Titles (from the short film 'The Sunday Man')", url: "/music/christilton_sundayman_01_opening-titles.mp3" },
       { title: "My Mom's a Hugger (from the short film 'The Sunday Man')", url: "/music/christilton_sundayman_02_my-moms-a-hugger.mp3" },
@@ -680,7 +680,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "icon-spotify.png",
     year: "2006",
-    desc: "",
+    desc: "Black is a first-person shooter video game developed by Criterion Games and published by Electronic Arts (EA). Known for its intense and explosive action, the game immerses players in high-octane combat scenarios, where they unleash a vast arsenal of realistic and powerful weaponry to take on enemies and complete challenging missions in a stunningly detailed environment.",
     songsdata: [
       {
         "title": "Main Theme (from the video game 'Black') [Excerpt]",
@@ -719,7 +719,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "",
     year: "2005",
-    desc: "",
+    desc: "Mercenaries is an action-adventure video game developed by Pandemic Studios. Set in a fictional war-torn North Korea, players assume the roles of skilled mercenaries, taking on dangerous missions for different factions and governments, with a vast array of weaponry, vehicles, and destructive capabilities at their disposal.",
     songsdata: [
       {
         "title": "Gas Tank on the Roof (from the video game 'Mercenaries')",
@@ -758,7 +758,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "",
     year: "2003",
-    desc: "",
+    desc: "Published by TDK Mediactive, Muppets Party Cruise offers a fun-filled multiplayer experience where players can participate in a variety of wacky mini-games and challenges set in the quirky Muppets universe, with humor and antics abound.",
     songsdata: [
       {
         "title": "The Cruise (from the video game 'Muppets: Party Cruise')",
