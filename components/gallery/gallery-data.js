@@ -54,7 +54,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "icon-web.png", 
     year: "2021", 
-    desc: "", 
+    desc: "Developed by a veteran team of technologists, neuroscientists, child development specialists, and creative storytellers, Moxie is a social robot designed with the latest technology that allows it to engage with children in a revolutionary way. ", 
     songsdata: [
       {
         "title": "The Adventures of Moxie (from the robot companion 'Moxie')",
@@ -133,7 +133,7 @@ export const projectData = [
     ctabrandhover: "",
     ctaicon: "",
     year: "2018", 
-    desc: "Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent.",
+    desc: `Zoo, based on the #1 bestselling novel by James Patterson, is a global thriller about a wave of violent animal attacks against humans sweeping the planet. In season three, the year is 2027, and the world has reached a tipping point: as the human population continues to dwindle due to the sterility problem, an equally devastating threat rises in the form of "the hybrids," an army of unstoppable lab-made creatures, hell-bent on destroying mankind. Although the team has become estranged over the past decade, Jackson, Jamie, Abraham, Dariela and Logan are forced to overcome their differences and reunite when they learn that Mitch is alive. As the planet’s future hangs in the balance, the team must race to stop the hybrids and their creator - a shadowy figure with a startling connection to the team's past.`,
     songsdata: [
       {
         "title": "Welcome to Pangea (from the TV series 'Zoo')",

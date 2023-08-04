@@ -41,7 +41,7 @@ export default function AudioPlayer (props) {
   
   // Function to add or remove a class based on intersection status
   const handleIntersectionClass = () => {
-    if (isIntersecting) {
+    if (isIntersecting && props.notpinned === true) {
       // Add your class name here to add it when the component is intersecting
       playerContainer.current.classList.remove('pinned');
     } else {
@@ -135,7 +135,7 @@ export default function AudioPlayer (props) {
   };
 
   return (
-    <div notpinned={props.notpinned} ref={playerContainer} className={`${props.className} flex flex-col z-[1] rounded-t-lg overflow-hidden`}>
+    <div notpinned={props.notpinned} ref={playerContainer} className={`flex flex-col z-[1] ${props.gallery ? "" : "rounded-t-lg"} overflow-hidden ${props.className}`}>
       <div className={`${props.fringe ? "rounded-b-lg" : null} text-white items-center justify-between isolate bg-gray-900 gap-2 flex flex-col p-4 shadow-2xl`}>
         <div className="flex flex-col gap-2 sm:flex-row items-center justify-center sm:justify-between w-full">
         <audio ref={audioPlayer} onLoadedMetadata={onLoadedMetaData} src={props.trackSource} title={props.mappedSongTitle} project={props.mappedSongProject} image={props.mappedSongImage} active={props.active} preload="metadata" ></audio>

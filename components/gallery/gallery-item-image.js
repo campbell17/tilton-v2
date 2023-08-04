@@ -36,8 +36,8 @@ export default function BlurImage(props) {
             objectFit="cover"
             className={`
               ${isLoading
-                ? 'gallery-image transitioning'
-                : 'gallery-image transitioned'}
+                ? 'gallery-image'
+                : 'gallery-image'}
             `}
             onLoadingComplete={() => setLoading(false)}
           />
@@ -50,8 +50,8 @@ export default function BlurImage(props) {
               zIndex: 0 
             }} 
               className={classNames(
-              isLoading ? 'h5 tile-title transitioning'
-                        : 'h5 tile-title transitioned',
+              isLoading ? 'h5 tile-title'
+                        : 'h5 tile-title',
                         'text-white font-bold uppercase'
             )}>
             {props.project}
