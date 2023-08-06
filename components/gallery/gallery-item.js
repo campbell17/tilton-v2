@@ -23,13 +23,14 @@ export default function GalleryItem(props) {
       hero: event.target.getAttribute('hero'),
       id: event.target.getAttribute('id'),
       project: event.target.getAttribute('project'),
+      type: event.target.getAttribute('type'),
       alt: event.target.getAttribute('alt'),
       color: event.target.getAttribute('color'),
       title: event.target.getAttribute('title'),
       subtitle: event.target.getAttribute('subtitle'),
       cta: event.target.getAttribute('cta'),
       ctabrand: event.target.getAttribute('ctabrand'),
-      ctabrandhover: event.target.getAttribute('ctabrandhover'),
+      credits: event.target.getAttribute('credits'),
       ctaicon: event.target.getAttribute('ctaicon'),
       ctalink: event.target.getAttribute('ctalink'),
       year: event.target.getAttribute('year'),
@@ -63,14 +64,15 @@ export default function GalleryItem(props) {
                 company={data.company} 
                 hero={data.hero}
                 id={data.id}
-                project={data.project} 
+                project={data.project}
+                type={data.type} 
                 alt={data.alt}  
                 color={data.color}
                 title={data.title}
                 subtitle={data.subtitle}
                 cta={data.cta}
                 ctabrand={data.ctabrand}
-                ctabrandhover={data.ctabrandhover}
+                credits={data.credits}
                 ctaicon={data.ctaicon}
                 ctalink={data.ctalink} 
                 year={data.year}

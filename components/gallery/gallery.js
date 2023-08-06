@@ -7,6 +7,7 @@ export default function Gallery(props) {
   const [open, setOpen] = useState(false);
   const [id, setId] = useState();
   const [project, setProject] = useState();
+  const [type, setType] = useState();
   const [src, setSrc] = useState();
   const [ctalink, setCtalink] = useState();
   const [company, setCompany] = useState();
@@ -17,7 +18,7 @@ export default function Gallery(props) {
   const [subtitle, setSubtitle] = useState();
   const [cta, setCta] = useState();
   const [ctabrand, setCtabrand] = useState();
-  const [ctabrandhover, setCtabrandhover] = useState();
+  const [credits, setCredits] = useState();
   const [ctaicon, setCtaicon] = useState();
   const [year, setYear] = useState();
   const [desc, setDesc] = useState();
@@ -30,6 +31,7 @@ export default function Gallery(props) {
     };
     setOpen(true)
     setProject(cover.project)
+    setType(cover.type)
     setId(cover.id)
     setSrc(cover.src)
     setCtalink(cover.ctalink)
@@ -41,7 +43,7 @@ export default function Gallery(props) {
     setSubtitle(cover.subtitle)
     setCta(cover.cta)
     setCtabrand(cover.ctabrand)
-    setCtabrandhover(cover.ctabrandhover)
+    setCredits(cover.credits)
     setCtaicon(cover.ctaicon)
     setYear(cover.year)
     setDesc(cover.desc)
@@ -57,6 +59,7 @@ export default function Gallery(props) {
         items={projectData} 
         setOpen={setOpen} 
         project={project} 
+        type={type}
         id={id}
         key={id} 
         src={src} 
@@ -69,7 +72,7 @@ export default function Gallery(props) {
         subtitle={subtitle}
         cta={cta}
         ctabrand={ctabrand}
-        ctabrandhover={ctabrandhover}
+        credits={credits}
         ctaicon={ctaicon}
         year={year}
         desc={desc}

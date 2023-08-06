@@ -17,13 +17,14 @@ export default function BlurImage(props) {
             hero={props.hero}
             id={props.id} 
             project={props.project} 
+            type={props.type} 
             alt={props.alt}  
             color={props.color}
             title={props.title}
             subtitle={props.subtitle}
             cta={props.cta}
             ctabrand={props.ctabrand}
-            ctabrandhover={props.ctabrandhover}
+            credits={props.credits}
             ctaicon={props.ctaicon}
             year={props.year}
             desc={props.desc}

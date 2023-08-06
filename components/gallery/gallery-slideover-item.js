@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { XMarkIcon, PlayCircleIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon, PlayCircleIcon, ArrowDownTrayIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 import { SiSpotify } from "@icons-pack/react-simple-icons"
 import Image from 'next/image'
 import Hero from '../hero'
@@ -70,21 +70,25 @@ export default function GallerySlideoverItem(props) {
                             </div>
                             
                             {/* Project CTA */}
+                            {props.cta &&
                             <div className="mt-5 flex justify-center sm:justify-start flex-wrap space-y-3 sm:space-y-0 sm:space-x-3">
                               <a
                                 href={props.ctalink}
                                 target="_blank noreferrer"
-                                className={`cursor-pointer flex items-center justify-center rounded-md border border-transparent px-4 py-2 ${props.ctaicon != "none" ? "pl-2" : ""} text-sm font-medium text-white shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-100 ${!props.ctabrand ? "bg-indigo-600 hover:bg-indigo-700" : props.ctabrand}`}
+                                className={`cursor-pointer flex items-center justify-center rounded-md border border-transparent px-4 py-2 ${props.ctaicon && "pl-2"} text-sm font-medium text-white shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-100 ${!props.ctabrand ? "bg-indigo-600 hover:bg-indigo-700" : props.ctabrand}`}
                               >
-                                {props.ctaicon != "none" ?
+                                {/* {props.ctaicon != "none" ?
                                   props.cta === "Listen on Spotify" ? <SiSpotify className="h-4 w-4 mr-2 ml-1" color="#ffffff" /> : <PlayCircleIcon className="h-6 w-6 mr-2" aria-hidden="true" />
                                   : null  
-                                }
-                                
+                                } */}
+                                {props.ctaicon === "Spotify" && <SiSpotify className="h-4 w-4 mr-2 ml-1" color="#ffffff" />}
+                                {props.ctaicon === "Play" && <PlayCircleIcon className="h-6 w-6 mr-2" aria-hidden="true" />}
+                                {props.ctaicon === "Download" && <ArrowDownTrayIcon className="h-4 w-4 mr-2" aria-hidden="true" />}
+                                {props.ctaicon === "Learn" && <ArrowTopRightOnSquareIcon className="h-5 w-5 mr-2 ml-1" aria-hidden="true" />}
                                 {props.cta}
                               </a>
 
-                            </div>
+                            </div>}
                           </div>
                         </div>
                       </div>
@@ -93,33 +97,51 @@ export default function GallerySlideoverItem(props) {
                       <div className="px-4 py-5 bg-white sm:px-0 sm:py-0 w-full flex">
                         <dl className="space-y-8 sm:space-y-0 sm:divide-y sm:divide-gray-200 w-full">
                           <Album gallery notpinned={props.notpinned} className="rounded-none" id={props.id} initialSrc={props.songsdata} selectedIds={props.selectedIds} mappedSongUrl={props.mappedSongUrl} mappedSongTitle={props.mappedSongTitle} />
-                          <div className="sm:flex sm:px-6 sm:py-5">
-                            <p className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">{props.desc}</p>
+                          <div className="sm:px-6 sm:py-5">
+                            <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                              Description
+                            </dt>
+                            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-1">
+                              {props.desc}
+                            </dd>
                           </div>
-                          <div className="sm:flex sm:px-6 sm:py-5">
+                          {props.company &&
+                          <div className="sm:px-6 sm:py-5">
                             <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
                               Company
                             </dt>
-                            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0 sm:ml-6">
-                              New York, NY, USA
+                            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-1">
+                              {props.company}
                             </dd>
-                          </div>
-                          <div className="sm:flex sm:px-6 sm:py-5">
+                          </div>}
+                          <div className="sm:px-6 sm:py-5">
                             <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
-                              Website
+                              Project type
                             </dt>
-                            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0 sm:ml-6">
-                              ashleyporter.com
+                            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-1">
+                              {props.type}
                             </dd>
                           </div>
-                          <div className="sm:flex sm:px-6 sm:py-5">
+                          {props.type === "Short Film" &&
+                            <div className="sm:px-6 sm:py-5">
+                              <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                                Director
+                              </dt>
+                              <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-1">
+                                {props.credits}
+                              </dd>
+                            </div>
+                          }
+                          {(props.credits && props.type != "Short Film") &&
+                          <div className="sm:px-6 sm:py-5">
                             <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
-                              Birthday
+                              Credits
                             </dt>
-                            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0 sm:ml-6">
-                              <time dateTime="1982-06-23">June 23, 1982</time>
+                            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-1">
+                              {props.credits}
                             </dd>
-                          </div>
+                          </div>}
+                          <div className={`sm:px-6 sm:py-3 shadow-inner shadow-indigo-900 bg-gradient-to-r from-violet-900 via-indigo-900 to-blue-700 ${props.color}`}></div>
                         </dl>
                       </div>
                     </div>

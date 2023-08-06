@@ -9,6 +9,7 @@ export default function GallerySlideover(props) {
       id={props.id}
       key={props.id} 
       project={props.project} 
+      type={props.type} 
       src={props.src} 
       ctalink={props.ctalink} 
       company={props.company} 
@@ -19,7 +20,7 @@ export default function GallerySlideover(props) {
       subtitle={props.subtitle}
       cta={props.cta}
       ctabrand={props.ctabrand}
-      ctabrandhover={props.ctabrandhover}
+      credits={props.credits}
       ctaicon={props.ctaicon}
       year={props.year}
       desc={props.desc}
