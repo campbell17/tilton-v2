@@ -9,6 +9,7 @@ export default function TrackList(props) {
     return props.customTracks.map((track, index) => (
       <TrackListItem
         key={track.url}
+        gallery={props.gallery}
         title={track.title}
         url={track.url}
         image={track.image}
@@ -23,6 +24,7 @@ export default function TrackList(props) {
         return project.songsdata.map((song, index) => (
           <TrackListItem
             key={song.url}
+            gallery={props.gallery}
             title={song.title}
             url={song.url}
             index={index}

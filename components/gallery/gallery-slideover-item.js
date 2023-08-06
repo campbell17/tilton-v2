@@ -94,10 +94,18 @@ export default function GallerySlideoverItem(props) {
                       </div>
                     {/* Body Content */}
                     <div className="flex h-auto bg-white">
-                      <div className="px-4 py-5 bg-white sm:px-0 sm:py-0 w-full flex">
+                      <div className="px-0 py-0 bg-white w-full flex">
                         <dl className="space-y-8 sm:space-y-0 sm:divide-y sm:divide-gray-200 w-full">
                           <Album gallery notpinned={props.notpinned} className="rounded-none" id={props.id} initialSrc={props.songsdata} selectedIds={props.selectedIds} mappedSongUrl={props.mappedSongUrl} mappedSongTitle={props.mappedSongTitle} />
-                          <div className="sm:px-6 sm:py-5">
+                          <div className="px-6 py-2 sm:py-5">
+                            <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
+                              Genre
+                            </dt>
+                            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-1">
+                              {props.type}
+                            </dd>
+                          </div>
+                          <div className="px-6 py-2 sm:py-5">
                             <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
                               Description
                             </dt>
@@ -106,7 +114,7 @@ export default function GallerySlideoverItem(props) {
                             </dd>
                           </div>
                           {props.company &&
-                          <div className="sm:px-6 sm:py-5">
+                          <div className="px-6 py-2 sm:py-5">
                             <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
                               Company
                             </dt>
@@ -114,16 +122,8 @@ export default function GallerySlideoverItem(props) {
                               {props.company}
                             </dd>
                           </div>}
-                          <div className="sm:px-6 sm:py-5">
-                            <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
-                              Project type
-                            </dt>
-                            <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-1">
-                              {props.type}
-                            </dd>
-                          </div>
                           {props.type === "Short Film" &&
-                            <div className="sm:px-6 sm:py-5">
+                            <div className="px-6 py-2 sm:py-5">
                               <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
                                 Director
                               </dt>
@@ -133,7 +133,7 @@ export default function GallerySlideoverItem(props) {
                             </div>
                           }
                           {(props.credits && props.type != "Short Film") &&
-                          <div className="sm:px-6 sm:py-5">
+                          <div className="px-6 py-2 sm:py-5">
                             <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
                               Credits
                             </dt>

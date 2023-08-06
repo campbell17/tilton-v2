@@ -34,7 +34,7 @@ export default function Album(props) {
     <div>
       <AudioPlayer gallery={props.gallery} className={props.className} notpinned={props.notpinned} forwardRef={audioPlayer} key={track} project={project} image={image} trackName={title} trackSource={track}  />
       <div className={`flex items-stretch flex-col ${props.gallery ? "" : "rounded-b-md"} overflow-hidden`}>
-        <TrackList customTracks={props.customTracks} id={props.id} selectedIds={props.selectedIds} trackClickHandler={trackClickHandler} />
+        <TrackList gallery={props.gallery} customTracks={props.customTracks} id={props.id} selectedIds={props.selectedIds} trackClickHandler={trackClickHandler} />
       </div>
     </div>
   )
