@@ -42,7 +42,7 @@ export default function BlurImage(props) {
             `}
             onLoadingComplete={() => setLoading(false)}
           />
-          <h3 style={{ 
+          <div style={{ 
               position: "absolute", 
               width: "100%", 
               height: "100%", 
@@ -50,13 +50,10 @@ export default function BlurImage(props) {
               textAlign: "center", 
               zIndex: 0 
             }} 
-              className={classNames(
-              isLoading ? 'h5 tile-title'
-                        : 'h5 tile-title',
-                        'text-white font-bold uppercase'
-            )}>
-            {props.project}
-          </h3>
+              className="text-white font-bold uppercase">
+            <h3 className="text-lg">{props.project}</h3>
+            <p className="text-xs text-slate-500">{props.year}</p>
+          </div>
         </div>
   )
 }

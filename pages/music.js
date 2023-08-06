@@ -9,7 +9,6 @@ export default function Music() {
     <Layout>
       <Hero 
         heading="Music"
-        subheading="This is the description"
       />
       <div className="m-8">
         <Gallery gallery />        
