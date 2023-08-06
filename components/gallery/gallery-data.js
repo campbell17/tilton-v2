@@ -489,7 +489,7 @@ export const projectData = [
   { 
     id: 12, 
     ctalink: "/projects", 
-    project: "Night at the Museum: Battle of the Smithsonian", 
+    project: "Night at the Museum", 
     type: "Video Game", 
     company: "Majesco/Pipeworks", 
     credits: "",
@@ -497,7 +497,7 @@ export const projectData = [
     hero: "bg-[url('/images/hero-night-at-the-museum.jpg')]",
     title: "",
     color: "bg-[#849CA8]", 
-    subtitle: "",
+    subtitle: "Battle of the Smithsonian",
     cta: "Download Soundtrack", 
     ctabrand: "",
     ctaicon: "Download", 
