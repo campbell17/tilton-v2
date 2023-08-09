@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import FringeFriday from '../pages/fringe-friday'
+import Footer from './footer'
 // import Navtest from './navtest'
 
 const navigation = [
@@ -126,6 +127,7 @@ export default function Layout( {children} ) {
           </div>
         </main>
       </div>
+      <Footer />
     </>
   )
 }
