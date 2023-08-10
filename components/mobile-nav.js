@@ -29,16 +29,16 @@ export default function MobileNav() {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-0 translate-y-1"
       >
-        <Popover.Panel className="absolute right-0 z-10 mt-5 flex w-screen max-w-full px-4">
-          <div className="w-screen max-w-full flex-auto overflow-hidden rounded-lg bg-white text-md leading-6 shadow-lg ring-1 ring-gray-900/5">
-            <div className="p-4 py-6 flex flex-col gap-6 ">
+        <Popover.Panel className="absolute right-0 z-10 mt-2 flex w-full sm:w-1/2 px-0 sm:px-4">
+          <div className="w-full flex-auto overflow-hidden sm:rounded-lg bg-indigo-950/[.95] text-md text-white leading-6 shadow-lg ring-1 ring-gray-900/5">
+            <div className="flex flex-col">
               {navigation.map((item) => (
                 <Link 
                   key={item.name}
-                  href={item.href}                   
+                  href={item.href}                       
                   aria-current={item.current ? 'page' : undefined} 
                 >
-                  {item.name}
+                  <div className="p-4 cursor-pointer hover:bg-white/10">{item.name}</div>
                 </Link>
                 
               ))}
