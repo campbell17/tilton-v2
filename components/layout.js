@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import FringeFriday from '../pages/fringe-friday'
 import Footer from './footer'
-import Navtest from './navtest'
+import MobileNav from './mobile-nav'
 
 const navigation = [
   { name: 'Home', href: '/', current: false },
@@ -73,7 +73,7 @@ export default function Layout( {children} ) {
 
                       <div className="flex md:hidden">
                         {/* Mobile menu  */}
-                        <Navtest />
+                        <MobileNav />
                       </div>
                     </div>
                   </div>
