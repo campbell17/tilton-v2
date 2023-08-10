@@ -11,6 +11,10 @@ const navigation = [
   { name: 'About', href: '/about', current: false },
 ]
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
 export default function MobileNav() {
   const router = useRouter();
   return (
@@ -33,12 +37,18 @@ export default function MobileNav() {
           <div className="w-full flex-auto overflow-hidden sm:rounded-lg bg-indigo-950/[.95] text-md text-white leading-6 shadow-lg ring-1 ring-gray-900/5">
             <div className="flex flex-col">
               {navigation.map((item) => (
-                <Link 
-                  key={item.name}
-                  href={item.href}                       
-                  aria-current={item.current ? 'page' : undefined} 
+                <Link key={item.name} href={item.href}>
+                <a                                
+                  className={classNames(
+                    router.asPath == (item.href)
+                      ? 'text-indigo-400'
+                      : 'hover:text-white',
+                    'font-medium'
+                  )}
+                  aria-current={item.current ? 'page' : undefined}
                 >
                   <div className="p-4 cursor-pointer hover:bg-white/10">{item.name}</div>
+                  </a>
                 </Link>
                 
               ))}
