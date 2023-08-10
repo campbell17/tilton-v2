@@ -135,7 +135,7 @@ export default function AudioPlayer (props) {
   };
 
   return (
-    <div notpinned={props.notpinned} ref={playerContainer} className={`flex flex-col z-[1] ${props.gallery === true ? "" : "rounded-t-lg"} overflow-hidden ${props.className}`}>
+    <div notpinned={props.notpinned} ref={playerContainer} className={`flex flex-col z-[1] ${props.gallery === true || props.notpinned ? "" : "rounded-t-lg"} overflow-hidden ${props.className}`}>
       <div className={`${props.fringe ? "rounded-b-lg" : null} text-white items-center justify-between isolate bg-gray-900 gap-2 flex flex-col p-4 shadow-2xl ${props.gallery === true ? "px-6" : ""}`}>
         <div className="flex flex-col gap-2 sm:flex-row items-center justify-center sm:justify-between w-full">
         <audio ref={audioPlayer} onLoadedMetadata={onLoadedMetaData} src={props.trackSource} title={props.mappedSongTitle} project={props.mappedSongProject} image={props.mappedSongImage} active={props.active} preload="metadata" ></audio>
