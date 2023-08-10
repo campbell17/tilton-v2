@@ -100,7 +100,7 @@ export default function Layout( {children} ) {
           </div>
         </main>
       </div>
-      <Footer />
+      {router.pathname === "/fringe-friday" ? <Footer light /> : <Footer />}
     </>
   )
 }

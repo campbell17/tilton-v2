@@ -48,7 +48,7 @@ const navigation = [
   },
 ]
 
-export default function Footer() {
+export default function Footer(props) {
 
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
@@ -57,8 +57,8 @@ export default function Footer() {
   }, []); // Empty dependency array to run the effect only once when the component mounts
 
   return (
-    <footer className="bg-white border-t border-cyan-200">
-      <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
+    <footer className={props.light ? "" : "bg-white border-t border-cyan-200"}>
+      <div className={`mx-auto max-w-7xl px-6 md:flex md:items-center md:justify-between lg:px-8 ${props.light ? "pt-0 pb-12" : "py-12"}`}>
         <div className="flex justify-center space-x-6 md:order-2">
           {navigation.map((item) => (
             <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
