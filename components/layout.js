@@ -7,6 +7,8 @@ import { useRouter } from 'next/router'
 import FringeFriday from '../pages/fringe-friday'
 import Footer from './footer'
 import MobileNav from './mobile-nav'
+import HeroTest from '../components/hero-test'
+
 
 const navigation = [
   { name: 'Home', href: '/', current: false },
@@ -81,6 +83,7 @@ export default function Layout( {children} ) {
               </>
             )}
           </Disclosure>
+              {/* <HeroTest /> */}
           <header className="p-10">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* {navigation.map((item) => (

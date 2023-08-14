@@ -1,9 +1,14 @@
-import { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Link from 'next/link'
 import { projectData } from './gallery-data'
 import BlurImage from './gallery-item-image'
+import { Menu, Transition } from "@headlessui/react";
+import { ChevronDownIcon, ArrowsUpDownIcon, BarsArrowDownIcon, BarsArrowUpIcon } from "@heroicons/react/20/solid";
 
 export default function GalleryItem(props) {
+  const [currentSortOption, setCurrentSortOption] = useState("year"); // Default sorting option
+  const [sortOrder, setSortOrder] = useState("descending"); // Default sorting order
+    
   const refId = useRef(0);
   // const mappedProject = projectData.map((data) => (data.songsdata[0]).title);
   // const mappedSongTitle = Array.from(mappedProject)[1];
@@ -11,7 +16,7 @@ export default function GalleryItem(props) {
   // console.log(mappedProject);
   // console.log(mappedSongTitle);
   
-
+  
   const coverClickHandler = (event) => {
     event.preventDefault();
     const mappedProject = projectData.map((data) => (data.songsdata[0]).title);
@@ -52,9 +57,128 @@ export default function GalleryItem(props) {
     filteredProjectData = projectData.filter((data) => !data.homepageonly);
   }
 
+  const sortingOptions = {
+    project: "Project Name",
+    type: "Type",
+    year: {
+      displayName: "Year",
+      ascendingDisplayName: "Oldest",
+      descendingDisplayName: "Newest",
+    },
+  };
+  
+  const sortedData = [...filteredProjectData].sort((a, b) => {
+    const key = currentSortOption;
+    
+    if (key === "project" || key === "type") {
+      return sortOrder === "ascending"
+        ? a[key].localeCompare(b[key])
+        : b[key].localeCompare(a[key]);
+    } else if (key === "year") {
+      return sortOrder === "ascending"
+        ? a[key] - b[key]
+        : b[key] - a[key];
+    }
+    
+    return 0; // Default case
+  });
+
   return (
+    <>
+      <Menu as="div" className="flex justify-end relative text-left z-10 -mt-5">
+        <div>
+          <Menu.Button className="rounded-md bg-white p-2 mb-2 -mt-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+            {/* {currentSortOption === "year"
+              ? sortOrder === "ascending"
+                ? sortingOptions.year.ascendingDisplayName
+                : sortingOptions.year.descendingDisplayName
+              : sortingOptions[currentSortOption]} */}
+            <ArrowsUpDownIcon
+              className="w-4 h-4 mx-0 text-slate-400 hover:text-slate-500"
+              aria-hidden="true"
+            />
+          </Menu.Button>
+        </div>
+        <Transition
+          as={React.Fragment}
+          enter="transition ease-out duration-100"
+          enterFrom="transform opacity-0 scale-95"
+          enterTo="transform opacity-100 scale-100"
+          leave="transition ease-in duration-75"
+          leaveFrom="transform opacity-100 scale-100"
+          leaveTo="transform opacity-0 scale-95"
+        >
+          <Menu.Items className="absolute top-8 right-0 w-56 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <div className="py-1">
+              <Menu.Item>
+                {({ active }) => (
+                  <button
+                    onClick={() => {
+                      setCurrentSortOption("project");
+                      setSortOrder("ascending");
+                    }}
+                  className={`${
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700"
+                    } flex items-center justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                  >
+                    {sortingOptions.project}
+                    <BarsArrowUpIcon className="w-4 h-4 ml-2 text-slate-400 hover:text-slate-500" aria-hidden="true" />
+                  </button>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <button
+                    onClick={() => {
+                      setCurrentSortOption("project");
+                      setSortOrder("descending");
+                    }}
+                    className={`${
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700"
+                    } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                  >
+                    {sortingOptions.project}
+                    <BarsArrowDownIcon className="w-4 h-4 ml-2 text-slate-400 hover:text-slate-500" aria-hidden="true" />
+                  </button>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <button
+                    onClick={() => {
+                      setCurrentSortOption("year");
+                      setSortOrder("descending");
+                    }}
+                    className={`${
+                      active ? "bg-gray-100 text-blue-600" : "text-gray-700"
+                    } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                  >
+                    {sortingOptions.year.descendingDisplayName}
+                  </button>
+                )}
+              </Menu.Item>            
+              <Menu.Item>
+                {({ active }) => (
+                  <button
+                    onClick={() => {
+                      setCurrentSortOption("year");
+                      setSortOrder("ascending");
+                    }}
+                    className={`${
+                      active ? "bg-gray-100 text-gray-900" : "text-gray-700"
+                    } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                  >
+                    {sortingOptions.year.ascendingDisplayName}
+                  </button>
+                )}
+              </Menu.Item>
+            </div>
+          </Menu.Items>
+        </Transition>
+      </Menu>
+
     <ul role="list" ref={refId} className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
-    {filteredProjectData.map((data) => (
+    {sortedData.map((data) => (
       <li key={data.src} className="relative hover:shadow-lg transition-shadow">
         <div style={{ background: 'linear-gradient(171deg, rgba(31,41,55,1) 0%, rgba(0,0,0,1) 36%, rgba(51,65,85,1) 100%)' }} className="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-900 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
           <Link href={`${data.hyperlink ? data.hyperlinkurl : "#"}`}>
@@ -85,6 +209,7 @@ export default function GalleryItem(props) {
         </div>
       </li>
     ))}
-  </ul>    
+  </ul>
+  </>    
   )
 }
