@@ -3,12 +3,18 @@ import Link from 'next/link'
 import { projectData } from './gallery-data'
 import BlurImage from './gallery-item-image'
 import { Menu, Transition } from "@headlessui/react";
+import { OneTwoThree, SortAZ, SortZA } from 'tabler-icons-react';
 import { ChevronDownIcon, ArrowsUpDownIcon, BarsArrowDownIcon, BarsArrowUpIcon } from "@heroicons/react/20/solid";
 
 export default function GalleryItem(props) {
   const [currentSortOption, setCurrentSortOption] = useState("year"); // Default sorting option
   const [sortOrder, setSortOrder] = useState("descending"); // Default sorting order
-    
+  
+  const isYearAscending = currentSortOption === "year" && sortOrder === "ascending";
+  const isYearDescending = currentSortOption === "year" && sortOrder === "descending";  
+  const isProjectAscending = currentSortOption === "project" && sortOrder === "ascending";  
+  const isProjectDescending = currentSortOption === "project" && sortOrder === "descending";  
+
   const refId = useRef(0);
   // const mappedProject = projectData.map((data) => (data.songsdata[0]).title);
   // const mappedSongTitle = Array.from(mappedProject)[1];
@@ -49,6 +55,10 @@ export default function GalleryItem(props) {
     console.log(allData.id);
   }  
 
+  const handleActive = () => {
+    !active ? null : setActive(!active)
+  }
+
   let filteredProjectData;
 
   if (props.isHomepage) {
@@ -58,7 +68,11 @@ export default function GalleryItem(props) {
   }
 
   const sortingOptions = {
-    project: "Project Name",
+    project: {
+      displayName: "Project Name",
+      ascendingDisplayName: "Name A-Z",
+      descendingDisplayName: "Name Z-A",
+    },
     type: "Type",
     year: {
       displayName: "Year",
@@ -87,7 +101,7 @@ export default function GalleryItem(props) {
     <>
       <Menu as="div" className="flex justify-end relative text-left z-10 -mt-5">
         <div>
-          <Menu.Button className="rounded-md bg-white p-2 mb-2 -mt-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+          <Menu.Button className="flex items-center rounded-md bg-white p-2 mb-2 -mt-2 text-sm font-semibold text-slate-400 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
             {/* {currentSortOption === "year"
               ? sortOrder === "ascending"
                 ? sortingOptions.year.ascendingDisplayName
@@ -111,64 +125,61 @@ export default function GalleryItem(props) {
           <Menu.Items className="absolute top-8 right-0 w-56 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="py-1">
               <Menu.Item>
-                {({ active }) => (
-                  <button
-                    onClick={() => {
-                      setCurrentSortOption("project");
-                      setSortOrder("ascending");
-                    }}
-                  className={`${
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700"
-                    } flex items-center justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
-                  >
-                    {sortingOptions.project}
-                    <BarsArrowUpIcon className="w-4 h-4 ml-2 text-slate-400 hover:text-slate-500" aria-hidden="true" />
-                  </button>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    onClick={() => {
-                      setCurrentSortOption("project");
-                      setSortOrder("descending");
-                    }}
-                    className={`${
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700"
-                    } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
-                  >
-                    {sortingOptions.project}
-                    <BarsArrowDownIcon className="w-4 h-4 ml-2 text-slate-400 hover:text-slate-500" aria-hidden="true" />
-                  </button>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
                   <button
                     onClick={() => {
                       setCurrentSortOption("year");
                       setSortOrder("descending");
                     }}
                     className={`${
-                      active ? "bg-gray-100 text-blue-600" : "text-gray-700"
-                    } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                      isYearDescending ? "bg-gray-100 text-indigo-600" : "text-gray-700"
+                    } hover:bg-gray-100 hover:text-grey-600 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                   >
                     {sortingOptions.year.descendingDisplayName}
                   </button>
-                )}
               </Menu.Item>            
               <Menu.Item>
-                {({ active }) => (
                   <button
                     onClick={() => {
                       setCurrentSortOption("year");
                       setSortOrder("ascending");
                     }}
                     className={`${
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700"
-                    } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                      isYearAscending ? "bg-gray-100 text-indigo-600" : "text-gray-700"
+                    } hover:bg-gray-100 hover:text-grey-600 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                   >
                     {sortingOptions.year.ascendingDisplayName}
+                  </button>
+              </Menu.Item>
+              <Menu.Item>
+                {/* {({ active }) => ( */}
+                  <button
+                    onClick={() => {
+                      setCurrentSortOption("project");
+                      setSortOrder("ascending");
+                      handleActive;
+                    }}
+                  className={`${
+                    isProjectAscending ? "bg-gray-100 text-indigo-600" : "text-gray-700"
+                    } hover:bg-gray-100 hover:text-grey-600 flex items-center justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                  >
+                    {sortingOptions.project.displayName}
+                    <SortAZ className="w-6 h-6 ml-2 text-slate-400" aria-hidden="true" />
+                  </button>
+                {/* )} */}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <button
+                    onClick={() => {
+                      setCurrentSortOption("project");
+                      setSortOrder("descending");
+                    }}
+                    className={`${
+                      isProjectDescending ? "bg-gray-100 text-indigo-600" : "text-gray-700"
+                    } hover:bg-gray-100 hover:text-grey-600 flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
+                  >
+                    {sortingOptions.project.displayName}
+                    <SortZA className="w-6 h-6 ml-2 text-slate-400" aria-hidden="true" />
                   </button>
                 )}
               </Menu.Item>
