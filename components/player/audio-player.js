@@ -64,15 +64,15 @@ export default function AudioPlayer (props) {
     progressBar.current.max = seconds;
   }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState]);
 
-  useEffect(() => {
-    // Automatically play the audio when trackSource changes and it's not the first play
-    if (!isFirstPlay && props.trackSource) {
-      audioPlayer.current.src = props.trackSource;
-      audioPlayer.current.load();
-      audioPlayer.current.play();
-      setIsPlaying(true);
-    }
-  }, [isFirstPlay, props.trackSource]);
+  // useEffect(() => {
+  //   // Automatically play the audio when trackSource changes and it's not the first play
+  //   if (!isFirstPlay && props.trackSource) {
+  //     audioPlayer.current.src = props.trackSource;
+  //     audioPlayer.current.load();
+  //     audioPlayer.current.play();
+  //     setIsPlaying(true);
+  //   }
+  // }, [isFirstPlay, props.trackSource]);
 
   const calculateTime = (secs) => {
     const minutes = Math.floor(secs / 60);

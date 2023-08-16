@@ -13,7 +13,6 @@ import HeroTest from '../components/hero-test'
 const navigation = [
   { name: 'Home', href: '/', current: false },
   { name: 'Music', href: '/music', current: false },
-  { name: 'Representation', href: '/representation', current: false },
   { name: 'About', href: '/about', current: false },
 ]
 

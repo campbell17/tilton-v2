@@ -99,14 +99,15 @@ export default function GalleryItem(props) {
 
   return (
     <>
-      <Menu as="div" className="flex justify-end relative text-left z-10 -mt-5">
-        <div>
-          <Menu.Button className="flex items-center rounded-md bg-white p-2 mb-2 -mt-2 text-sm font-semibold text-slate-400 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+      <Menu as="div" className="flex justify-end relative text-left z-10">
+        <div className="mb-2">
+          <Menu.Button className="flex items-center rounded-md bg-white p-2 mb-2 text-sm font-semibold text-slate-400 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
             {/* {currentSortOption === "year"
               ? sortOrder === "ascending"
                 ? sortingOptions.year.ascendingDisplayName
                 : sortingOptions.year.descendingDisplayName
               : sortingOptions[currentSortOption]} */}
+              <p className="uppercase text-xs mr-2 font-medium text-slate-500">Sort</p>
             <ArrowsUpDownIcon
               className="w-4 h-4 mx-0 text-slate-400 hover:text-slate-500"
               aria-hidden="true"

@@ -10,6 +10,7 @@ export default function Album(props) {
   const [image, setImage] = useState(props.mappedSongImage);
   const audioPlayer = useRef(null);
 
+
   const trackClickHandler = (event) => {        
     event.preventDefault();
     const trackData = {
