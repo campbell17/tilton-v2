@@ -1,7 +1,6 @@
 import Layout from '../components/layout'
 import Gallery from '../components/gallery/gallery'
 import DarkFeature from '../components/dark-feature'
-import Hero from '../components/hero'
 import Album from '../components/album'
 import LogoCloud from '../components/logo-cloud'
 
@@ -71,29 +70,11 @@ export default function Home() {
 
   return (
     <Layout>
-        <Hero 
-          darkBG
-          // videoSource1="/images/vid-example.webm"
-          // videoSourceType1="video/webm"
-          // videoSource2="/images/vid-example.mp4"
-          // videoSourceType2="video/mp4"
-          heroBGStyles="bg-blue-800 py-12 bg-cover bg-right bg-[url('/images/hero.jpg')]"
-          announcementUrl="https://press.epix.com/mgm-renews-sci-fi-horror-series-from-for-season-three/" 
-          announcementLinktext="Read more" 
-          announcementContent="MGM+ Renews Sci-Fi Horror Series FROM for Season Three"
-          heading="Chris Tilton" 
-          subheading="Composer. Los Angeles, CA."
-          // ctaPrimaryUrl="#" ctaPrimaryText="Get started" 
-          // ctaSecondaryUrl="#" ctaSecondaryText="Learn more"
-        />
-        <div className="m-8">
-          <Album mappedSongUrl={customTracks[0].url} mappedSongProject={customTracks[0].project} mappedSongImage={customTracks[0].image} mappedSongTitle={customTracks[0].title} customTracks={customTracks} />        
-        </div>
-        <LogoCloud />
-        <div className="m-8">
-          <Gallery gallery isHomepage={true} />        
-        </div>
-        <DarkFeature />
+      <Album mappedSongUrl={customTracks[0].url} mappedSongProject={customTracks[0].project} mappedSongImage={customTracks[0].image} mappedSongTitle={customTracks[0].title} customTracks={customTracks} />        
+      <LogoCloud />
+      <Gallery gallery isHomepage={true} />        
+      <DarkFeature />
     </Layout>
+    
   )
 }
