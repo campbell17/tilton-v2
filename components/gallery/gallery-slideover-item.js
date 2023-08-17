@@ -27,10 +27,11 @@ export default function GallerySlideoverItem(props) {
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-2xl">
                   <div className="flex h-full flex-col relative overflow-y-scroll shadow-xl">
                       {/* Hero BG */}
-                      <Hero 
-                        darkBG
-                        heroBGStyles={`absolute -z-[1] w-full h-96 py-12 bg-cover bg-right ${props.color} ${props.hero}`}
-                      />
+                      <div className={`absolute -z-[1] w-full h-96 py-12 bg-cover bg-right ${props.color} ${props.hero}`}>
+                        <div className="relative isolate px-6 lg:px-8">
+                          <div className="mx-auto max-w-2xl py-32 sm:py-24 lg:py-12"></div>
+                        </div>
+                      </div>
                       {/* Header & Close button */}
                       <div className="px-4 py-6 sm:px-6">
                         <div className="flex items-start justify-between">
