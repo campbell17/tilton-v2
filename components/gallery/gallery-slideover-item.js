@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon, PlayCircleIcon, ArrowDownTrayIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 import { SiSpotify } from "@icons-pack/react-simple-icons"
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Hero from '../hero'
 import Album from '../../components/album'
 
