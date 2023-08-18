@@ -49,7 +49,7 @@ export default function Layout( {children, fullbleed} ) {
                       <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
                           {navigation.map((item) => (
-                            <Link key={item.name} href={item.href}>
+                            <Link legacyBehavior key={item.name} href={item.href}>
                               <a                                
                                 className={classNames(
                                   router.asPath == (item.href)
