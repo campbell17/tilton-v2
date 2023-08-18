@@ -98,7 +98,7 @@ export default function GalleryItem(props) {
   });
 
   return (
-    <>
+    <div>
       <Menu as="div" className="flex justify-end relative text-left z-10">
         <div className="mb-2">
           <Menu.Button className="flex items-center rounded-md bg-white p-2 mb-2 text-sm font-semibold text-slate-400 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
@@ -222,6 +222,6 @@ export default function GalleryItem(props) {
       </li>
     ))}
   </ul>
-  </>    
+  </div>    
   )
 }
