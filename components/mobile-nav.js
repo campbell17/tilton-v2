@@ -37,7 +37,7 @@ export default function MobileNav() {
           <div className="w-full flex-auto overflow-hidden sm:rounded-lg bg-indigo-950/[.95] text-md text-white leading-6 shadow-lg ring-1 ring-gray-900/5">
             <div className="flex flex-col">
               {navigation.map((item) => (
-                <Link key={item.name} href={item.href}>
+                <Link legacyBehavior key={item.name} href={item.href}>
                 <a                                
                   className={classNames(
                     router.asPath == (item.href)

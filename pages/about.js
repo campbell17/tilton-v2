@@ -5,8 +5,8 @@ import ContentPhotos from '../components/content-photos'
 export default function About() {
   return (
     <Layout fullbleed>
-      <ContentPhotos />
       <Feature />      
+      <ContentPhotos />
     </Layout>
   )
 }

@@ -101,14 +101,19 @@ export default function Hero(props) {
     : null; // Provide a default value if none of the conditions match
   
   return (
-      <div className={`${currentContent.videoSource1 ? "relative py-12" : currentContent.heroBGStyles}`}> {/* BG image and styles are declared as props */}
-        {currentContent.videoSource1 ?
-          <video className="absolute top-0 left-0 object-cover w-screen h-screen" autoPlay muted loop id="bgvid">
-            <source src={currentContent.videoSource1} type={currentContent.videoSourceType1} />
-            <source src={currentContent.videoSource2} type={currentContent.videoSourceType2} />
-          </video> : null }
+    <div className={`${currentContent.videoSource1 ? "relative py-12" : currentContent.heroBGStyles}`}> {/* BG image and styles are declared as props */}
+      {/* Video BG if applicable */}
+      {currentContent.videoSource1 ?
+        <video className="absolute top-0 left-0 object-cover w-screen h-screen" autoPlay muted loop id="bgvid">
+          <source src={currentContent.videoSource1} type={currentContent.videoSourceType1} />
+          <source src={currentContent.videoSource2} type={currentContent.videoSourceType2} />
+        </video> : null }
+
+        {/* Text container */}
         <div className="relative isolate px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl py-32 sm:py-24 lg:py-12">
+          {/* Inner text container */}
+          <div className="mx-auto max-w-2xl py-32 sm:py-24">
+            {/* Announcement if applicable */}
             {currentContent.announcementContent != null ? 
               <div className="hidden sm:mb-4 sm:flex sm:justify-center">
                 <div className={"transition-all duration-300 relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20" + `${currentContent.darkBG && " text-white ring-gray-100/10 hover:ring-gray-100/20 bg-black/30 hover:bg-black/50"}` }>
@@ -121,13 +126,16 @@ export default function Hero(props) {
               </div>
             : null
             }
+            {/* Heading */}
             <div className="text-center">
               <h1 className={"text-5xl font-bold tracking-tight sm:text-6xl text-gray-900" + `${currentContent.darkBG && " text-white"}` }>
                 {currentContent.heading}
               </h1>
+              {/* Subheading */}
               <p className={"mt-6 text-lg leading-8 text-gray-600" + `${currentContent.darkBG && " text-white"}` }>
                 {currentContent.subheading}
               </p>
+              {/* CTA if applicable */}
               {currentContent.ctaPrimaryUrl != null ? 
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a

@@ -82,8 +82,8 @@ export default function Layout( {children, fullbleed} ) {
       <main className="">
         <div className={`mx-auto max-w-7xl ${router.pathname === "/fringe-friday" ? "p-4" : "px-0 py-0"} sm:py-12 sm:px-6 lg:px-8`}>
           {/* Replace with your content */}
-          <div className={`bg-white shadow ${router.pathname === "/fringe-friday" ? "py-0" : "py-12 sm:py-2"} px-4 rounded-none sm:rounded-xl sm:px-0`}>
-            <div className={`gap-y-8 flex flex-col ${router.pathname === "/fringe-friday" || fullbleed ? "" : "m-0 sm:m-8"}`}>
+          <div className={`bg-white shadow ${router.pathname === "/fringe-friday" || fullbleed ? "p-0" : "py-12 sm:py-2 px-4"} rounded-none sm:rounded-xl sm:px-0`}>
+            <div className={`${router.pathname === "/fringe-friday" ? "gap-y-0" : "gap-y-8"} flex flex-col ${router.pathname === "/fringe-friday" || fullbleed ? "" : "m-0 sm:m-8"}`}>
               {children}
             </div>
           </div>            
