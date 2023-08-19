@@ -13,7 +13,7 @@ const content = {
     announcementLinktext: "Read more",
     announcementContent: "MGM+ Renews Sci-Fi Horror Series FROM for Season Three",
     heading: "Chris Tilton",
-    subheading: "Composer. Los Angeles, CA.",
+    subheading: "Composer for television, film, and video games. Based in Los Angeles, CA.",
     ctaPrimaryUrl: null,
     ctaSecondaryUrl: null,
     // EXAMPLE
@@ -128,7 +128,7 @@ export default function Hero(props) {
             }
             {/* Heading */}
             <div className="text-center">
-              <h1 className={"text-5xl font-bold tracking-tight sm:text-6xl text-gray-900" + `${currentContent.darkBG && " text-white"}` }>
+              <h1 className={"text-5xl font-bold tracking-tight sm:text-8xl text-gray-900" + `${currentContent.darkBG && " text-white"}` }>
                 {currentContent.heading}
               </h1>
               {/* Subheading */}
