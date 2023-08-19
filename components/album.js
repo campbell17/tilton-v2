@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import AudioPlayer from './player/audio-player';
 import TrackList from './player/track-list';
-import { projectData } from '../components/gallery/gallery-data';
 
 export default function Album(props) {    
   const [track, setTrack] = useState(props.mappedSongUrl);
@@ -9,7 +8,6 @@ export default function Album(props) {
   const [project, setProject] = useState(props.mappedSongProject);
   const [image, setImage] = useState(props.mappedSongImage);
   const audioPlayer = useRef(null);
-
 
   const trackClickHandler = (event) => {        
     event.preventDefault();
@@ -20,6 +18,11 @@ export default function Album(props) {
       project: event.target.getAttribute('project'),
     };
     onTrackClick(trackData);
+
+    if(event.detail == 2){
+			console.log("Double Clicked");
+		}
+
   } 
   const onTrackClick = (clickedTrack) => {
     const trackinfo = {
@@ -40,5 +43,3 @@ export default function Album(props) {
     </div>
   )
 }
-
-// todo - make CustomAlbum, CustomTrackList, and CustomTrackListItem components to be able to do 1-off albums &shrug;

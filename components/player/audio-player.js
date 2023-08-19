@@ -17,28 +17,25 @@ export default function AudioPlayer (props) {
   const animationRef = useRef(); // reference the animation
   const playerContainer = useRef();
 
+  // Everything INTERSECTION-related is to make the AudioPlayer sticky on scroll
   // Function to handle intersection changes
   const handleIntersection = (entries) => {
     const [entry] = entries;
     setIsIntersecting(entry.isIntersecting);
   };
-
   useEffect(() => {
     // Create the Intersection Observer instance
     const observer = new IntersectionObserver(handleIntersection, {
       root: null, // Use the viewport as the root
       threshold: 1, // 50% intersection required
     });
-
     // Observe the player container
     if (playerContainer.current) {
       observer.observe(playerContainer.current);
     }
-
     // Clean up the observer when the component unmounts
     return () => observer.disconnect();
   });
-  
   // Function to add or remove a class based on intersection status
   const handleIntersectionClass = () => {
     if (isIntersecting) {
@@ -49,11 +46,11 @@ export default function AudioPlayer (props) {
       playerContainer.current.classList.add('pinned');
     }
   };
-
   // Call the function whenever the intersection status changes
   useEffect(() => {
     handleIntersectionClass();
   });  
+
 
   const onLoadedMetaData = () =>
     setTotalAudioTime(audioPlayer.current?.duration);
@@ -63,16 +60,6 @@ export default function AudioPlayer (props) {
     setDuration(seconds);
     progressBar.current.max = seconds;
   }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState]);
-
-  // useEffect(() => {
-  //   // Automatically play the audio when trackSource changes and it's not the first play
-  //   if (!isFirstPlay && props.trackSource) {
-  //     audioPlayer.current.src = props.trackSource;
-  //     audioPlayer.current.load();
-  //     audioPlayer.current.play();
-  //     setIsPlaying(true);
-  //   }
-  // }, [isFirstPlay, props.trackSource]);
 
   const calculateTime = (secs) => {
     const minutes = Math.floor(secs / 60);
@@ -122,17 +109,7 @@ export default function AudioPlayer (props) {
   const forwardThirty = () => {
     progressBar.current.value = Number(progressBar.current.value) + 10;
     changeRange();
-  }    
-  const changeTrack = (newSrc) => {
-    if (audioPlayer.current) {
-      audioPlayer.current.pause();
-      audioPlayer.current.currentTime = 0;
-    }
-    audioPlayer.current.src = newSrc;
-    audioPlayer.current.load();
-    audioPlayer.current.play();
-    setIsPlaying(true);
-  };
+  }
 
   return (
     <div notpinned={props.notpinned} ref={playerContainer} className={`flex flex-col z-[1] ${props.gallery === true || props.notpinned ? "" : "rounded-t-lg"} overflow-hidden ${props.className}`}>
