@@ -101,7 +101,7 @@ export default function Hero(props) {
     : null; // Provide a default value if none of the conditions match
   
   return (
-    <div className={`${currentContent.videoSource1 ? "relative py-12" : currentContent.heroBGStyles}`}> {/* BG image and styles are declared as props */}
+    <div className={`${currentContent.videoSource1 ? "relative py-12 overflow-hidden" : currentContent.heroBGStyles}`}> {/* BG image and styles are declared as props */}
       {/* Video BG if applicable */}
       {currentContent.videoSource1 ?
         <video className="absolute top-0 left-0 object-cover w-screen h-screen" autoPlay muted loop id="bgvid">
