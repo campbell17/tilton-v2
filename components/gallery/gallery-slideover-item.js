@@ -7,6 +7,9 @@ import Hero from '../hero'
 import Album from '../../components/album'
 
 export default function GallerySlideoverItem(props) {
+
+  const buttonColors = `${props.ctaicon === 'Spotify' ? 'bg-[#1DB954]' : props.company === 'MGM+' ? 'bg-[#c7a338]' : props.company === 'Paramount+' ? 'bg-[#0164FF]' : 'bg-indigo-600'}`;
+
   return (
     <Transition.Root show={props.open} appear={true} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={props.setOpen}>
@@ -76,7 +79,7 @@ export default function GallerySlideoverItem(props) {
                               <a
                                 href={props.ctalink}
                                 target="_blank noreferrer"
-                                className={`cursor-pointer flex items-center justify-center rounded-md border border-transparent px-4 py-2 ${props.ctaicon && "pl-2"} text-sm font-medium text-white shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-100 ${!props.ctabrand ? "bg-indigo-600 hover:bg-indigo-700" : props.ctabrand}`}
+                                className={`cursor-pointer flex items-center justify-center rounded-md border border-transparent px-4 py-2 ${props.ctaicon && "pl-2"} text-sm font-medium text-white shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-100 ${buttonColors}`}
                               >
                                 {/* {props.ctaicon != "none" ?
                                   props.cta === "Listen on Spotify" ? <SiSpotify className="h-4 w-4 mr-2 ml-1" color="#ffffff" /> : <PlayCircleIcon className="h-6 w-6 mr-2" aria-hidden="true" />
