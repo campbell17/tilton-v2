@@ -1,6 +1,5 @@
 import Layout from '../components/layout'
 import Gallery from '../components/gallery/gallery'
-import Gallerytest from '../components/gallery/gallerytest'
 import DarkFeature from '../components/dark-feature'
 import Album from '../components/album'
 import LogoCloud from '../components/logo-cloud'
@@ -9,7 +8,8 @@ import { projectsQuery } from '../sanity/lib/sanity.queries'
 
 export default function Home({projects}) {
   const projectArray = projects;
-  
+  const songsArray = projectArray.map(project => project.songs);
+  // console.log(songsArray[0].map(song => song.title));
   const customTracks = [
     {
       "title": "From Main Theme [Excerpt]",
@@ -77,6 +77,15 @@ export default function Home({projects}) {
     <Layout>
       <Album mappedSongUrl={customTracks[0].url} mappedSongProject={customTracks[0].project} mappedSongImage={customTracks[0].image} mappedSongTitle={customTracks[0].title} customTracks={customTracks} />        
       <LogoCloud />
+      <div>
+        {projectArray.map((item) => (
+          <div key={item._id}>
+            {item.songs.map((song) => (
+              <div key={song._id}>{song.title}{song.url}</div>
+            ))}
+          </div>
+        ))}
+      </div>
       <Gallery projectItems={projectArray} gallery isHomepage={true} />        
       <DarkFeature />
     </Layout>

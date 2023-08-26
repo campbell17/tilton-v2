@@ -3,6 +3,9 @@ import TrackListItem from './track-list-item';
 import { projectData } from '../../components/gallery/gallery-data';
 
 export default function TrackList(props) {
+  const projectArray = props.projectItems;
+  // console.log(projectArray);
+
   let tracklist = [];
 
   if (props.customTracks) {
@@ -20,8 +23,8 @@ export default function TrackList(props) {
     ));
   } else {
     tracklist = projectData.map((project) => {
-      if (project.songsdata) {
-        return project.songsdata.map((song, index) => (
+      if (project.songs) {
+        return project.songs.map((song, index) => (
           <TrackListItem
             key={song.url}
             gallery={props.gallery}

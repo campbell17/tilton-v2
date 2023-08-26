@@ -28,7 +28,7 @@ export default function BlurImage(props) {
             ctaicon={props.ctaicon}
             year={props.year}
             desc={props.desc}
-            songsdata={props.songsdata}
+            songs={props.songs}
             mappedsongtitle={props.mappedsongtitle}
             mappedsongurl={props.mappedsongurl}
             layout='responsive'

@@ -5,6 +5,7 @@ import { projectData } from './gallery-data';
 
 export default function Gallery(props) {
   const projectArray = props.projectItems;
+  const [sharedData, setSharedData] = useState(projectArray);
 
   const [open, setOpen] = useState(false);
   const [id, setId] = useState();
@@ -24,6 +25,7 @@ export default function Gallery(props) {
   const [ctaicon, setCtaicon] = useState();
   const [year, setYear] = useState();
   const [desc, setDesc] = useState();
+  const [songs, setSongs] = useState();
   const [mappedSongTitle, setMappedSongTitle] = useState();
   const [mappedSongUrl, setMappedSongUrl] = useState();
 
@@ -36,6 +38,7 @@ export default function Gallery(props) {
     setType(cover.type)
     setId(cover.id)
     setSrc(cover.src)
+    setSongs(cover.songs)
     setCtalink(cover.ctalink)
     setCompany(cover.company)
     setHero(cover.hero)
@@ -49,19 +52,21 @@ export default function Gallery(props) {
     setCtaicon(cover.ctaicon)
     setYear(cover.year)
     setDesc(cover.desc)
+    setSongs(cover.songs)
     setMappedSongTitle(cover.mappedSongTitle)
     setMappedSongUrl(cover.mappedSongUrl)
+
   };
   return (
     <>
-      <GalleryItem onCoverClick={onCoverClick} projectItems={projectArray} isHomepage={props.isHomepage} />
+      <GalleryItem onCoverClick={onCoverClick} sharedData={sharedData} isHomepage={props.isHomepage} />
       <GallerySlideover 
         gallery={props.gallery}
         open={open} 
-        items={props.projectItems} 
+        // items={props.projectItems} 
         setOpen={setOpen} 
         project={project} 
-        projectItems={projectArray}
+        sharedData={sharedData}
         type={type}
         id={id}
         key={id} 
@@ -79,6 +84,7 @@ export default function Gallery(props) {
         ctaicon={ctaicon}
         year={year}
         desc={desc}
+        songs={songs}
         mappedSongTitle={mappedSongTitle}
         mappedSongUrl={mappedSongUrl}
       />

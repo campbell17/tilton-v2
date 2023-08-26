@@ -20,13 +20,15 @@ export default function GalleryItem(props) {
   
   // console.log(mappedProject);
   // console.log(mappedSongTitle);
+  const projectArray = props.sharedData;
+  // console.log(projectArray)
+  // const projectArray = props.projectItems;
+  // const songsArray = projectArray.map(project => project.songs);
 
-  const projectArray = props.projectItems;
-  
   const coverClickHandler = (event) => {
     event.preventDefault();
-    const mappedProject = projectArray.map((data) => (data.songs[0]).title);
-    const mappedUrl = projectArray.map((data) => (data.songs[0]).url);
+    const mappedProject = projectArray.map((data) => (data.songs[0]).title[0]);
+    const mappedUrl = projectArray.map((data) => (data.songs[1].url));
 
     const allData = {
       src: event.target.getAttribute('src'),
@@ -44,6 +46,7 @@ export default function GalleryItem(props) {
       credits: event.target.getAttribute('credits'),
       ctaicon: event.target.getAttribute('ctaicon'),
       ctalink: event.target.getAttribute('ctalink'),
+      songs: event.target.getAttribute('songs'),
       year: event.target.getAttribute('year'),
       desc: event.target.getAttribute('desc'),      
       mappedSongTitle: Array.from(mappedProject)[event.target.getAttribute('id')],
@@ -52,7 +55,8 @@ export default function GalleryItem(props) {
 
     props.onCoverClick(allData);
     refId.current = allData.id;
-    console.log(allData.id);
+    // console.log(allData);
+    // console.log(mappedProject);
   }  
 
   const handleActive = () => {
@@ -191,7 +195,7 @@ export default function GalleryItem(props) {
 
     <ul role="list" ref={refId} className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
     {sortedData.map((data) => (
-      console.log(data),
+      // console.log(data),
       <li key={data._id} className="relative hover:shadow-lg transition-shadow">
         <div style={{ background: 'linear-gradient(171deg, rgba(31,41,55,1) 0%, rgba(0,0,0,1) 36%, rgba(51,65,85,1) 100%)' }} className="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-900 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
           <Link legacyBehavior href={`"#"`}>
@@ -207,6 +211,7 @@ export default function GalleryItem(props) {
                 color={data.color}
                 title={data.title}
                 subtitle={data.subtitle}
+                songs={data.songs}
                 cta={data.cta}
                 ctabrand={data.ctabrand}
                 credits={data.credits}
