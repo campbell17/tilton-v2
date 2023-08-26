@@ -22,9 +22,11 @@ export default function TrackList(props) {
       />
     ));
   } else {
-    tracklist = projectData.map((project) => {
+    tracklist = projectArray.map((project) => {
+      // console.log(project)
       if (project.songs) {
         return project.songs.map((song, index) => (
+          console.log(song),
           <TrackListItem
             key={song.url}
             gallery={props.gallery}
@@ -40,7 +42,7 @@ export default function TrackList(props) {
     });
   }
 
-  const selectedTracklist = tracklist.slice(parseInt(props.id), parseInt(props.id) + 1);
+  const selectedTracklist = tracklist.slice(parseInt(props.index), parseInt(props.index) + 1);
 
   return <>{selectedTracklist}</>;
 }
