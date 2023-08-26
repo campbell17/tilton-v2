@@ -1,22 +1,15 @@
 import Layout from '../components/layout'
 import Gallery from '../components/gallery/gallery'
+import Gallerytest from '../components/gallery/gallerytest'
 import DarkFeature from '../components/dark-feature'
 import Album from '../components/album'
 import LogoCloud from '../components/logo-cloud'
 import sanity from '../sanity/lib/sanity'
-
-
-const query = `*[_type == 'project']{
-  _id,
-  hero,
-  company,
-  type,
-  year,
-  songsdata[]->{title, url}
-}
-`;
+import { projectsQuery } from '../sanity/lib/sanity.queries'
 
 export default function Home({projects}) {
+  const projectArray = projects;
+  
   const customTracks = [
     {
       "title": "From Main Theme [Excerpt]",
@@ -82,14 +75,9 @@ export default function Home({projects}) {
 
   return (
     <Layout>
-       <ul className="list">
-          {projects.map(project => (
-            <li key={project._id}>{project.company}</li>
-         ))}
-        </ul>
       <Album mappedSongUrl={customTracks[0].url} mappedSongProject={customTracks[0].project} mappedSongImage={customTracks[0].image} mappedSongTitle={customTracks[0].title} customTracks={customTracks} />        
       <LogoCloud />
-      <Gallery gallery isHomepage={true} />        
+      <Gallery projectItems={projectArray} gallery isHomepage={true} />        
       <DarkFeature />
     </Layout>
     
@@ -97,7 +85,7 @@ export default function Home({projects}) {
 }
 
 export const getStaticProps = async () => {
-  const projects = await sanity.fetch(query);
+  const projects = await sanity.fetch(projectsQuery);
   return {
     props: { projects } // will be passed to the page component as props
   };

@@ -125,7 +125,7 @@ export const projectData = [
     id: 3, 
     project: "Zoo", 
     type: "TV Series", 
-    company: "", 
+    company: "Paramount+", 
     credits: "",
     src: "/images/cover-art/zoo.jpg", 
     hero: "bg-[url('/images/hero-zoo.jpg')]",

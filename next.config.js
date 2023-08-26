@@ -7,7 +7,7 @@ const nextConfig = {
 module.exports = {
   images: {
     dangerouslyAllowSVG: true,
-    domains: ['images.unsplash.com', 'tailwindui.com', 'christilton.com'],
+    domains: ['images.unsplash.com', 'tailwindui.com', 'christilton.com', 'cdn.sanity.io'],
   },
   webpack: (config) => {
     let modularizeImports = null;

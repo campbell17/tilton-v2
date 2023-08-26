@@ -76,17 +76,6 @@ export default defineType({
     //   // description: `Format: "bg-[url('/images/hero-myimage.jpg')]"`,
     // }),    
     defineField({
-      name: 'color',
-      title: 'Color',
-      type: 'string',
-      description: `Format: "bg-[#HEXHEX]"`,
-    }),
-    defineField({
-      name: 'colortest',
-      title: 'Color test',
-      type: 'color',
-    }),
-    defineField({
       name: 'subtitle',
       title: 'Subtitle',
       type: 'string',
@@ -100,12 +89,6 @@ export default defineType({
       name: 'ctalink',
       title: 'Button link (Slideover)',
       type: 'string',
-    }),    
-    defineField({
-      name: 'ctabrand',
-      title: 'Button color (Slideover)',
-      type: 'string',
-      description: `Format: "bg-[#HEXHEX] hover:bg-[#HEXHEX]"`
     }),    
     defineField({
       name: 'ctaicon',

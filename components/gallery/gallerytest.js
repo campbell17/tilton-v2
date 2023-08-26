@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import GallerySlideover from './gallery-slideover'
 import GalleryItem from './gallery-item'
+import Image from 'next/image';
 import { projectData } from './gallery-data';
 
-export default function Gallery(props) {
-  const projectArray = props.projectItems;
-
+export default function Gallerytest(props) {
   const [open, setOpen] = useState(false);
   const [id, setId] = useState();
   const [project, setProject] = useState();
@@ -52,16 +51,18 @@ export default function Gallery(props) {
     setMappedSongTitle(cover.mappedSongTitle)
     setMappedSongUrl(cover.mappedSongUrl)
   };
+
+  const dataArray = props.projectItems;
+
   return (
     <>
-      <GalleryItem onCoverClick={onCoverClick} projectItems={projectArray} isHomepage={props.isHomepage} />
+      <GalleryItem onCoverClick={onCoverClick} projectItems={props.projectItems} isHomepage={props.isHomepage} />
       <GallerySlideover 
         gallery={props.gallery}
         open={open} 
         items={props.projectItems} 
         setOpen={setOpen} 
         project={project} 
-        projectItems={projectArray}
         type={type}
         id={id}
         key={id} 
@@ -82,6 +83,19 @@ export default function Gallery(props) {
         mappedSongTitle={mappedSongTitle}
         mappedSongUrl={mappedSongUrl}
       />
+      {/* <Image
+        src={props.projectItems[0].cover.url}
+        alt="consoles"
+        width={1080}
+        height={720}
+        className="w-[36rem] max-w-none shadow-xl ring-1 ring-gray-400/10 sm:w-[40rem] md:-ml-4 lg:-ml-0 relative object-cover rounded-2xl"
+      /> */}
+      {dataArray.map((item) => (
+        <div key={item._id}>
+        <h2>{item.project}</h2>
+        <h3>{item.year}</h3>
+        </div>
+      ))}
     </>
   )
 }
