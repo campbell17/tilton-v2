@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
 import Image from "next/legacy/image";
-import { ForwardIcon, BackwardIcon, PlayIcon, PauseIcon, ArrowUturnRightIcon, ArrowUturnLeftIcon } from '@heroicons/react/20/solid'
+import { PlayIcon, PauseIcon, ArrowUturnRightIcon, ArrowUturnLeftIcon } from '@heroicons/react/20/solid'
 
 export default function AudioPlayer (props) {
   // state

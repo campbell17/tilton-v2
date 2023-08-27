@@ -1,14 +1,9 @@
 import { useState } from 'react';
 import GallerySlideover from './gallery-slideover'
 import GalleryItem from './gallery-item'
-import { projectData } from './gallery-data';
 
 export default function Gallery(props) {
   const projectArray = props.projectItems;
-  const songsArray = projectArray.map(projectItem => projectItem.album);
-  const selectedSongs = songsArray == projectArray.project;
-  // console.log(songsArray)
-  // console.log(selectedSongs)
 
   const [open, setOpen] = useState(false);
   const [album, setAlbum] = useState();
@@ -34,39 +29,12 @@ export default function Gallery(props) {
   const [mappedSongTitle, setMappedSongTitle] = useState();
   const [mappedSongUrl, setMappedSongUrl] = useState();
 
-  // const onCoverClick = (data) => {
-  //   setOpen(true)
-  //   setProject(data.project)
-  //   setAlbum(data.album)
-  //   setType(data.type)
-  //   setId(data._id)
-  //   setSrc(data.src)
-  //   setCtalink(data.ctalink)
-  //   setCompany(data.company)
-  //   setHero(data.hero)
-  //   setCover(data.cover)
-  //   setAlt(data.alt)
-  //   setColor(data.color)
-  //   setTitle(data.title)
-  //   setSubtitle(data.subtitle)
-  //   setCta(data.cta)
-  //   setCtabrand(data.ctabrand)
-  //   setCredits(data.credits)
-  //   setCtaicon(data.ctaicon)
-  //   setYear(data.year)
-  //   setDesc(data.desc)
-  //   setSongs(songsArray)
-  //   setMappedSongTitle(data.mappedSongTitle)
-  //   setMappedSongUrl(data.mappedSongUrl)
-
-  // };
-
   const onCoverClick = (data) => {
     setOpen(true);
   
     // Find the clicked project item in the projectArray
     const clickedProjectItem = projectArray.find(item => item._id === data._id);
-    // console.log(clickedProjectItem)
+
     // Set the states based on the clicked project item
     if (clickedProjectItem) {
       setProject(clickedProjectItem.project);
@@ -100,7 +68,6 @@ export default function Gallery(props) {
       <GallerySlideover 
         gallery={props.gallery}
         open={open} 
-        // items={props.projectItems} 
         setOpen={setOpen} 
         project={project} 
         projectItems={projectArray}

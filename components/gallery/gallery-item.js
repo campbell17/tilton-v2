@@ -17,51 +17,6 @@ export default function GalleryItem(props) {
   const refId = useRef(0);
   const projectArray = props.projectItems;
 
-  // const mappedProject = projectData.map((data) => (data.songs[0]).title);
-  // const mappedSongTitle = Array.from(mappedProject)[1];
-  
-  // console.log(mappedProject);
-  // console.log(mappedSongTitle);
-  // console.log(props)
-  // const projectArray = props.projectItems;
-  // const songsArray = projectArray.map(project => project.songs);
-
-  // const coverClickHandler = (event) => {
-  //   event.preventDefault();
-  //   const mappedProject = projectArray[0].songs[0].title;
-  //   const mappedUrl = projectArray[0].songs[0].url;
-  //   console.log(mappedProject)
-  //   console.log(mappedUrl)
-
-  //   const allData = {
-  //     src: event.target.getAttribute('src'),
-  //     company: event.target.getAttribute('company'),
-  //     hero: event.target.getAttribute('hero'),
-  //     id: event.target.getAttribute('_id'),
-  //     project: event.target.getAttribute('project'),
-  //     type: event.target.getAttribute('type'),
-  //     alt: event.target.getAttribute('alt'),
-  //     color: event.target.getAttribute('color'),
-  //     title: event.target.getAttribute('title'),
-  //     subtitle: event.target.getAttribute('subtitle'),
-  //     cta: event.target.getAttribute('cta'),
-  //     ctabrand: event.target.getAttribute('ctabrand'),
-  //     credits: event.target.getAttribute('credits'),
-  //     ctaicon: event.target.getAttribute('ctaicon'),
-  //     ctalink: event.target.getAttribute('ctalink'),
-  //     songs: event.target.getAttribute('songs'),
-  //     year: event.target.getAttribute('year'),
-  //     desc: event.target.getAttribute('desc'),      
-  //     mappedSongTitle: event.target.getAttribute('url'),
-  //     mappedSongUrl: Array.from(mappedUrl)[event.target.getAttribute('url')],
-  //   };
-
-  //   props.onCoverClick(allData);
-  //   refId.current = allData.id;
-  //   console.log(allData);
-  //   // console.log(mappedProject);
-  // }  
-
   const handleActive = () => {
     !active ? null : setActive(!active)
   }
@@ -109,11 +64,6 @@ export default function GalleryItem(props) {
       <Menu as="div" className="flex justify-end relative text-left z-10">
         <div className="mb-2">
           <Menu.Button className="flex items-center rounded-md bg-white p-2 mb-2 text-sm font-semibold text-slate-400 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-            {/* {currentSortOption === "year"
-              ? sortOrder === "ascending"
-                ? sortingOptions.year.ascendingDisplayName
-                : sortingOptions.year.descendingDisplayName
-              : sortingOptions[currentSortOption]} */}
               <p className="uppercase text-xs mr-2 font-medium text-slate-500">Sort</p>
             <ArrowsUpDownIcon
               className="w-4 h-4 mx-0 text-slate-400 hover:text-slate-500"
@@ -159,7 +109,6 @@ export default function GalleryItem(props) {
                   </button>
               </Menu.Item>
               <Menu.Item>
-                {/* {({ active }) => ( */}
                   <button
                     onClick={() => {
                       setCurrentSortOption("project");
@@ -173,7 +122,6 @@ export default function GalleryItem(props) {
                     {sortingOptions.project.displayName}
                     <SortAZ className="w-6 h-6 ml-2 text-slate-400" aria-hidden="true" />
                   </button>
-                {/* )} */}
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
@@ -198,7 +146,6 @@ export default function GalleryItem(props) {
 
     <ul role="list" ref={refId} className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
     {sortedData.map((data) => (
-      // console.log(data),
       <li key={data._id} className="relative hover:shadow-lg transition-shadow">
         <div style={{ background: 'linear-gradient(171deg, rgba(31,41,55,1) 0%, rgba(0,0,0,1) 36%, rgba(51,65,85,1) 100%)' }} className="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-900 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
           <Link legacyBehavior href={`"#"`}>
@@ -208,29 +155,11 @@ export default function GalleryItem(props) {
               onClick={(e) => {
                 e.preventDefault();
                 props.onCoverClick(data);
-                // console.log(data);
               }}>
               <BlurImage      
                 src={data.cover.url} 
                 project={data.project}
                 year={data.year}
-                // company={data.company} 
-                // hero={data.hero.url}
-                // id={data._id}
-                // type={data.type} 
-                // alt={data.alt}  
-                // color={data.color}
-                // title={data.title}
-                // subtitle={data.subtitle}
-                // songs={data.songs}
-                // cta={data.cta}
-                // ctabrand={data.ctabrand}
-                // credits={data.credits}
-                // ctaicon={data.ctaicon}
-                // ctalink={data.ctalink} 
-                // desc={data.desc}
-                // mappedSongTitle={data.mappedSongTitle}
-                // mappedSongUrl={data.mappedSongUrl}
               />
             </a>
           </Link>
