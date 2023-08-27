@@ -4,7 +4,7 @@ export default function GallerySlideover(props, {data}) {
   // const projectArray = props.projectItems;
   const projectArray = props.projectItems;
 
-  console.log(props);
+  console.log(props.album);
 
   return (
     <GallerySlideoverItem

@@ -9,5 +9,5 @@ import songsdata from './schemas/songsdata'
 import songs from './schemas/songs'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [post, author, category, blockContent, project, songs],
+  types: [blockContent, project, songs],
 }

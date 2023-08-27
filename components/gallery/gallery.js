@@ -66,7 +66,7 @@ export default function Gallery(props) {
   
     // Find the clicked project item in the projectArray
     const clickedProjectItem = projectArray.find(item => item._id === data._id);
-    console.log(clickedProjectItem)
+    // console.log(clickedProjectItem)
     // Set the states based on the clicked project item
     if (clickedProjectItem) {
       setProject(clickedProjectItem.project);

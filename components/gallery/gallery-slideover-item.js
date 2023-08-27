@@ -3,14 +3,11 @@ import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon, PlayCircleIcon, ArrowDownTrayIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 import { SiSpotify } from "@icons-pack/react-simple-icons"
 import Image from "next/legacy/image"
-import Hero from '../hero'
 import Album from '../../components/album'
 
 export default function GallerySlideoverItem(props) {
   const projectArray = props.projectItems;
 
-  // console.log(projectArray);
-  // console.log(props);
   const buttonColors = `${props.ctaicon === 'Spotify' ? 'bg-[#1DB954]' : props.company === 'MGM+' ? 'bg-[#c7a338]' : props.company === 'Paramount+' ? 'bg-[#0164FF]' : 'bg-indigo-600'}`;
 
   return (
@@ -84,10 +81,6 @@ export default function GallerySlideoverItem(props) {
                                 target="_blank noreferrer"
                                 className={`cursor-pointer flex items-center justify-center rounded-md border border-transparent px-4 py-2 ${props.ctaicon && "pl-2"} text-sm font-medium text-white shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-100 ${buttonColors}`}
                               >
-                                {/* {props.ctaicon != "none" ?
-                                  props.cta === "Listen on Spotify" ? <SiSpotify className="h-4 w-4 mr-2 ml-1" color="#ffffff" /> : <PlayCircleIcon className="h-6 w-6 mr-2" aria-hidden="true" />
-                                  : null  
-                                } */}
                                 {props.ctaicon === "Spotify" && <SiSpotify className="h-4 w-4 mr-2 ml-1" color="#ffffff" />}
                                 {props.ctaicon === "Play" && <PlayCircleIcon className="h-6 w-6 mr-2" aria-hidden="true" />}
                                 {props.ctaicon === "Download" && <ArrowDownTrayIcon className="h-4 w-4 mr-2" aria-hidden="true" />}
@@ -103,7 +96,7 @@ export default function GallerySlideoverItem(props) {
                     <div className="flex h-auto bg-white">
                       <div className="px-0 py-0 bg-white w-full flex">
                         <dl className="space-y-8 sm:space-y-0 sm:divide-y sm:divide-gray-200 w-full">
-                          {!projectArray ? <div>Loading...</div> : <Album projectItems={projectArray} gallery notpinned={props.notpinned} className="rounded-none" id={props.id} initialSrc={props.songs} selectedIds={props.selectedIds} mappedSongUrl={props.mappedSongUrl} mappedSongTitle={props.mappedSongTitle} />}
+                          <Album album={props.album} projectItems={projectArray} gallery notpinned={props.notpinned} className="rounded-none" id={props.id} initialSrc={props.songs} selectedIds={props.selectedIds} mappedSongUrl={props.mappedSongUrl} mappedSongTitle={props.mappedSongTitle} />
                           
                           <div className="px-6 py-2 sm:py-5">
                             <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">

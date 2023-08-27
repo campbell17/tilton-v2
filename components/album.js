@@ -10,9 +10,7 @@ export default function Album(props) {
   const audioPlayer = useRef(null);
 
   const projectArray = props.projectItems;
-  // console.log(props);
-
-
+  
   const trackClickHandler = (event) => {        
     event.preventDefault();
     const trackData = {
@@ -42,7 +40,7 @@ export default function Album(props) {
     <div>
       <AudioPlayer gallery={props.gallery} className={props.className} notpinned={props.notpinned} forwardRef={audioPlayer} key={track} project={project} image={image} trackName={title} trackSource={track}  />
       <div className={`flex items-stretch flex-col ${props.gallery ? "" : "rounded-b-md"} overflow-hidden`}>
-        <TrackList projectItems={projectArray} gallery={props.gallery} customTracks={props.customTracks} id={props.id} selectedIds={props.selectedIds} trackClickHandler={trackClickHandler} />
+        <TrackList album={props.album} projectItems={projectArray} gallery={props.gallery} customTracks={props.customTracks} id={props.id} selectedIds={props.selectedIds} trackClickHandler={trackClickHandler} />
       </div>
     </div>
   )
