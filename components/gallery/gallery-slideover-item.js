@@ -8,8 +8,9 @@ import Album from '../../components/album'
 
 export default function GallerySlideoverItem(props) {
   const projectArray = props.projectItems;
-  // console.log(projectArray);
 
+  // console.log(projectArray);
+  // console.log(props);
   const buttonColors = `${props.ctaicon === 'Spotify' ? 'bg-[#1DB954]' : props.company === 'MGM+' ? 'bg-[#c7a338]' : props.company === 'Paramount+' ? 'bg-[#0164FF]' : 'bg-indigo-600'}`;
 
   return (
@@ -32,7 +33,7 @@ export default function GallerySlideoverItem(props) {
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-2xl">
                   <div className="flex h-full flex-col relative overflow-y-scroll shadow-xl">
                       {/* Hero BG */}
-                      <div style={{'--image-url': `url(${props.hero})`}} className={`absolute -z-[1] w-full h-96 py-12 bg-cover bg-right ${props.color} bg-[image:var(--image-url)]`}>
+                      <div style={{'--image-url': `url(${props.hero.url})`}} className={`absolute -z-[1] w-full h-96 py-12 bg-cover bg-right ${props.color} bg-[image:var(--image-url)]`}>
                         <div className="relative isolate px-6 lg:px-8">
                           <div className="mx-auto max-w-2xl py-32 sm:py-24 lg:py-12"></div>
                         </div>
@@ -62,7 +63,7 @@ export default function GallerySlideoverItem(props) {
                           
                           {/* Album Cover Image */}
                           <div className="inline-flex overflow-hidden rounded-lg border-4 border-white relative flex-shrink-0 -mt-20 sm:mt-0 h-40 w-40 lg:h-48 lg:w-48">
-                            <ImageLoader src={props.src} alt={props.alt} />
+                            <ImageLoader src={props.cover.url} alt={props.alt} />
                           </div>
 
                           <div className="sm:ml-6 mt-4 sm:mt-0 text-white flex flex-col">
@@ -102,7 +103,7 @@ export default function GallerySlideoverItem(props) {
                     <div className="flex h-auto bg-white">
                       <div className="px-0 py-0 bg-white w-full flex">
                         <dl className="space-y-8 sm:space-y-0 sm:divide-y sm:divide-gray-200 w-full">
-                          {!projectArray ? <div>Loading...</div> : <Album projectItems={projectArray} songs={props.songs} gallery notpinned={props.notpinned} className="rounded-none" id={props.id} initialSrc={props.songs} selectedIds={props.selectedIds} mappedSongUrl={props.mappedSongUrl} mappedSongTitle={props.mappedSongTitle} />}
+                          {!projectArray ? <div>Loading...</div> : <Album projectItems={projectArray} gallery notpinned={props.notpinned} className="rounded-none" id={props.id} initialSrc={props.songs} selectedIds={props.selectedIds} mappedSongUrl={props.mappedSongUrl} mappedSongTitle={props.mappedSongTitle} />}
                           
                           <div className="px-6 py-2 sm:py-5">
                             <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
@@ -162,7 +163,7 @@ export default function GallerySlideoverItem(props) {
     </Transition.Root>
   )
 }
-export function ImageLoader(props) {
+export function ImageLoader(props, {data}) {
   const [isLoading, setLoading] = useState(true)
 
   function classNames(...classes) {

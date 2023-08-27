@@ -1,14 +1,15 @@
 import GallerySlideoverItem from "./gallery-slideover-item"
 
-export default function GallerySlideover(props) {
+export default function GallerySlideover(props, {data}) {
   // const projectArray = props.projectItems;
-  const projectArray = props.sharedData;
+  const projectArray = props.projectItems;
 
-  // console.log(projectArray);
+  console.log(props);
 
   return (
     <GallerySlideoverItem
     {...props}
+    {...data}
     key={props.id}
     projectItems={projectArray}
     />

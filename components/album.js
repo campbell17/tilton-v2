@@ -10,7 +10,7 @@ export default function Album(props) {
   const audioPlayer = useRef(null);
 
   const projectArray = props.projectItems;
-  // console.log(projectArray);
+  // console.log(props);
 
 
   const trackClickHandler = (event) => {        

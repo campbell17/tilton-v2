@@ -15,49 +15,52 @@ export default function GalleryItem(props) {
   const isProjectDescending = currentSortOption === "project" && sortOrder === "descending";  
 
   const refId = useRef(0);
+  const projectArray = props.projectItems;
+
   // const mappedProject = projectData.map((data) => (data.songs[0]).title);
   // const mappedSongTitle = Array.from(mappedProject)[1];
   
   // console.log(mappedProject);
   // console.log(mappedSongTitle);
-  const projectArray = props.sharedData;
-  // console.log(projectArray)
+  // console.log(props)
   // const projectArray = props.projectItems;
   // const songsArray = projectArray.map(project => project.songs);
 
-  const coverClickHandler = (event) => {
-    event.preventDefault();
-    const mappedProject = projectArray.map((data) => (data.songs[0]).title[0]);
-    const mappedUrl = projectArray.map((data) => (data.songs[1].url));
+  // const coverClickHandler = (event) => {
+  //   event.preventDefault();
+  //   const mappedProject = projectArray[0].songs[0].title;
+  //   const mappedUrl = projectArray[0].songs[0].url;
+  //   console.log(mappedProject)
+  //   console.log(mappedUrl)
 
-    const allData = {
-      src: event.target.getAttribute('src'),
-      company: event.target.getAttribute('company'),
-      hero: event.target.getAttribute('hero'),
-      id: event.target.getAttribute('id'),
-      project: event.target.getAttribute('project'),
-      type: event.target.getAttribute('type'),
-      alt: event.target.getAttribute('alt'),
-      color: event.target.getAttribute('color'),
-      title: event.target.getAttribute('title'),
-      subtitle: event.target.getAttribute('subtitle'),
-      cta: event.target.getAttribute('cta'),
-      ctabrand: event.target.getAttribute('ctabrand'),
-      credits: event.target.getAttribute('credits'),
-      ctaicon: event.target.getAttribute('ctaicon'),
-      ctalink: event.target.getAttribute('ctalink'),
-      songs: event.target.getAttribute('songs'),
-      year: event.target.getAttribute('year'),
-      desc: event.target.getAttribute('desc'),      
-      mappedSongTitle: Array.from(mappedProject)[event.target.getAttribute('id')],
-      mappedSongUrl: Array.from(mappedUrl)[event.target.getAttribute('id')],
-    };
+  //   const allData = {
+  //     src: event.target.getAttribute('src'),
+  //     company: event.target.getAttribute('company'),
+  //     hero: event.target.getAttribute('hero'),
+  //     id: event.target.getAttribute('_id'),
+  //     project: event.target.getAttribute('project'),
+  //     type: event.target.getAttribute('type'),
+  //     alt: event.target.getAttribute('alt'),
+  //     color: event.target.getAttribute('color'),
+  //     title: event.target.getAttribute('title'),
+  //     subtitle: event.target.getAttribute('subtitle'),
+  //     cta: event.target.getAttribute('cta'),
+  //     ctabrand: event.target.getAttribute('ctabrand'),
+  //     credits: event.target.getAttribute('credits'),
+  //     ctaicon: event.target.getAttribute('ctaicon'),
+  //     ctalink: event.target.getAttribute('ctalink'),
+  //     songs: event.target.getAttribute('songs'),
+  //     year: event.target.getAttribute('year'),
+  //     desc: event.target.getAttribute('desc'),      
+  //     mappedSongTitle: event.target.getAttribute('url'),
+  //     mappedSongUrl: Array.from(mappedUrl)[event.target.getAttribute('url')],
+  //   };
 
-    props.onCoverClick(allData);
-    refId.current = allData.id;
-    // console.log(allData);
-    // console.log(mappedProject);
-  }  
+  //   props.onCoverClick(allData);
+  //   refId.current = allData.id;
+  //   console.log(allData);
+  //   // console.log(mappedProject);
+  // }  
 
   const handleActive = () => {
     !active ? null : setActive(!active)
@@ -199,28 +202,35 @@ export default function GalleryItem(props) {
       <li key={data._id} className="relative hover:shadow-lg transition-shadow">
         <div style={{ background: 'linear-gradient(171deg, rgba(31,41,55,1) 0%, rgba(0,0,0,1) 36%, rgba(51,65,85,1) 100%)' }} className="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-900 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
           <Link legacyBehavior href={`"#"`}>
-            <a className="blurOnHover" key={data.id} onClick={coverClickHandler}>
-              <BlurImage                 
+            <a 
+              className="blurOnHover" 
+              key={data.id} 
+              onClick={(e) => {
+                e.preventDefault();
+                props.onCoverClick(data);
+                // console.log(data);
+              }}>
+              <BlurImage      
                 src={data.cover.url} 
-                company={data.company} 
-                hero={data.hero.url}
-                id={data.id}
                 project={data.project}
-                type={data.type} 
-                alt={data.alt}  
-                color={data.color}
-                title={data.title}
-                subtitle={data.subtitle}
-                songs={data.songs}
-                cta={data.cta}
-                ctabrand={data.ctabrand}
-                credits={data.credits}
-                ctaicon={data.ctaicon}
-                ctalink={data.ctalink} 
                 year={data.year}
-                desc={data.desc}
-                mappedSongTitle={data.mappedSongTitle}
-                mappedSongUrl={data.mappedSongUrl}
+                // company={data.company} 
+                // hero={data.hero.url}
+                // id={data._id}
+                // type={data.type} 
+                // alt={data.alt}  
+                // color={data.color}
+                // title={data.title}
+                // subtitle={data.subtitle}
+                // songs={data.songs}
+                // cta={data.cta}
+                // ctabrand={data.ctabrand}
+                // credits={data.credits}
+                // ctaicon={data.ctaicon}
+                // ctalink={data.ctalink} 
+                // desc={data.desc}
+                // mappedSongTitle={data.mappedSongTitle}
+                // mappedSongUrl={data.mappedSongUrl}
               />
             </a>
           </Link>

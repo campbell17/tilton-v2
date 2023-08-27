@@ -2,7 +2,7 @@ import { groq } from 'next-sanity'
 
 export const projectsQuery = groq`*[_type == 'project']{
   _id,
-  homepage,
+  homepage == true => {homepage},
   cta,
   ctalink,
   ctabrand,
@@ -16,6 +16,10 @@ export const projectsQuery = groq`*[_type == 'project']{
   project,
   credits,
   subtitle,
-  songs[]->{title, ...track{...asset->{url}}}
+  album{name, "songs": songs[]->{
+    ...track{...asset->{url}},
+    title,
+  }},
 }
+
 `

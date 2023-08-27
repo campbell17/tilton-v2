@@ -59,8 +59,8 @@ export default defineType({
           name: 'alt',
           type: 'string',
           title: 'Alt Text',
-        }
-      ]
+        },
+      ],
     }),
 
     // defineField({
@@ -75,6 +75,12 @@ export default defineType({
     //   type: 'image',
     //   // description: `Format: "bg-[url('/images/hero-myimage.jpg')]"`,
     // }),    
+    // defineField({
+    //   name: 'color',
+    //   title: 'Color',
+    //   type: 'string',
+    //   description: `Format: "bg-[#HEXHEX]"`,
+    // }),
     defineField({
       name: 'subtitle',
       title: 'Subtitle',
@@ -90,6 +96,12 @@ export default defineType({
       title: 'Button link (Slideover)',
       type: 'string',
     }),    
+    // defineField({
+    //   name: 'ctabrand',
+    //   title: 'Button color (Slideover)',
+    //   type: 'string',
+    //   description: `Format: "bg-[#HEXHEX] hover:bg-[#HEXHEX]"`
+    // }),    
     defineField({
       name: 'ctaicon',
       title: 'Button icon (Slideover)',
@@ -107,16 +119,34 @@ export default defineType({
       type: 'text',
     }),    
     defineField({
-      name: 'songs',
-      title: 'Songs',
-      type: 'array',
-      of: [
+      name: 'album',
+      title: 'Album',
+      type: 'object',
+      fields: [
+        {name: 'name', title: 'Name', type: 'string',},
         {
-          type: "reference",
-          to: [{type: 'songs'}]
-        }
-      ]
+          name: 'songs', 
+          title: 'Songs', 
+          type: 'array', 
+          of: [
+            { 
+              type: 'reference', 
+              to: [{type: 'songs'}]
+            }]
+          },
+      ],
     }),
+    // defineField({
+    //   name: 'songs',
+    //   title: 'Songs',
+    //   type: 'array',
+    //   of: [
+    //     {
+    //       type: "reference",
+    //       to: [{type: 'songs'}]
+    //     }
+    //   ]
+    // }),
     // defineField({
     //   name: 'songsdata',
     //   title: 'Songs',

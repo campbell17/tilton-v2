@@ -77,15 +77,6 @@ export default function Home({projects}) {
     <Layout>
       <Album mappedSongUrl={customTracks[0].url} mappedSongProject={customTracks[0].project} mappedSongImage={customTracks[0].image} mappedSongTitle={customTracks[0].title} customTracks={customTracks} />        
       <LogoCloud />
-      <div>
-        {projectArray.map((item) => (
-          <div key={item._id}>
-            {item.songs.map((song) => (
-              <div key={song._id}>{song.title}{song.url}</div>
-            ))}
-          </div>
-        ))}
-      </div>
       <Gallery projectItems={projectArray} gallery isHomepage={true} />        
       <DarkFeature />
     </Layout>

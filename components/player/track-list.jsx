@@ -26,7 +26,7 @@ export default function TrackList(props) {
       // console.log(project)
       if (project.songs) {
         return project.songs.map((song, index) => (
-          console.log(song),
+          // console.log(song),
           <TrackListItem
             key={song.url}
             gallery={props.gallery}
@@ -41,8 +41,13 @@ export default function TrackList(props) {
       }
     });
   }
+  
+  const selectedTracklist = tracklist/* .slice(parseInt(props.id), parseInt(props.id) + 1 )*/;
 
-  const selectedTracklist = tracklist.slice(parseInt(props.index), parseInt(props.index) + 1);
 
+  // console.log(tracklist)
   return <>{selectedTracklist}</>;
 }
+// todo make the selectedTracklist do what it's supposed to - 
+// select ONLY the 1 array of songs from the passed down prop. Gotta figure
+// out which prop will work out of the new set from the Sanity query.

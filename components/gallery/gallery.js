@@ -5,16 +5,21 @@ import { projectData } from './gallery-data';
 
 export default function Gallery(props) {
   const projectArray = props.projectItems;
-  const [sharedData, setSharedData] = useState(projectArray);
+  const songsArray = projectArray.map(projectItem => projectItem.album);
+  const selectedSongs = songsArray == projectArray.project;
+  // console.log(songsArray)
+  // console.log(selectedSongs)
 
   const [open, setOpen] = useState(false);
-  const [id, setId] = useState();
-  const [project, setProject] = useState();
+  const [album, setAlbum] = useState();
+  const [id, setId] = useState(props.projectItems[0]._id);
+  const [project, setProject] = useState(props.projectItems[0].project);
   const [type, setType] = useState();
   const [src, setSrc] = useState();
   const [ctalink, setCtalink] = useState();
   const [company, setCompany] = useState();
-  const [hero, setHero] = useState();
+  const [hero, setHero] = useState(props.projectItems[0].hero.url);
+  const [cover, setCover] = useState(props.projectItems[0].cover.url);
   const [alt, setAlt] = useState();
   const [color, setColor] = useState();
   const [title, setTitle] = useState();
@@ -29,48 +34,81 @@ export default function Gallery(props) {
   const [mappedSongTitle, setMappedSongTitle] = useState();
   const [mappedSongUrl, setMappedSongUrl] = useState();
 
-  const onCoverClick = (clickedCover) => {
-    const cover = {
-      ...clickedCover,
-    };
-    setOpen(true)
-    setProject(cover.project)
-    setType(cover.type)
-    setId(cover.id)
-    setSrc(cover.src)
-    setSongs(cover.songs)
-    setCtalink(cover.ctalink)
-    setCompany(cover.company)
-    setHero(cover.hero)
-    setAlt(cover.alt)
-    setColor(cover.color)
-    setTitle(cover.title)
-    setSubtitle(cover.subtitle)
-    setCta(cover.cta)
-    setCtabrand(cover.ctabrand)
-    setCredits(cover.credits)
-    setCtaicon(cover.ctaicon)
-    setYear(cover.year)
-    setDesc(cover.desc)
-    setSongs(cover.songs)
-    setMappedSongTitle(cover.mappedSongTitle)
-    setMappedSongUrl(cover.mappedSongUrl)
+  // const onCoverClick = (data) => {
+  //   setOpen(true)
+  //   setProject(data.project)
+  //   setAlbum(data.album)
+  //   setType(data.type)
+  //   setId(data._id)
+  //   setSrc(data.src)
+  //   setCtalink(data.ctalink)
+  //   setCompany(data.company)
+  //   setHero(data.hero)
+  //   setCover(data.cover)
+  //   setAlt(data.alt)
+  //   setColor(data.color)
+  //   setTitle(data.title)
+  //   setSubtitle(data.subtitle)
+  //   setCta(data.cta)
+  //   setCtabrand(data.ctabrand)
+  //   setCredits(data.credits)
+  //   setCtaicon(data.ctaicon)
+  //   setYear(data.year)
+  //   setDesc(data.desc)
+  //   setSongs(songsArray)
+  //   setMappedSongTitle(data.mappedSongTitle)
+  //   setMappedSongUrl(data.mappedSongUrl)
 
+  // };
+
+  const onCoverClick = (data) => {
+    setOpen(true);
+  
+    // Find the clicked project item in the projectArray
+    const clickedProjectItem = projectArray.find(item => item._id === data._id);
+    console.log(clickedProjectItem)
+    // Set the states based on the clicked project item
+    if (clickedProjectItem) {
+      setProject(clickedProjectItem.project);
+      setAlbum(clickedProjectItem.album);
+      setType(clickedProjectItem.type);
+      setId(clickedProjectItem._id);
+      setSrc(clickedProjectItem.src);
+      setCtalink(clickedProjectItem.ctalink);
+      setCompany(clickedProjectItem.company);
+      setHero(clickedProjectItem.hero);
+      setCover(clickedProjectItem.cover);
+      setAlt(clickedProjectItem.alt);
+      setColor(clickedProjectItem.color);
+      setTitle(clickedProjectItem.title);
+      setSubtitle(clickedProjectItem.subtitle);
+      setCta(clickedProjectItem.cta);
+      setCtabrand(clickedProjectItem.ctabrand);
+      setCredits(clickedProjectItem.credits);
+      setCtaicon(clickedProjectItem.ctaicon);
+      setYear(clickedProjectItem.year);
+      setDesc(clickedProjectItem.desc);
+      setSongs([clickedProjectItem.album]); // Set only the clicked album in the songs state
+      setMappedSongTitle(clickedProjectItem.album.songs[0].title);
+      setMappedSongUrl(clickedProjectItem.album.songs[0].url);
+    }
   };
+  
   return (
     <>
-      <GalleryItem onCoverClick={onCoverClick} sharedData={sharedData} isHomepage={props.isHomepage} />
+      <GalleryItem onCoverClick={onCoverClick} projectItems={projectArray} isHomepage={props.isHomepage} />
       <GallerySlideover 
         gallery={props.gallery}
         open={open} 
         // items={props.projectItems} 
         setOpen={setOpen} 
         project={project} 
-        sharedData={sharedData}
+        projectItems={projectArray}
         type={type}
         id={id}
         key={id} 
         src={src} 
+        cover={cover}
         ctalink={ctalink} 
         company={company} 
         hero={hero} 
@@ -84,6 +122,7 @@ export default function Gallery(props) {
         ctaicon={ctaicon}
         year={year}
         desc={desc}
+        album={album}
         songs={songs}
         mappedSongTitle={mappedSongTitle}
         mappedSongUrl={mappedSongUrl}

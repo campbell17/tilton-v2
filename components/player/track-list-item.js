@@ -2,8 +2,8 @@ import React from 'react';
 import Image from "next/legacy/image";
 
 export default function TrackListItem(props) {
-  const { index } = props;
-
+  // const { index } = props;
+  // console.log(index)
   return (
     <button
       index={props.index}
