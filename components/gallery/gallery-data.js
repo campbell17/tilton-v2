@@ -313,7 +313,7 @@ export const projectData = [
         "url": "/music/christilton_simcity_02_building-the-foundation_excerpt.mp3" 
       },
       {
-        "title": "Town and Out  [Excerpt]",
+        "title": "Town and Out [Excerpt]",
         "url": "/music/christilton_simcity_03_town-and-out_excerpt.mp3" 
       },
       {
@@ -836,7 +836,7 @@ export const projectData = [
         "url": "/music/christilton_ctoriginal_03_the-road-home-again.mp3"
       },
       {
-        "title": "Fox Hunt",
+        "title": "Fox Unit",
         "url": "/music/christilton_ctoriginal_04_fox-unit.mp3"
       },
       {

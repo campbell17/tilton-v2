@@ -30,6 +30,7 @@ export default defineType({
     defineField({
       name: 'credits',
       title: 'Credits',
+      description: '(optional)',
       type: 'string',
     }),
     defineField({
@@ -43,6 +44,7 @@ export default defineType({
         {
           name: 'alt',
           type: 'string',
+          description: 'What is this an image of?',
           title: 'Alt Text',
         }
       ]
@@ -58,6 +60,7 @@ export default defineType({
         {
           name: 'alt',
           type: 'string',
+          description: 'What is this an image of?',
           title: 'Alt Text',
         },
       ],
@@ -84,6 +87,7 @@ export default defineType({
     defineField({
       name: 'subtitle',
       title: 'Subtitle',
+      description: '(optional)',
       type: 'string',
     }),
     defineField({
@@ -123,7 +127,7 @@ export default defineType({
       title: 'Album',
       type: 'object',
       fields: [
-        {name: 'name', title: 'Name', type: 'string',},
+        {name: 'name', title: 'Name', description: 'MUST match Project name', type: 'string',},
         {
           name: 'songs', 
           title: 'Songs', 
