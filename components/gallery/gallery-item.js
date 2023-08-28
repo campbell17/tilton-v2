@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import BlurImage from './gallery-item-image'
 import { Menu, Transition } from "@headlessui/react";
@@ -13,6 +14,7 @@ export default function GalleryItem(props) {
   const isYearDescending = currentSortOption === "year" && sortOrder === "descending";  
   const isProjectAscending = currentSortOption === "project" && sortOrder === "ascending";  
   const isProjectDescending = currentSortOption === "project" && sortOrder === "descending";  
+  const router = useRouter();
 
   const refId = useRef(0);
   const projectArray = props.projectItems;
@@ -166,7 +168,21 @@ export default function GalleryItem(props) {
         </div>
       </li>
     ))}
-  </ul>
+     {router.pathname === "/" && <li key="more" className="relative hover:shadow-lg transition-shadow">
+        <div style={{ background: 'linear-gradient(171deg, rgba(31,41,55,1) 0%, rgba(0,0,0,1) 36%, rgba(51,65,85,1) 100%)' }} className="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-900 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+          <Link legacyBehavior href="/music">
+            <a 
+              className="blurOnHover">
+              <BlurImage      
+                src="/images/ig-10.jpg" 
+                project="All Projects"
+                year="2003 - Current"
+              />
+            </a>
+          </Link>
+        </div>
+      </li> }
+    </ul>
   </div>    
   )
 }
