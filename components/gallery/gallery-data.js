@@ -9,7 +9,7 @@ export const projectData = [
     src: "/images/cover-art/from.jpg", 
     hero: "bg-[url('/images/hero-from.jpg')]",
     title: "",
-    color: "bg-[#192427]", 
+    color: "bg-[#192427]",  
     subtitle: "",
     cta: "Watch on MGM+",
     ctalink: "https://www.epix.com/series/from",
