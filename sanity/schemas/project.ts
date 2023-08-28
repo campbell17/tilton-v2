@@ -127,7 +127,7 @@ export default defineType({
       title: 'Album',
       type: 'object',
       fields: [
-        {name: 'name', title: 'Name', description: 'MUST match Project name', type: 'string',},
+        {name: 'name', title: 'Name', description: `Click 'Generate' to match the project name, which makes the tracks visible in the slideover`, type: 'slug', options: { source: 'project', slugify: input => input},},
         {
           name: 'songs', 
           title: 'Songs', 
