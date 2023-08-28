@@ -1,3 +1,5 @@
+// This file is no longer referenced. See query in sanity/lib/sanity.queries.js
+
 export const projectData = [
   { 
     homepage: true,

@@ -6,8 +6,8 @@ import post from './schemas/post'
 import author from './schemas/author'
 import project from './schemas/project'
 import songsdata from './schemas/songsdata'
-import songs from './schemas/songs'
+import song from './schemas/song'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [blockContent, project, songs],
+  types: [blockContent, project, song],
 }
