@@ -21,5 +21,10 @@ export const projectsQuery = groq`*[_type == 'project']{
     title,
   }},
 }
-
+`
+export const announcement = groq`*[_type == 'announcement']{
+  url,
+  urltext,
+  content,
+}
 `
