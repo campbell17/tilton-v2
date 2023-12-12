@@ -17,9 +17,8 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Layout( {children, fullbleed} ) {
+export default function Layout( {children, fullbleed, announcementData} ) {
   const router = useRouter();
-
   return (
     <>
       <div className="min-h-full">
@@ -72,7 +71,7 @@ export default function Layout( {children, fullbleed} ) {
           )}
         </Disclosure>
       </div>
-      {router.pathname === "/fringe-friday" ? null : <Hero />}
+      {router.pathname === "/fringe-friday" ? null : <Hero announcementData={announcementData} />}      
       <main className="">
         <div className={`mx-auto max-w-7xl ${router.pathname === "/fringe-friday" ? "p-4" : "px-0 py-0"} sm:py-12 sm:px-6 lg:px-8`}>
           {/* Replace with your content */}

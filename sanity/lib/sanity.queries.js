@@ -22,7 +22,7 @@ export const projectsQuery = groq`*[_type == 'project']{
   }},
 }
 `
-export const announcement = groq`*[_type == 'announcement']{
+export const announcementQuery = groq`*[_type == 'announcement']{
   url,
   urltext,
   content,

@@ -7,6 +7,7 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {colorInput} from '@sanity/color-input'
 import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
+import {myStructure} from './deskStructure'
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import {apiVersion, dataset, projectId} from './sanity/env'
@@ -18,8 +19,10 @@ export default defineConfig({
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
   schema,
-  plugins: [
-    deskTool(),
+  plugins: [    
+    deskTool({
+      structure: myStructure,
+    }),    
     colorInput(),
     vercelDeployTool(),
     // Vision is a tool that lets you query your content with GROQ in the studio

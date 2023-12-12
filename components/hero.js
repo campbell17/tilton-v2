@@ -88,7 +88,7 @@ const aboutpage = content.about;
 
 // I want the return statement to say currentContent.{currentPage}.contentthing
 
-export default function Hero(props) {
+export default function Hero({announcementData}) {
   const router = useRouter();
 
   const currentContent =
@@ -114,17 +114,16 @@ export default function Hero(props) {
           {/* Inner text container */}
           <div className="mx-auto max-w-2xl py-32 sm:py-24">
             {/* Announcement if applicable */}
-            {currentContent.announcementContent != null ? 
+            {currentContent === homepage && 
               <div className="hidden sm:mb-4 sm:flex sm:justify-center">
                 <div className={"transition-all duration-300 relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20" + `${currentContent.darkBG && " text-white ring-gray-100/10 hover:ring-gray-100/20 bg-black/30 hover:bg-black/50"}` }>
-                  {currentContent.announcementContent}{' '}
-                  <a href={currentContent.announcementUrl} target="_blank" rel="noreferrer" className={"font-semibold text-indigo-600" + `${currentContent.darkBG && " text-indigo-300 hover:text-indigo-400 mix-blend-difference"}` }>
+                  {announcementData.content}{' '}
+                  <a href={announcementData.url} target="_blank" rel="noreferrer" className={"font-semibold text-indigo-600" + `${currentContent.darkBG && " text-indigo-300 hover:text-indigo-400 mix-blend-difference"}` }>
                     <span className="absolute inset-0" aria-hidden="true" />
-                    {currentContent.announcementLinktext} <span aria-hidden="true">&rarr;</span>
+                    {announcementData.urltext} <span aria-hidden="true">&rarr;</span>
                   </a>
                 </div>
               </div>
-            : null
             }
             {/* Heading */}
             <div className="text-center">

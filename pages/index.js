@@ -5,10 +5,16 @@ import Album from '../components/album'
 import LogoCloud from '../components/logo-cloud'
 import sanity from '../sanity/lib/sanity'
 import { projectsQuery } from '../sanity/lib/sanity.queries'
+import { announcementQuery } from '../sanity/lib/sanity.queries'
 
-export default function Home({projects}) {
+export default function Home({projects, announce}) {
   const projectArray = projects;
-  const songsArray = projectArray.map(project => project.songs);
+  const announcement = announce;
+  const announcementData = announcement[0];
+  console.log(announcementData);
+  // console.log(announce[0].url);
+
+  // const songsArray = projectArray.map(project => project.songs);
   // console.log(songsArray[0].map(song => song.title));
   const customTracks = [
     {
@@ -74,7 +80,7 @@ export default function Home({projects}) {
   ];
 
   return (
-    <Layout>
+    <Layout announcementData={announcementData}>
       <Album mappedSongUrl={customTracks[0].url} mappedSongProject={customTracks[0].project} mappedSongImage={customTracks[0].image} mappedSongTitle={customTracks[0].title} customTracks={customTracks} />        
       <LogoCloud />
       <Gallery projectItems={projectArray} gallery isHomepage={true} />        
@@ -86,7 +92,8 @@ export default function Home({projects}) {
 
 export const getStaticProps = async () => {
   const projects = await sanity.fetch(projectsQuery);
+  const announce = await sanity.fetch(announcementQuery);
   return {
-    props: { projects } // will be passed to the page component as props
+    props: { projects, announce } // will be passed to the page component as props
   };
 };
