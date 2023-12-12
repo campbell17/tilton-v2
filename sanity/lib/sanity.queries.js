@@ -26,5 +26,6 @@ export const announcementQuery = groq`*[_type == 'announcement']{
   url,
   urltext,
   content,
+  show,
 }
 `

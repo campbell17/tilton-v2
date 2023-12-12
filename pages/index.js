@@ -11,11 +11,7 @@ export default function Home({projects, announce}) {
   const projectArray = projects;
   const announcement = announce;
   const announcementData = announcement[0];
-  console.log(announcementData);
-  // console.log(announce[0].url);
 
-  // const songsArray = projectArray.map(project => project.songs);
-  // console.log(songsArray[0].map(song => song.title));
   const customTracks = [
     {
       "title": "From Main Theme [Excerpt]",
