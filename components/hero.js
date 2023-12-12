@@ -114,7 +114,7 @@ export default function Hero({announcementData}) {
           {/* Inner text container */}
           <div className="mx-auto max-w-2xl py-32 sm:py-24">
             {/* Announcement if applicable */}
-            {announcementData.show === true && 
+            {(currentContent === homepage && announcementData.show === true) &&
               <div className="hidden sm:mb-4 sm:flex sm:justify-center">
                 <div className={"transition-all duration-300 relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20" + `${currentContent.darkBG && " text-white ring-gray-100/10 hover:ring-gray-100/20 bg-black/30 hover:bg-black/50"}` }>
                   {announcementData.content}{' '}
