@@ -1,0 +1,9 @@
+{
+  "redirects": [
+      {
+          "source": "/fringefriday",
+          "destination": "/fringe-friday/",
+          "permanent": true
+      }
+  ]
+}
