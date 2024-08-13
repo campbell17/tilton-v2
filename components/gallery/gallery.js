@@ -23,6 +23,7 @@ export default function Gallery(props) {
   const [ctabrand, setCtabrand] = useState();
   const [credits, setCredits] = useState();
   const [ctaicon, setCtaicon] = useState();
+  const [buttontype, setButtontype] = useState();
   const [year, setYear] = useState();
   const [desc, setDesc] = useState();
   const [songs, setSongs] = useState();
@@ -49,6 +50,7 @@ export default function Gallery(props) {
       setAlt(clickedProjectItem.alt);
       setColor(clickedProjectItem.color);
       setTitle(clickedProjectItem.title);
+      setButtontype(clickedProjectItem.buttontype);
       setSubtitle(clickedProjectItem.subtitle);
       setCta(clickedProjectItem.cta);
       setCtabrand(clickedProjectItem.ctabrand);
@@ -87,6 +89,7 @@ export default function Gallery(props) {
         ctabrand={ctabrand}
         credits={credits}
         ctaicon={ctaicon}
+        buttontype={buttontype}
         year={year}
         desc={desc}
         album={album}

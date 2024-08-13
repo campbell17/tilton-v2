@@ -100,6 +100,23 @@ export default defineType({
       title: 'Button link (Slideover)',
       type: 'string',
     }),    
+    {
+      name: 'buttontype',
+      title: 'Button Type',
+      type: 'string',
+      initialValue: {
+        title: 'Generic'
+      },
+      options: {
+        list: [
+          {title: 'Spotify', value: '[#1DB954]'},
+          {title: 'MGM+', value: '[#c7a338]'},
+          {title: 'Paramount+', value: '[#0164FF]'},
+          {title: 'Apple Music', value: '[#fc3c44]'},
+          {title: 'Generic', value: 'indigo-600'},
+        ],
+      },
+    }, 
     // defineField({
     //   name: 'ctabrand',
     //   title: 'Button color (Slideover)',

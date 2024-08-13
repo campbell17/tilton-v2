@@ -7,6 +7,7 @@ export const projectsQuery = groq`*[_type == 'project']{
   ctalink,
   ctabrand,
   ctaicon,
+  buttontype,
   desc,
   cover{alt, ...asset->{url}},
   hero{alt, ...asset->{url}},
