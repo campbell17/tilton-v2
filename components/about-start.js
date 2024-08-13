@@ -16,7 +16,7 @@ export default function AboutStart() {
               Meet Chris.
             </h1>
             <p className="relative mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-lg">
-              Chris Tilton is a Los Angeles based composer for television, film, and video games. Chris got his start in the industry working as an apprentice for composer Michael Giacchino in 2001. Since then, Chris has taken his experience and passion for storytelling and gone on to write music for several TV series (Fringe, Zoo, Alcatraz) and video games (Assassin's Creed: Unity, SimCity, Mercenaries).
+              Chris Tilton is a Los Angeles based composer for television, film, and video games. Chris got his start in the industry working as an apprentice for composer Michael Giacchino in 2001. Since then, Chris has taken his experience and passion for storytelling and gone on to write music for several TV series (Fringe, Zoo, Alcatraz) and video games (Assassin&rsquo;s Creed: Unity, SimCity, Mercenaries).
             </p>
           </div>
           <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
