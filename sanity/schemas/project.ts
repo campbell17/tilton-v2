@@ -105,7 +105,7 @@ export default defineType({
       title: 'Button Type',
       type: 'string',
       initialValue: {
-        title: 'Generic'
+        title: 'indigo-600'
       },
       options: {
         list: [
