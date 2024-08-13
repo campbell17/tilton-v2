@@ -26,6 +26,7 @@ export default function BlurImage(props) {
             ctabrand={props.ctabrand}
             credits={props.credits}
             ctaicon={props.ctaicon}
+            buttontype={props.buttontype}
             year={props.year}
             desc={props.desc}
             songs={props.songs}
