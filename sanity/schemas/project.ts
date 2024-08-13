@@ -106,7 +106,7 @@ export default defineType({
           {title: 'Spotify', value: '[#1DB954]'},
           {title: 'MGM+', value: '[#c7a338]'},
           {title: 'Paramount+', value: '[#0164FF]'},
-          {title: 'Apple Music', value: '[#fc3c44]'},
+          {title: 'Apple Music', value: '[#FC3C44]'},
         ],
       },
     }), 
