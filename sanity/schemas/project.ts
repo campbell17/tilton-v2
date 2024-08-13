@@ -99,9 +99,7 @@ export default defineType({
       name: 'buttontype',
       title: 'Button Color',
       type: 'string',
-      initialValue: {
-        title: 'indigo-600'
-      },
+      initialValue: 'indigo-600',
       options: {
         list: [
           {title: 'Default', value: 'indigo-600'},
