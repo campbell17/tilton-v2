@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon, PlayCircleIcon, ArrowDownTrayIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
-import { SiSpotify } from "@icons-pack/react-simple-icons"
+import { SiSpotify, SiApplemusic } from "@icons-pack/react-simple-icons"
 import Image from "next/legacy/image"
 import Album from '../../components/album'
 
@@ -82,12 +82,26 @@ export default function GallerySlideoverItem(props) {
                                 className={`cursor-pointer flex items-center justify-center rounded-md border border-transparent px-4 py-2 ${props.ctaicon && "pl-2"} text-sm font-medium text-white shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-100 bg-${props.buttontype}`}
                               >
                                 {props.ctaicon === "Spotify" && <SiSpotify className="h-4 w-4 mr-2 ml-1" color="#ffffff" />}
+                                {props.ctaicon === "Apple" && <SiApplemusic className="h-4 w-4 mr-2 ml-1" color="#ffffff" />}
                                 {props.ctaicon === "Play" && <PlayCircleIcon className="h-6 w-6 mr-2" aria-hidden="true" />}
                                 {props.ctaicon === "Download" && <ArrowDownTrayIcon className="h-4 w-4 mr-2" aria-hidden="true" />}
                                 {props.ctaicon === "Learn" && <ArrowTopRightOnSquareIcon className="h-5 w-5 mr-2 ml-1" aria-hidden="true" />}
                                 {props.cta}
                               </a>
-
+                              {props.ctaalt &&
+                              <a
+                                href={props.ctalink}
+                                target="_blank noreferrer"
+                                className={`cursor-pointer flex items-center justify-center rounded-md border border-transparent px-4 py-2 ${props.ctaicon && "pl-2"} text-sm font-medium text-white shadow-sm hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-100 bg-${props.buttontype}`}
+                              >
+                                {props.ctaicon === "Spotify" && <SiSpotify className="h-4 w-4 mr-2 ml-1" color="#ffffff" />}
+                                {props.ctaicon === "Apple" && <SiApplemusic className="h-4 w-4 mr-2 ml-1" color="#ffffff" />}
+                                {props.ctaicon === "Play" && <PlayCircleIcon className="h-6 w-6 mr-2" aria-hidden="true" />}
+                                {props.ctaicon === "Download" && <ArrowDownTrayIcon className="h-4 w-4 mr-2" aria-hidden="true" />}
+                                {props.ctaicon === "Learn" && <ArrowTopRightOnSquareIcon className="h-5 w-5 mr-2 ml-1" aria-hidden="true" />}
+                                {props.cta}
+                              </a>
+                              }
                             </div>}
                           </div>
                         </div>
