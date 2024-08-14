@@ -111,7 +111,7 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'ctaFieldset',
+      name: 'ctaalt',
       title: 'Call to Action (Slideover)',
       type: 'object',
       fields: [
