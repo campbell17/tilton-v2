@@ -12,7 +12,6 @@ export default function BlurImage(props) {
         <div style={{ aspectRatio: '1', overflow: 'hidden', borderRadius: 8, position: "relative" }}>
           <Image
             src={props.src} 
-            ctalink={props.ctalink} 
             company={props.company} 
             hero={props.hero}
             id={props.id} 
@@ -23,10 +22,15 @@ export default function BlurImage(props) {
             title={props.title}
             subtitle={props.subtitle}
             cta={props.cta}
+            ctalink={props.ctalink} 
+            ctaicon={props.ctaicon}
+            ctaalt={props.ctaalt}
+            ctalinkalt={props.ctalinkalt} 
+            ctaiconalt={props.ctaiconalt}
+            buttontype={props.buttontype}
+            buttontypealt={props.buttontypealt}
             ctabrand={props.ctabrand}
             credits={props.credits}
-            ctaicon={props.ctaicon}
-            buttontype={props.buttontype}
             year={props.year}
             desc={props.desc}
             songs={props.songs}
