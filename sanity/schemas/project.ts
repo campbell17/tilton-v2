@@ -112,49 +112,42 @@ export default defineType({
     }),
     defineField({
       name: 'ctaalt',
-      title: 'Call to Action (Slideover)',
-      type: 'object',
-      fields: [
-        defineField({
-          name: 'ctaalt',
-          title: 'Button text (Slideover)',
-          type: 'string',
-        }),    
-        defineField({
-          name: 'buttontype',
-          title: 'Button Color',
-          type: 'string',
-          initialValue: 'indigo-600',
-          options: {
-            list: [
-              {title: 'Default', value: 'indigo-600'},
-              {title: 'Spotify', value: '[#1DB954]'},
-              {title: 'MGM+', value: '[#c7a338]'},
-              {title: 'Apple Music', value: '[#FC3C44]'},
-              {title: 'Paramount+', value: '[#0164FF]'},
-            ],
-          },
-        }), 
-        defineField({
-          name: 'ctalink',
-          title: 'Button link (Slideover)',
-          type: 'string',
-        }),    
-        defineField({
-          name: 'ctaicon',
-          title: 'Button icon (Slideover)',
-          type: 'string',
-          options: {
-            list: [
-              {title: 'Apple', value: 'Apple'},
-              {title: 'Spotify', value: 'Spotify'},
-              {title: 'Play', value: 'Play'},
-              {title: 'Download', value: 'Download'},
-              {title: 'Learn', value: '[#fc3c44]'},
-            ],
-          },
-        }),
-      ],
+      title: 'Alternate Button text (Slideover)',
+      type: 'string',
+    }),    
+    defineField({
+      name: 'buttontypealt',
+      title: 'Alternate Button Color',
+      type: 'string',
+      initialValue: 'indigo-600',
+      options: {
+        list: [
+          {title: 'Default', value: 'indigo-600'},
+          {title: 'Spotify', value: '[#1DB954]'},
+          {title: 'MGM+', value: '[#c7a338]'},
+          {title: 'Apple Music', value: '[#FC3C44]'},
+          {title: 'Paramount+', value: '[#0164FF]'},
+        ],
+      },
+    }), 
+    defineField({
+      name: 'ctalinkalt',
+      title: 'Alternate Button link (Slideover)',
+      type: 'string',
+    }),    
+    defineField({
+      name: 'ctaiconalt',
+      title: 'Alternate Button icon (Slideover)',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Apple', value: 'Apple'},
+          {title: 'Spotify', value: 'Spotify'},
+          {title: 'Play', value: 'Play'},
+          {title: 'Download', value: 'Download'},
+          {title: 'Learn', value: '[#fc3c44]'},
+        ],
+      },
     }),
     
     defineField({
