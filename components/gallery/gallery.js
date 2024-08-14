@@ -88,7 +88,6 @@ export default function Gallery(props) {
         key={id} 
         src={src} 
         cover={cover}
-        ctalink={ctalink} 
         company={company} 
         hero={hero} 
         alt={alt}  
@@ -96,10 +95,16 @@ export default function Gallery(props) {
         title={title}
         subtitle={subtitle}
         cta={cta}
+        ctalink={ctalink} 
         ctabrand={ctabrand}
         credits={credits}
         ctaicon={ctaicon}
         buttontype={buttontype}
+        ctaalt={ctaalt}
+        ctalinkalt={ctalinkalt} 
+        ctabrandalt={ctabrandalt}
+        ctaiconalt={ctaiconalt}
+        buttontypealt={buttontypealt}
         year={year}
         desc={desc}
         album={album}
