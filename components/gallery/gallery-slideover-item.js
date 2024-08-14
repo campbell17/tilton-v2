@@ -74,8 +74,8 @@ export default function GallerySlideoverItem(props) {
                             </div>
                             
                             {/* Project CTA */}
-                            {props.cta &&
                             <div className="mt-5 flex justify-center sm:justify-start flex-wrap space-y-3 sm:space-y-0 sm:space-x-3">
+                            {props.cta &&
                               <a
                                 href={props.ctalink}
                                 target="_blank noreferrer"
@@ -88,6 +88,7 @@ export default function GallerySlideoverItem(props) {
                                 {props.ctaicon === "Learn" && <ArrowTopRightOnSquareIcon className="h-5 w-5 mr-2 ml-1" aria-hidden="true" />}
                                 {props.cta}
                               </a>
+                              }
                               {props.ctaalt &&
                               <a
                                 href={props.ctalinkalt}
@@ -102,7 +103,7 @@ export default function GallerySlideoverItem(props) {
                                 {props.ctaalt}
                               </a>
                               }
-                            </div>}
+                            </div>
                           </div>
                         </div>
                       </div>
