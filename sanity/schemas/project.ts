@@ -84,10 +84,10 @@ export default defineType({
       options: {
         list: [
           {title: 'Default', value: 'indigo-600'},
-          {title: 'Spotify', value: '[#1DB954]'},
-          {title: 'MGM+', value: '[#c7a338]'},
-          {title: 'Apple Music', value: '[#FC3C44]'},
-          {title: 'Paramount+', value: '[#0164FF]'},
+          {title: 'Spotify', value: 'spotify'},
+          {title: 'MGM+', value: 'mgm'},
+          {title: 'Apple Music', value: 'apple-music'},
+          {title: 'Paramount+', value: 'paramount'},
         ],
       },
     }), 
@@ -123,10 +123,10 @@ export default defineType({
       options: {
         list: [
           {title: 'Default', value: 'indigo-600'},
-          {title: 'Spotify', value: '[#1DB954]'},
-          {title: 'MGM+', value: '[#c7a338]'},
-          {title: 'Apple Music', value: '[#FC3C44]'},
-          {title: 'Paramount+', value: '[#0164FF]'},
+          {title: 'Spotify', value: 'spotify'},
+          {title: 'MGM+', value: 'mgm'},
+          {title: 'Apple Music', value: 'apple-music'},
+          {title: 'Paramount+', value: 'paramount'},
         ],
       },
     }), 
