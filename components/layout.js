@@ -74,13 +74,11 @@ export default function Layout( {children, fullbleed, announcementData} ) {
       {router.pathname === "/fringe-friday" ? null : <Hero announcementData={announcementData} />}      
       <main className="">
         <div className={`mx-auto max-w-7xl ${router.pathname === "/fringe-friday" ? "p-4" : "px-0 py-0"} sm:py-12 sm:px-6 lg:px-8`}>
-          {/* Replace with your content */}
           <div className={`bg-white shadow ${router.pathname === "/fringe-friday" || fullbleed ? "p-0" : "py-12 sm:py-2 px-4"} rounded-none sm:rounded-xl sm:px-0`}>
             <div className={`${router.pathname === "/fringe-friday" ? "gap-y-0" : "gap-y-8"} flex flex-col ${router.pathname === "/fringe-friday" || fullbleed ? "" : "m-0 sm:m-8"}`}>
               {children}
             </div>
           </div>            
-          {/* /End replace */}
         </div>
       </main>
       {router.pathname === "/fringe-friday" ? <Footer light /> : <Footer />}
