@@ -70,7 +70,7 @@ export default function ContentPhotos() {
               <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
                 <div className="aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 relative">
                   <Image
-                    src="/images/ig-12.jpg"
+                    src="/images/igpup-2.jpg"
                     alt="consoles"
                     width={1440}
                     height={1080}

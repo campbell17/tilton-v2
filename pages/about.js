@@ -8,8 +8,6 @@ export default function About() {
   return (
     <Layout fullbleed>
       <AboutStart />
-      <Testimonial />
-      <Feature />      
       <ContentPhotos />
     </Layout>
   )
