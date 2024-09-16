@@ -1,5 +1,5 @@
 import Image from "next/legacy/image"
-import testimonialPic from '../public/images/about/testimonial.jpg'
+import testimonialPic from '../public/images/about/testimonial2.jpg'
 
 export default function Testimonial() {
   return (
