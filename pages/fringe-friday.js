@@ -14,27 +14,30 @@ export default function FringeFriday({ fringeFridayData }) {
       fridayMidnight.setDate(fridayMidnight.getDate() + (5 + 7 - fridayMidnight.getDay()) % 7);
       fridayMidnight.setHours(0, 0, 0, 0);
 
-      const storedTrack = localStorage.getItem('fringeFridayTrack');
-      const storedExpiry = localStorage.getItem('fringeFridayExpiry');
-
-      if (storedTrack && storedExpiry && new Date(storedExpiry) > now) {
-        // Use the stored track if it's still valid
-        setSelectedTrack(JSON.parse(storedTrack));
+      let newTrack;
+      // Check if there's a manually selected track in Sanity
+      if (fringeFridayData.currentTrack !== undefined && fringeFridayData.songs[fringeFridayData.currentTrack]) {
+        newTrack = fringeFridayData.songs[fringeFridayData.currentTrack];
       } else {
-        // Check if there's a manually selected track
-        if (fringeFridayData.currentTrack && fringeFridayData.currentTrack.trackName) {
-          setSelectedTrack(fringeFridayData.currentTrack);
+        // If no manual selection, check localStorage
+        const storedTrack = localStorage.getItem('fringeFridayTrack');
+        const storedExpiry = localStorage.getItem('fringeFridayExpiry');
+
+        if (storedTrack && storedExpiry && new Date(storedExpiry) > now) {
+          // Use the stored track if it's still valid
+          newTrack = JSON.parse(storedTrack);
         } else {
           // Select a random track
           const newTrackIndex = Math.floor(Math.random() * fringeFridayData.songs.length);
-          const newTrack = fringeFridayData.songs[newTrackIndex];
-          setSelectedTrack(newTrack);
+          newTrack = fringeFridayData.songs[newTrackIndex];
         }
-
-        // Store the new track and its expiry
-        localStorage.setItem('fringeFridayTrack', JSON.stringify(selectedTrack));
-        localStorage.setItem('fringeFridayExpiry', fridayMidnight.toISOString());
       }
+
+      setSelectedTrack(newTrack);
+
+      // Always update localStorage with the current selection
+      localStorage.setItem('fringeFridayTrack', JSON.stringify(newTrack));
+      localStorage.setItem('fringeFridayExpiry', fridayMidnight.toISOString());
     };
 
     selectTrackForWeek();
