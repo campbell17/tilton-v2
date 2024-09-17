@@ -17,7 +17,6 @@ export default defineType({
     }),
   ]
 })
-
 //   name: 'songs',
 //   title: 'Songs',
 //   type: 'file',

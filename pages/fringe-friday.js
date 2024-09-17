@@ -7,25 +7,42 @@ import { fringeFridayQuery } from '../sanity/lib/sanity.queries'
 export default function FringeFriday({ fringeFridayData }) {
   const [selectedTrack, setSelectedTrack] = useState(null);
 
-  const getRandomTrack = () => {
-    const randomIndex = Math.floor(Math.random() * fringeFridayData.songs.length);
-    return fringeFridayData.songs[randomIndex];
-  };
-
-  const updateTrackOnFriday = () => {
-    const today = new Date();
-    const isFriday = today.getDay() === 5;
-    
-    if (isFriday || !selectedTrack) {
-      setSelectedTrack(getRandomTrack());
-    }
-  };
-
   useEffect(() => {
-    updateTrackOnFriday();
-    const interval = setInterval(updateTrackOnFriday, 24 * 60 * 60 * 1000);
+    const selectTrackForWeek = () => {
+      const now = new Date();
+      const fridayMidnight = new Date(now);
+      fridayMidnight.setDate(fridayMidnight.getDate() + (5 + 7 - fridayMidnight.getDay()) % 7);
+      fridayMidnight.setHours(0, 0, 0, 0);
+
+      const storedTrack = localStorage.getItem('fringeFridayTrack');
+      const storedExpiry = localStorage.getItem('fringeFridayExpiry');
+
+      if (storedTrack && storedExpiry && new Date(storedExpiry) > now) {
+        // Use the stored track if it's still valid
+        setSelectedTrack(JSON.parse(storedTrack));
+      } else {
+        // Check if there's a manually selected track
+        if (fringeFridayData.currentTrack && fringeFridayData.currentTrack.trackName) {
+          setSelectedTrack(fringeFridayData.currentTrack);
+        } else {
+          // Select a random track
+          const newTrackIndex = Math.floor(Math.random() * fringeFridayData.songs.length);
+          const newTrack = fringeFridayData.songs[newTrackIndex];
+          setSelectedTrack(newTrack);
+        }
+
+        // Store the new track and its expiry
+        localStorage.setItem('fringeFridayTrack', JSON.stringify(selectedTrack));
+        localStorage.setItem('fringeFridayExpiry', fridayMidnight.toISOString());
+      }
+    };
+
+    selectTrackForWeek();
+    // Set up an interval to check every hour if we need to update the track
+    const interval = setInterval(selectTrackForWeek, 60 * 60 * 1000);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [fringeFridayData]);
 
   if (!selectedTrack) {
     return <Layout><div>Loading...</div></Layout>;
@@ -60,6 +77,6 @@ export async function getStaticProps() {
   const fringeFridayData = await sanity.fetch(fringeFridayQuery);
   return {
     props: { fringeFridayData },
-    revalidate: 60 * 60 * 24, // Revalidate once per day
+    revalidate: 60 * 60, // Revalidate every hour
   };
 }

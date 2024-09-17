@@ -41,5 +41,10 @@ export const fringeFridayQuery = groq`*[_type == 'fringeFriday'][0]{
   "songs": songs[]{
     trackName,
     "trackSource": trackSource.asset->url
-  }
+  },
+  currentTrack{
+    trackName,
+    "trackSource": trackSource.asset->url
+  },
+  lastUpdated
 }`

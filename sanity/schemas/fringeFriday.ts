@@ -24,5 +24,20 @@ export default defineType({
         },
       ],
     }),
+    defineField({
+      name: 'currentTrack',
+      title: 'Current Track (Optional)',
+      type: 'object',
+      fields: [
+        {name: 'trackName', title: 'Track Name', type: 'string'},
+        {name: 'trackSource', title: 'Track Source', type: 'file'},
+      ],
+      description: 'Optionally select a specific track for this week. Leave empty for random selection.',
+    }),
+    defineField({
+      name: 'lastUpdated',
+      title: 'Last Updated',
+      type: 'datetime',
+    }),
   ],
 })
