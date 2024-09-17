@@ -1,45 +1,38 @@
 import { useState, useEffect } from 'react';
 import Layout from '../components/layout'
 import AudioPlayer from '../components/player/audio-player'
-import Hero from '../components/hero'
-import fringeTracks from '../components/fringe-tracks'
+import sanity from '../sanity/lib/sanity'
+import { fringeFridayQuery } from '../sanity/lib/sanity.queries'
 
-export default function FringeFriday() {
+export default function FringeFriday({ fringeFridayData }) {
+  const [selectedTrack, setSelectedTrack] = useState(null);
+
   const getRandomTrack = () => {
-    const randomIndex = Math.floor(Math.random() * fringeTracks.length);
-    return fringeTracks[randomIndex];
+    const randomIndex = Math.floor(Math.random() * fringeFridayData.songs.length);
+    return fringeFridayData.songs[randomIndex];
   };
-  
-  // State to hold the selected track
-  const [selectedTrack, setSelectedTrack] = useState(getRandomTrack());
-  
-  // Function to update the selected track every Friday
+
   const updateTrackOnFriday = () => {
     const today = new Date();
-    const isFriday = today.getDay() === 5; // Friday is represented by the number 5 in JavaScript's Date object
+    const isFriday = today.getDay() === 5;
     
-    if (isFriday) {
+    if (isFriday || !selectedTrack) {
       setSelectedTrack(getRandomTrack());
     }
   };
-  
-  // useEffect hook to run the update function when the component mounts and every day at midnight
+
   useEffect(() => {
     updateTrackOnFriday();
-    const interval = setInterval(updateTrackOnFriday, 24 * 60 * 60 * 1000); // 24 hours interval
+    const interval = setInterval(updateTrackOnFriday, 24 * 60 * 60 * 1000);
     return () => clearInterval(interval);
-  });
-  
+  }, []);
+
+  if (!selectedTrack) {
+    return <Layout><div>Loading...</div></Layout>;
+  }
 
   return (
     <Layout>
-      {/* <Hero 
-        darkBG
-        heroBGStyles="bg-blue-800 py-12 bg-cover bg-top bg-[url('/images/hero-fringe-friday.jpg')]"
-        heading="Fringe Friday" 
-        subheading="Take a listen to the Other Side every Friday."
-      /> */}
-
       <div className="bg-blue-800 py-12 bg-cover bg-top bg-[url('/images/hero-fringe-friday.jpg')] rounded-t-lg">
         <div className="relative isolate px-6 lg:px-8">
           <div className="mx-auto max-w-2xl py-32 sm:py-24 lg:py-12">
@@ -61,4 +54,12 @@ export default function FringeFriday() {
       />    
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const fringeFridayData = await sanity.fetch(fringeFridayQuery);
+  return {
+    props: { fringeFridayData },
+    revalidate: 60 * 60 * 24, // Revalidate once per day
+  };
 }

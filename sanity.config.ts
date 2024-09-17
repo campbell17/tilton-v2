@@ -21,7 +21,18 @@ export default defineConfig({
   schema,
   plugins: [    
     deskTool({
-      structure: myStructure,
+      structure: (S) =>
+        myStructure(S)
+          .items([
+            ...S.documentTypeListItems().filter(listItem => !['fringeFriday'].includes(listItem.getId())),
+            S.listItem()
+              .title('Fringe Friday')
+              .child(
+                S.document()
+                  .schemaType('fringeFriday')
+                  .documentId('fringeFriday')
+              ),
+          ]),
     }),    
     colorInput(),
     vercelDeployTool(),

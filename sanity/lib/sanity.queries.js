@@ -35,3 +35,11 @@ export const announcementQuery = groq`*[_type == 'announcement']{
   show,
 }
 `
+
+export const fringeFridayQuery = groq`*[_type == 'fringeFriday'][0]{
+  title,
+  "songs": songs[]{
+    trackName,
+    "trackSource": trackSource.asset->url
+  }
+}`

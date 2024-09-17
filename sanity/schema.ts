@@ -7,7 +7,8 @@ import author from './schemas/author'
 import project from './schemas/project'
 import songsdata from './schemas/songsdata'
 import song from './schemas/song'
+import fringeFriday from './schemas/fringeFriday'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [blockContent, announcement, project, song],
+  types: [blockContent, announcement, project, song, fringeFriday],
 }
