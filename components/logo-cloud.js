@@ -13,10 +13,10 @@ export default function LogoCloud() {
               height={64}
             />
           </div>
-          <div className="relative col-span-2 object-contain lg:col-span-1">
-            <Image              
-              src="/images/logos/logo-lucasfilm.png"
-              alt="Lucasfilm Games"
+          <div className="relative col-span-2 object-contain lg:col-span-2">
+            <Image
+              src="/images/logos/logo-ubisoft.png"
+              alt="Ubisoft"
               width={158}
               height={48}
             />
@@ -61,10 +61,10 @@ export default function LogoCloud() {
               height={64}
             />
           </div>
-          <div className="relative col-span-2 object-contain lg:col-span-2">
-            <Image
-              src="/images/logos/logo-ubisoft.png"
-              alt="Ubisoft"
+          <div className="relative col-span-2 object-contain lg:col-span-1">
+            <Image              
+              src="/images/logos/logo-lucasfilm.png"
+              alt="Lucasfilm Games"
               width={158}
               height={48}
             />
