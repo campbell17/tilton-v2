@@ -7,40 +7,43 @@ export default function Album(props) {
   const [title, setTitle] = useState(props.mappedSongTitle);
   const [project, setProject] = useState(props.mappedSongProject);
   const [image, setImage] = useState(props.mappedSongImage);
+  const [shouldPlay, setShouldPlay] = useState(false);
   const audioPlayer = useRef(null);
 
   const projectArray = props.projectItems;
   
-  const trackClickHandler = (event) => {        
-    event.preventDefault();
-    const trackData = {
-      track: event.target.getAttribute('url'),
-      title: event.target.getAttribute('title'),
-      image: event.target.getAttribute('image'),
-      project: event.target.getAttribute('project'),
-    };
-    onTrackClick(trackData);
-
-    if(event.detail == 2){
-			console.log("Double Clicked");
-		}
-
+  const trackClickHandler = (trackData) => {        
+    setTrack(trackData.url);
+    setTitle(trackData.title);
+    setImage(trackData.image);
+    setProject(trackData.project);
+    setShouldPlay(trackData.shouldPlay);
   } 
-  const onTrackClick = (clickedTrack) => {
-    const trackinfo = {
-      ...clickedTrack,
-    };
 
-    setTrack(trackinfo.track)
-    setTitle(trackinfo.title)
-    setImage(trackinfo.image)
-    setProject(trackinfo.project)
-  };
   return (
     <div>
-      <AudioPlayer gallery={props.gallery} className={props.className} notpinned={props.notpinned} forwardRef={audioPlayer} key={track} project={project} image={image} trackName={title} trackSource={track}  />
+      <AudioPlayer 
+        gallery={props.gallery} 
+        className={props.className} 
+        notpinned={props.notpinned} 
+        forwardRef={audioPlayer} 
+        key={track} 
+        project={project} 
+        image={image} 
+        trackName={title} 
+        trackSource={track}
+        shouldPlay={shouldPlay}
+      />
       <div className={`flex items-stretch flex-col ${props.gallery ? "" : "rounded-b-md"} overflow-hidden`}>
-        <TrackList album={props.album} projectItems={projectArray} gallery={props.gallery} customTracks={props.customTracks} id={props.id} selectedIds={props.selectedIds} trackClickHandler={trackClickHandler} />
+        <TrackList 
+          album={props.album} 
+          projectItems={projectArray} 
+          gallery={props.gallery} 
+          customTracks={props.customTracks} 
+          id={props.id} 
+          selectedIds={props.selectedIds} 
+          trackClickHandler={trackClickHandler} 
+        />
       </div>
     </div>
   )

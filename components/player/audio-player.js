@@ -111,6 +111,13 @@ export default function AudioPlayer (props) {
     changeRange();
   }
 
+  useEffect(() => {
+    if (props.shouldPlay) {
+      audioPlayer.current.play();
+      setIsPlaying(true);
+    }
+  }, [props.trackSource, props.shouldPlay]);
+
   return (
     <div notpinned={props.notpinned} ref={playerContainer} className={`flex flex-col z-[1] ${props.gallery === true || props.notpinned ? "" : "rounded-t-lg"} overflow-hidden ${props.className}`}>
       <div className={`${props.fringe ? "rounded-b-lg" : null} text-white items-center justify-between isolate bg-gray-900 gap-2 flex flex-col p-4 shadow-2xl ${props.gallery === true ? "px-6" : ""}`}>
