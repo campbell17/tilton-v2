@@ -69,6 +69,9 @@ export default function GallerySlideoverItem(props) {
                               {/* Project title */}
                               <h3 className="text-xl font-bold sm:text-2xl">{props.project}</h3>
 
+                              {/* Project company */}
+                              <p className="text-sm">{props.company}</p>
+
                               {/* Project subtitle & year */}
                               <p className="text-sm text-gray-400">{props.subtitle ? props.subtitle + " " + "(" + props.year + ")" : props.year}</p>
                             </div>
