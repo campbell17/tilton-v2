@@ -10,7 +10,7 @@ export default function TrackListItem(props) {
       project: props.project,
       image: props.image,
       index: props.index,
-      shouldPlay: true // Add this flag to indicate immediate playback
+      shouldPlay: true
     });
   };
 

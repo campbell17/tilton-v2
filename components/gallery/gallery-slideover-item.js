@@ -113,7 +113,19 @@ export default function GallerySlideoverItem(props) {
                     <div className="flex h-auto bg-white">
                       <div className="px-0 py-0 bg-white w-full flex">
                         <dl className="space-y-8 sm:space-y-0 sm:divide-y sm:divide-gray-200 w-full">
-                          <Album album={props.album} projectItems={projectArray} gallery notpinned={props.notpinned} className="rounded-none" id={props.id} initialSrc={props.songs} selectedIds={props.selectedIds} mappedSongUrl={props.mappedSongUrl} mappedSongTitle={props.mappedSongTitle} />
+                          <Album 
+                            album={props.album} 
+                            projectItems={projectArray} 
+                            gallery 
+                            notpinned={props.notpinned} 
+                            className="rounded-none" 
+                            id={props.id} 
+                            initialSrc={props.songs} 
+                            selectedIds={props.selectedIds} 
+                            mappedSongUrl={props.mappedSongUrl} 
+                            mappedSongTitle={props.mappedSongTitle}
+                            shouldPlay={true} // Add this line
+                          />
                           
                           <div className="px-6 py-2 sm:py-5">
                             <dt className="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0 lg:w-48">
