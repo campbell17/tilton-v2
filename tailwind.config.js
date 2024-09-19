@@ -12,6 +12,7 @@ module.exports = {
         mgm: '#c7a338',
         paramount: '#0164ff',
         spotify: '#1dB954',
+        amazon: '#00A8E1',
       },
       transitionProperty: {
         'height': 'height',

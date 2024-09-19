@@ -30,7 +30,7 @@ export default function GallerySlideoverItem(props) {
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-2xl">
                   <div className="flex h-full flex-col relative overflow-y-scroll shadow-xl">
                       {/* Hero BG */}
-                      <div style={{'--image-url': `url(${props.hero.url})`}} className={`absolute -z-[1] w-full h-[27rem] py-12 bg-cover bg-indigo-950 bg-right ${props.color} bg-[image:var(--image-url)]`}>
+                      <div style={{'--image-url': `url(${props.hero.url})`}} className={`absolute -z-[1] w-full h-[28rem] py-12 bg-cover bg-indigo-950 bg-center ${props.color} bg-[image:var(--image-url)]`}>
                         <div className="relative isolate px-6 lg:px-8">
                           <div className="mx-auto max-w-2xl py-32 sm:py-24 lg:py-12"></div>
                         </div>
@@ -54,9 +54,9 @@ export default function GallerySlideoverItem(props) {
 
                       {/* Top Content */}
 
-                      <div className="pb-10">
+                      <div className="pb-8 sm:pb-10">
 
-                        <div className="-mt-8 flex flex-col items-center sm:items-start px-6 gap-4">
+                        <div className="mt-8 sm:-mt-8 flex flex-col items-center sm:items-start px-6 gap-4">
                           
                           {/* Album Cover Image */}
                           <div className="inline-flex overflow-hidden rounded-lg border-4 border-white relative flex-shrink-0 -mt-20 sm:mt-0 h-40 w-40 lg:h-48 lg:w-48">
@@ -78,7 +78,7 @@ export default function GallerySlideoverItem(props) {
                             
                             {/* Project CTA */}
                             {props.cta &&
-                            <div className="mt-5 flex justify-center sm:justify-start flex-wrap space-y-3 sm:space-y-0 sm:space-x-3">
+                            <div className="mt-5 flex justify-center sm:justify-start flex-wrap space-y-3 sm:space-y-0 sm:space-x-3 flex-col sm:flex-row">
                               <a
                                 href={props.ctalink}
                                 target="_blank noreferrer"
