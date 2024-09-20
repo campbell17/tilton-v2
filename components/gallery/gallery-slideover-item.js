@@ -171,7 +171,7 @@ export default function GallerySlideoverItem(props) {
                               {props.credits}
                             </dd>
                           </div>}
-                          <div className={`sm:px-6 sm:py-3 shadow-inner shadow-indigo-900 bg-gradient-to-r from-violet-900 via-indigo-900 to-blue-700 ${props.color}`}></div>
+                          <div className={`sm:px-6 sm:py-3 sm:pb-11 shadow-inner shadow-indigo-900 bg-gradient-to-r from-violet-900 via-indigo-900 to-blue-700 ${props.color}`}></div>
                         </dl>
                       </div>
                     </div>
