@@ -30,7 +30,7 @@ export default function GallerySlideoverItem(props) {
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-2xl">
                   <div className="flex h-full flex-col relative overflow-y-scroll shadow-xl">
                       {/* Hero BG */}
-                      <div style={{'--image-url': `url(${props.hero.url})`}} className={`absolute -z-[1] w-full h-[28rem] py-12 bg-cover bg-indigo-950 bg-center ${props.color} bg-[image:var(--image-url)]`}>
+                    <div style={{'--image-url': `url(${props.hero.url})`}} className={`absolute -z-[1] w-full h-[28rem] py-12 bg-cover bg-indigo-950 bg-center ${props.color} bg-[image:var(--image-url)]`}>
                         <div className="relative isolate px-6 lg:px-8">
                           <div className="mx-auto max-w-2xl py-32 sm:py-24 lg:py-12"></div>
                         </div>
