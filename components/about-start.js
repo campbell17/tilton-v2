@@ -39,10 +39,10 @@ export default function AboutStart() {
             <p className="mt-6 text-xl leading-8 text-gray-600">
               Chris Tilton is a Los Angeles based composer for television, film, and video games. Chris got his start in the industry working as an apprentice for composer Michael Giacchino in 2001.
             </p>
-            <p className="mt-6 text-base leading-7 text-gray-600">
+            <p className="mt-6 text-xl leading-7 text-gray-600">
               Since then, Chris has taken his experience and passion for storytelling and gone on to write music for several TV series (Fringe, Zoo) and video games (Assassin&rsquo;s Creed: Unity, SimCity).
             </p>
-            <p className="mt-6 text-base leading-7 text-gray-600">
+            <p className="mt-6 text-xl leading-7 text-gray-600">
               Most recently, you can hear Chris&rsquo;s music in the MGM+ series, From, and the Ubisoft video game, Assassin&rsquo;s Creed Nexus.
             </p>
             <div className="mt-10 flex">
