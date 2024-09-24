@@ -1,4 +1,5 @@
 import Image from "next/legacy/image"
+import { useEffect, useState } from "react"
 import chrisStudioPic from '../public/images/about/chris-studio.jpg'
 import chrisDinerSmPic from '../public/images/about/chris-diner-sm.png'
 import chrisConferencePic from '../public/images/about/chris-conference.jpg'
@@ -6,6 +7,29 @@ import chrisWelcomePic from '../public/images/about/chris-welcome.jpg'
 import chrisPianoPic from '../public/images/about/chris-piano.jpg'
 import chrisTestPic from '../public/images/about/chris-test.png'
 export default function AboutStart() {
+  const [emailToken, setEmailToken] = useState("")
+
+  useEffect(() => {
+    async function fetchEmailToken() {
+      try {
+        const response = await fetch('/api/get-email-token')
+        const data = await response.json()
+        setEmailToken(data.token)
+      } catch (error) {
+        console.error('Failed to fetch email token:', error)
+      }
+    }
+    fetchEmailToken()
+  }, [])
+
+  const handleContactClick = (e) => {
+    e.preventDefault()
+    if (emailToken) {
+      const decodedEmail = atob(emailToken)
+      window.location.href = `mailto:${decodedEmail}?subject=${encodeURIComponent("Hi Chris...")}`
+    }
+  }
+
   return (
     <div className="overflow-hidden bg-white py-32">
       <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
@@ -24,6 +48,7 @@ export default function AboutStart() {
             <div className="mt-10 flex">
               <a
                 href="#"
+                onClick={handleContactClick}
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Contact Chris <span aria-hidden="true">&rarr;</span>
